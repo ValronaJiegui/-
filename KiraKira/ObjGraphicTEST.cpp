@@ -10,12 +10,41 @@ using namespace GameL;
 //初期設定(イニシャライズ)////////////////////
 void CObjGraphicTEST::Init()
 {
-
+	m_px = 0.0f;
+	m_py = 0.0f;
+	m_vx = 0.0f;
+	m_vy = 0.0f;
 }
 //動作内容(アクション)////////////////////////
 void CObjGraphicTEST::Action()
 {
+	//移動を減速(毎時)
+	m_vx *= 0.75f;
+	m_vy *= 0.75f;
 
+	//キー入力されたときの処理
+	if (Input::GetVKey(VK_RIGHT) == true)
+	{ 
+		m_vx = +5.0f; 
+		//左右同時押しされたら停止
+		if (Input::GetVKey(VK_LEFT) == true)
+		{
+			m_vx = 0.0f;
+		}
+	}
+	if (Input::GetVKey(VK_LEFT) == true)
+	{ 
+		m_vx = -5.0f; 
+		//左右同時押しされたら停止
+		if (Input::GetVKey(VK_RIGHT) == true)
+		{
+			m_vx = 0.0f;
+		}
+	}
+
+	//移動を位置に反映する
+	m_px += m_vx;
+	m_py += m_vy;
 }
 //描画情報(ドロー)////////////////////////////
 void CObjGraphicTEST::Draw()
@@ -31,11 +60,11 @@ void CObjGraphicTEST::Draw()
 	src.m_right = 32.0f;
 	src.m_bottom = 32.0f;
 
-	//切取位置の設定
-	dst.m_top = 0.0f;
-	dst.m_left = 0.0f;
-	dst.m_right = 32.0f;
-	dst.m_bottom = 32.0f;
+	//表示位置の設定
+	dst.m_top	 =   0.0f + m_py;
+	dst.m_left	 =   0.0f + m_px;
+	dst.m_right	 = 128.0f + m_px;
+	dst.m_bottom = 128.0f + m_py;
 
 	Draw::Draw(0, &src, &dst, c, 0.0f);
 }
