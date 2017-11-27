@@ -12,6 +12,13 @@ public:
 	void Draw();	//•`‰æî•ñ
 	float GetX() { return m_px; }
 	float GetY() { return m_py; }
+	float GetVX() { return m_vx; }
+	float GetVY() { return m_vy; }
+	void SetX(float x) { m_px = x; return; }
+	void SetY(float y) { m_py = y; return; }
+	void SetVX(float vx) { m_vx = vx; return; }
+	void SetVY(float vy) { m_vy = vy; return; }
+
 private:
 	float m_px;//ˆÊ’uX
 	float m_py;//ˆÊ’uY
