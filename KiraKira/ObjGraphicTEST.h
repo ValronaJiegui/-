@@ -10,6 +10,8 @@ public:
 	void Init();	//‰Šúİ’è
 	void Action();	//“®ì“à—e
 	void Draw();	//•`‰æî•ñ
+	float GetX() { return m_px; }
+	float GetY() { return m_py; }
 private:
 	float m_px;//ˆÊ’uX
 	float m_py;//ˆÊ’uY

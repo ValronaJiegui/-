@@ -118,6 +118,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="GameL\GameL_Main.cpp" />
+    <ClCompile Include="ObjBlock.cpp" />
     <ClCompile Include="ObjGraphicTEST.cpp" />
     <ClCompile Include="SceneMain.cpp" />
     <ClCompile Include="test.cpp" />
@@ -136,12 +137,12 @@
     <ClInclude Include="GameL\UserData.h" />
     <ClInclude Include="GameL\WinInputs.h" />
     <ClInclude Include="main.h" />
+    <ClInclude Include="ObjBlock.h" />
     <ClInclude Include="ObjGraphicTEST.h" />
     <ClInclude Include="SceneMain.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="GameL\Draw2DTex.hlsl" />
-    <None Include="test.png" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="GameL\libar.lib" />
