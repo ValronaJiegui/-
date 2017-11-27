@@ -82,9 +82,6 @@
     <None Include="GameL\Draw2DTex.hlsl">
       <Filter>リソース ファイル</Filter>
     </None>
-    <None Include="test.png">
-      <Filter>ソース ファイル\TEST</Filter>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Library Include="GameL\libar.lib">
