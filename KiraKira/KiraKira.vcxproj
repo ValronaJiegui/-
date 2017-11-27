@@ -139,7 +139,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="GameL\Draw2DTex.hlsl" />
-    <None Include="test.png" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="GameL\libar.lib" />
