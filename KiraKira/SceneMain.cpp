@@ -22,7 +22,7 @@ CSceneMain::~CSceneMain()
 void CSceneMain::InitScene()
 {
 	//グラフィック読み込み
-	Draw::LoadImageW(L"LEI_KARI.png", 0, TEX_SIZE_64);
+	Draw::LoadImageW(L"Lei.png", 0, TEX_SIZE_256);
 
 	//テストグラフィック作成
 	CObjGraphicTEST* obj = new CObjGraphicTEST();

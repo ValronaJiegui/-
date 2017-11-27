@@ -15,4 +15,9 @@ private:
 	float m_py;//位置Y
 	float m_vx;//移動X(ベクトル)
 	float m_vy;//移動Y(ベクトル)
+	int m_time;
+	int m_aruku;
+	bool m_jump;
+	bool m_dash;
+	bool m_z_key;
 };
