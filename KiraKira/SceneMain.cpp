@@ -22,11 +22,21 @@ CSceneMain::~CSceneMain()
 void CSceneMain::InitScene()
 {
 	//グラフィック読み込み
-	Draw::LoadImageW(L"Lei.png", 0, TEX_SIZE_256);
+	Draw::LoadImageW(L"dorodoro.png", 0, TEX_SIZE_256);
+
+	//テキストオブジェクト作成
+	CObjText* obj = new CObjText();
+	Objs::InsertObj(obj, OBJ_TEXT, 10);
 
 	//テストグラフィック作成
-	CObjGraphicTEST* obj = new CObjGraphicTEST();
-	Objs::InsertObj(obj, OBJ_TEST, 10);
+	CObjwindow* obj3 = new CObjwindow();
+	Objs::InsertObj(obj3, OBJ_WINDOW, 10);
+
+//	Draw::LoadImageW(L"Lei.png", 0, TEX_SIZE_256);
+
+	//テストグラフィック作成
+//	CObjGraphicTEST* obj = new CObjGraphicTEST();
+//	Objs::InsertObj(obj, OBJ_TEST, 10);
 }
 //実行中の操作//////////////////////////////////
 void CSceneMain::Scene()

@@ -115,8 +115,10 @@
   <ItemGroup>
     <ClCompile Include="GameL\GameL_Main.cpp" />
     <ClCompile Include="ObjGraphicTEST.cpp" />
+    <ClCompile Include="ObjText.cpp" />
     <ClCompile Include="SceneMain.cpp" />
     <ClCompile Include="test.cpp" />
+    <ClCompile Include="window_create.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameHead.h" />
@@ -133,7 +135,9 @@
     <ClInclude Include="GameL\WinInputs.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="ObjGraphicTEST.h" />
+    <ClInclude Include="ObjText.h" />
     <ClInclude Include="SceneMain.h" />
+    <ClInclude Include="window_create.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="GameL\Draw2DTex.hlsl" />
