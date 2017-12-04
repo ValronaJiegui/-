@@ -15,10 +15,11 @@ void CObjGraphicTEST::Init()
 	m_vx = 0.0f;
 	m_vy = 0.0f;
 	m_time = 0;
-	m_aruku = 0;
+	m_motion_walk = 0;
+	m_motion_attack = 0;
 	m_jump = false;
 	m_dash = false;
-	m_z_key = false;
+	m_key_z = false;
 }
 //動作内容(アクション)////////////////////////
 void CObjGraphicTEST::Action()
@@ -59,9 +60,13 @@ void CObjGraphicTEST::Action()
 		m_vy -= 1.0f;
 		m_jump = true;
 	}
-	if (Input::GetVKey('Z') == true)
+	if (m_key_z == false)
 	{
-
+		if (Input::GetVKey('Z') == true)
+		{
+			m_key_z = true;
+			m_time = 0;
+		}
 	}
 
 
@@ -76,13 +81,27 @@ void CObjGraphicTEST::Action()
 		m_jump = false;
 	}
 
+	if (m_key_z == true)
+	{
+		if (m_time % 3 == 0)
+		{
+			m_time = 0;
+			m_motion_attack++;
+			if (m_motion_attack == 5)
+			{
+				m_motion_attack = 0;
+				m_key_z = false;
+			}
+		}
+	}
+
 	if (m_time % 8 == 0)
 	{
 		m_time = 0;
-		m_aruku++;
-		if (m_aruku == 4)
+		m_motion_walk++;
+		if (m_motion_walk == 4)
 		{
-			m_aruku = 0;
+			m_motion_walk = 0;
 		}
 	}
 }
@@ -94,37 +113,51 @@ void CObjGraphicTEST::Draw()
 	RECT_F src;//描画元切取位置
 	RECT_F dst;//描画元表示位置
 
-	//切取位置の設定
-	if (m_jump == true|| Input::GetVKey(VK_RIGHT) == true)
+	//切取位置の設定	
+	if (m_key_z == true)
 	{
-		src.m_top = 32.0f;
-		src.m_left = 0.0f;
-		src.m_right = 32.0f;
-		src.m_bottom = 64.0f;
+		//Ｚキー
+		src.m_top = 96.0f;
+		src.m_left = 0.0f + (m_motion_attack * 32);
+		src.m_right = 32.0f + (m_motion_attack * 32);;
+		src.m_bottom = 128.0f;
+	}
+	else if (m_jump == true|| Input::GetVKey(VK_RIGHT) == true)
+	{
+		//ジャンプ＋右
+		src.m_top = 0.0f;
+		src.m_left = 128.0f;
+		src.m_right = 160.0f;
+		src.m_bottom = 32.0f;
 	}	
 	else if (m_jump == true || Input::GetVKey(VK_LEFT) == true)
 	{
-		src.m_top = 32.0f;
-		src.m_left = 32.0f;
-		src.m_right = 0.0f;
-		src.m_bottom = 64.0f;
+		//ジャンプ＋左
+		src.m_top = 0.0f;
+		src.m_left = 160.0f;
+		src.m_right = 128.0f;
+		src.m_bottom = 32.0f;
 	}
 	else if (Input::GetVKey(VK_RIGHT) == true)
 	{
+		//右キー
 		src.m_top = 0.0f;
-		src.m_left = 0.0f + (m_aruku * 32.0f);
-		src.m_right = 32.0f + (m_aruku * 32.0f);
+		src.m_left = 0.0f + (m_motion_walk * 32.0f);
+		src.m_right = 32.0f + (m_motion_walk * 32.0f);
 		src.m_bottom = 32.0f;
 	}
 	else if (Input::GetVKey(VK_LEFT) == true)
 	{
+		//左キー
 		src.m_top = 0.0f;
-		src.m_left = 32.0f + (m_aruku * 32.0f);
-		src.m_right = 0.0f + (m_aruku * 32.0f);
+		src.m_left = 32.0f + (m_motion_walk * 32.0f);
+		src.m_right = 0.0f + (m_motion_walk * 32.0f);
 		src.m_bottom = 32.0f;
 	}
+
 	else
 	{
+		//キーなし(止まり)
 		src.m_top = 0.0f;
 		src.m_left = 0.0f;
 		src.m_right = 32.0f;
@@ -143,10 +176,10 @@ void CObjGraphicTEST::Draw()
 
 /*
 作りたい動きリスト
-左右移動→向きは変わりません
+左右移動→ほぼ完成です
 ジャンプ→動作にまだ難あり
 着地→できてません
 ダッシュ→○
-攻撃→できてません
+攻撃→途中です
 
 */

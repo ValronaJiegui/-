@@ -30,10 +30,7 @@
     <ClCompile Include="test.cpp">
       <Filter>ソース ファイル\TEST</Filter>
     </ClCompile>
-    <ClCompile Include="window_create.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjText.cpp">
+    <ClCompile Include="ObjBlock.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
@@ -83,19 +80,13 @@
     <ClInclude Include="ObjGraphicTEST.h">
       <Filter>ソース ファイル\TEST</Filter>
     </ClInclude>
-    <ClInclude Include="window_create.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjText.h">
+    <ClInclude Include="ObjBlock.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="GameL\Draw2DTex.hlsl">
       <Filter>リソース ファイル</Filter>
-    </None>
-    <None Include="test.png">
-      <Filter>ソース ファイル\TEST</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
