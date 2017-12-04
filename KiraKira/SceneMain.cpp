@@ -27,7 +27,7 @@ CSceneMain::~CSceneMain()
 void CSceneMain::InitScene()
 {
 	//外部データの読み込み(ステージ情報)
-/*	unique_ptr<wchar_t>p;//ステージ情報ポインター
+	unique_ptr<wchar_t>p;//ステージ情報ポインター
 	int size;			//ステージ情報の大きさ
 	p = Save::ExternalDataOpen(L"Book1.csv", &size);//外部データ読み込み
 
@@ -44,7 +44,7 @@ void CSceneMain::InitScene()
 			count += 2;
 		}
 	}
-	*/
+
 
 	//グラフィック読み込み
 	Draw::LoadImageW(L"Lei.png", 0, TEX_SIZE_256);
@@ -52,10 +52,6 @@ void CSceneMain::InitScene()
 	//テストグラフィック作成
 	CObjGraphicTEST* obj = new CObjGraphicTEST();
 	Objs::InsertObj(obj, OBJ_TEST, 10);
-
-	//blockオブジェクト作成
-//	CObjBlock* objb = new CObjBlock(map);
-//	Objs::InsertObj(objb, OBJ_BLOCK, 9);
 
 }
 //実行中の操作//////////////////////////////////

@@ -1,5 +1,7 @@
 #pragma once
 #include"GameL\SceneObjManager.h"
+#include"GameHead.h"
+#include"GameL\DrawTexture.h"
 
 //使用するネームスペース
 using namespace GameL;
@@ -24,8 +26,10 @@ public:
 	float GetScroll() { return m_scroll; }
 
 private:
-//	void BlockDraw(float x, float y, RECT_F*dst, float c[]);
+	void BlockDraw(float x, float y, RECT_F* dst, float c[]);
 	int m_map[10][100]; //マップ情報
 
 	float m_scroll;//左右スクロール用
+	float hx;
+	float hy;
 };
