@@ -6,6 +6,7 @@
 
 #include"GameHead.h"
 #include"ObjBlock.h"
+#include "ObjGraphicTEST.h"
 
 //使用するネームスペース
 using namespace GameL;
@@ -27,32 +28,32 @@ void CObjBlock::Init()
 void CObjBlock::Action()
 {
 	//主人公の位置を取得
-	CObjGraphicTEST*hero = (CObjGraphicTEST*)Objs::GetObj(OBJ_TEST);
-	float hx = hero->GetX();
-	float hy = hero->GetY();
+	CObjGraphicTEST * test = (CObjGraphicTEST*)Objs::GetObj(OBJ_TEST);
+	hx= test->GetX();
+	hy = test->GetY();
 
 	//後方スクロールライン
 	if (hx < 80)
 	{
-		hero->SetX(80);//主人公はラインを超えないようにする
-		m_scroll -= hero->GetVX();//主人公が本来動くべき分の値をm_scrollに加える
+		test->SetX(80);//主人公はラインを超えないようにする
+		m_scroll -= test->GetVX();//主人公が本来動くべき分の値をm_scrollに加える
 	}
 
 	//前方スクロールライン
 	if (hx > 300)
 	{
-		hero->SetX(300);
-		m_scroll -= hero->GetVX();
+		test->SetX(300);
+		m_scroll -= test->GetVX();
 	}
 
 	//主人公の衝突状態確認用のフラグの初期化
-	hero->SetUp(false);
-	hero->SetDown(false);
-	hero->SetLeft(false);
-	hero->SetRight(false);
+	test->SetUp(false);
+	test->SetDown(false);
+	test->SetLeft(false);
+	test->SetRight(false);
 
 	//踏んでいるblockの種類の初期化
-	hero->SetBT(0);
+	test->SetBT(0);
 
 	//m_mapの全要素にアクセス
 	for (int i = 0; i < 10; i++)
@@ -90,41 +91,41 @@ void CObjBlock::Action()
 					if (len < 88.0f) {
 
 						//角度で上下左右を判定
-						if ((r < 45 && r>0) || r > 315)
+					if ((r < 45 && r>0) || r > 315)
 						{
 							//右
-							hero->SetRight(true);//主人公の左の部分が衝突している
-							hero->SetX(x + 64.0f + (m_scroll));//ブロックの位置＋主人公の幅
-							hero->SetVX(-hero->GetVX()*0.1f);//ーVX*反発定数
+							test->SetRight(true);//主人公の左の部分が衝突している
+							test->SetX(x + 64.0f + (m_scroll));//ブロックの位置＋主人公の幅
+							test->SetVX(-test->GetVX()*0.1f);//ーVX*反発定数
 
 
 						}
 						if (r > 45 && r < 135)
 						{
 							//上
-							hero->SetDown(true);
-							hero->SetY(y - 64.0f);//ブロックの位置・主人公の幅
+							test->SetDown(true);
+							test->SetY(y - 64.0f);//ブロックの位置・主人公の幅
 												  //種類を渡すのスタートとゴールのみ変更する
 							if (m_map[i][j] >= 2)
-								hero->SetBT(m_map[i][j]);//ブロックの要素(type)を主人公に渡す
-							hero->SetVY(0.0f);
+								test->SetBT(m_map[i][j]);//ブロックの要素(type)を主人公に渡す
+							test->SetVY(0.0f);
 
 						}
 						if (r > 135 && r < 225)
 						{
 							//左
-							hero->SetLeft(true);
-							hero->SetX(x - 64.0f + (m_scroll));
-							hero->SetVX(-hero->GetVX()*0.1f);
+							test->SetLeft(true);
+							test->SetX(x - 64.0f + (m_scroll));
+							test->SetVX(-test->GetVX()*0.1f);
 						}
 						if (r > 225 && r < 315)
 						{
 							//下
-							hero->SetUp(true);//主人公から見て、上の部分が小とるしている
-							hero->SetY(y + 64.0f);//ブロックの位置＋主人公の幅
-							if (hero->GetVY() < 0)
+							test->SetUp(true);//主人公から見て、上の部分が小とるしている
+							test->SetY(y + 64.0f);//ブロックの位置＋主人公の幅
+							if (test->GetVY() < 0)
 							{
-								hero->SetVY(0.0f);
+								test->SetVY(0.0f);
 							}
 						}
 					}
@@ -138,6 +139,16 @@ void CObjBlock::Action()
 //ドロー
 void CObjBlock::Draw()
 {
+
+
+	int map[10][100];
+
+/*	Draw::LoadImageW(L"緑の32×32背景 1.png", 0, TEX_SIZE_256);
+
+	//blockオブジェクト作成
+	CObjBlock* objb = new CObjBlock(map);
+	Objs::InsertObj(objb, OBJ_BLOCK, 9);*/
+
 	//描画カラー情報
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
@@ -145,14 +156,14 @@ void CObjBlock::Draw()
 	RECT_F dst;
 
 	//背景表示
-	src.m_top = 256.0f;
-	src.m_left = 0.0f;
-	src.m_right = 512.0f;
-	src.m_bottom = 512.0f;
+	src.m_top = 0.0f;
+	src.m_left = 0.0f + hx / 2;
+	src.m_right = 600.0f + hx / 2;
+	src.m_bottom = 900.0f;
 	dst.m_top = 0.0f;
 	dst.m_left = 0.0f;
 	dst.m_right = 800.0f;
-	dst.m_bottom = 600.0f;
+	dst.m_bottom = 600.0;
 	Draw::Draw(0, &src, &dst, c, 0.0f);
 
 	//マップチップによるblock設置
@@ -181,7 +192,7 @@ void CObjBlock::Draw()
 				}
 				else
 				{
-					BlockDraw(320.0f, 0.0f, &dst, c);
+					BlockDraw(0.0, 32.0, &dst, c);
 				}
 
 
@@ -206,8 +217,10 @@ void CObjBlock::BlockDraw(float x, float y, RECT_F*dst, float c[])
 	RECT_F src;
 	src.m_top = y;
 	src.m_left = x;
-	src.m_right = src.m_left + 64.0f;
-	src.m_bottom = src.m_top + 64.0f;
+	src.m_right = src.m_left + 32.0f;
+	src.m_bottom = src.m_top + 32.0f;
+
+
 	//描画
-	Draw::Draw(0, &src, dst, c, 0.0f);
+	Draw::Draw(1, &src, dst, c, 0.0f);
 }

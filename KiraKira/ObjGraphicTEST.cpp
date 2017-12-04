@@ -171,7 +171,7 @@ void CObjGraphicTEST::Draw()
 	dst.m_right	 = 64.0f + m_px;
 	dst.m_bottom = 64.0f + m_py;
 
-	Draw::Draw(0, &src, &dst, c, 0.0f);
+	Draw::Draw(2, &src, &dst, c, 0.0f);
 }
 
 /*
