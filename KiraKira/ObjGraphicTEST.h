@@ -29,4 +29,5 @@ private:
 	bool m_jump;
 	bool m_dash;
 	bool m_z_key;
+	bool m_f;//ƒWƒƒƒ“ƒv§Œä—p
 };

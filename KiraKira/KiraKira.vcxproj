@@ -82,6 +82,9 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
     </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -118,8 +121,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="GameL\GameL_Main.cpp" />
-    <ClCompile Include="ObjBlock.cpp" />
-    <ClCompile Include="ObjGraphicTEST.cpp" />
+    <ClCompile Include="ObjGraphicTEST.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="ObjItemTea.cpp" />
+    <ClCompile Include="ObjItemWing.cpp" />
     <ClCompile Include="SceneMain.cpp" />
     <ClCompile Include="test.cpp" />
   </ItemGroup>
@@ -138,7 +144,11 @@
     <ClInclude Include="GameL\WinInputs.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="ObjBlock.h" />
-    <ClInclude Include="ObjGraphicTEST.h" />
+    <ClInclude Include="ObjGraphicTEST.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="ObjItemTea.h" />
+    <ClInclude Include="ObjItemWing.h" />
     <ClInclude Include="SceneMain.h" />
   </ItemGroup>
   <ItemGroup>

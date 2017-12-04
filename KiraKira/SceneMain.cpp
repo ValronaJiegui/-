@@ -26,33 +26,22 @@ CSceneMain::~CSceneMain()
 //初期化の操作//////////////////////////////////
 void CSceneMain::InitScene()
 {
-	//外部データの読み込み(ステージ情報)
-	unique_ptr<wchar_t>p;//ステージ情報ポインター
-	int size;			//ステージ情報の大きさ
-	p = Save::ExternalDataOpen(L"Book1.csv", &size);//外部データ読み込み
-
-	int map[10][100];
-	int count = 1;
-	for (int i = 0; i < 10; i++)
-	{
-		for (int j = 0; j < 100; j++)
-		{
-			int w = 0;
-			swscanf_s(&p.get()[count], L"%d", &w);
-
-			map[i][j] = w;
-			count += 2;
-		}
-	}
-
-
 	//グラフィック読み込み
-	Draw::LoadImageW(L"Lei.png", 0, TEX_SIZE_256);
+	Draw::LoadImageW(L"item.png", 0, TEX_SIZE_256);
+	Draw::LoadImageW(L"Lei.png", 1, TEX_SIZE_256);
 
 	//テストグラフィック作成
-	CObjGraphicTEST* obj = new CObjGraphicTEST();
-	Objs::InsertObj(obj, OBJ_TEST, 10);
+	//茶
+	CObjItemTea* obj = new CObjItemTea();
+	Objs::InsertObj(obj, OBJ_ITEM_TEA, 0);
 
+	//翼
+	CObjItemWing* obj2 = new CObjItemWing();
+	Objs::InsertObj(obj2, OBJ_ITEM_WING, 0);
+
+	//主人公
+	CObjGraphicTEST* obj3 = new CObjGraphicTEST();
+	Objs::InsertObj(obj3, OBJ_TEST, 1);
 }
 //実行中の操作//////////////////////////////////
 void CSceneMain::Scene()
