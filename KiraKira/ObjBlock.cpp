@@ -15,6 +15,7 @@ CObjBlock::CObjBlock(int map[10][100])
 {
 	//マップデータをコピー
 	memcpy(m_map, map, sizeof(int)*(10 * 100));
+
 }
 
 //イニシャライズ
@@ -140,15 +141,6 @@ void CObjBlock::Action()
 void CObjBlock::Draw()
 {
 
-
-	int map[10][100];
-
-/*	Draw::LoadImageW(L"緑の32×32背景 1.png", 0, TEX_SIZE_256);
-
-	//blockオブジェクト作成
-	CObjBlock* objb = new CObjBlock(map);
-	Objs::InsertObj(objb, OBJ_BLOCK, 9);*/
-
 	//描画カラー情報
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
@@ -157,12 +149,12 @@ void CObjBlock::Draw()
 
 	//背景表示
 	src.m_top = 0.0f;
-	src.m_left = 0.0f + hx / 2;
-	src.m_right = 600.0f + hx / 2;
+	src.m_left = 0.0f + hx;
+	src.m_right = 650.0f + hx;
 	src.m_bottom = 900.0f;
 	dst.m_top = 0.0f;
 	dst.m_left = 0.0f;
-	dst.m_right = 800.0f;
+	dst.m_right = 900.0f;
 	dst.m_bottom = 600.0;
 	Draw::Draw(0, &src, &dst, c, 0.0f);
 
@@ -177,8 +169,8 @@ void CObjBlock::Draw()
 				//表示位置の設定
 				dst.m_top = i*64.0f;
 				dst.m_left = j*64.0f + m_scroll;
-				dst.m_right = dst.m_left + 64.0;
-				dst.m_bottom = dst.m_top + 64.0;
+				dst.m_right = dst.m_left + 64.0f;
+				dst.m_bottom = dst.m_top + 64.0f;
 				if (m_map[i][j] == 2)
 				{
 					//スタートブロック
@@ -192,7 +184,7 @@ void CObjBlock::Draw()
 				}
 				else
 				{
-					BlockDraw(0.0, 32.0, &dst, c);
+					BlockDraw(0.0f, 32.0f, &dst, c);
 				}
 
 

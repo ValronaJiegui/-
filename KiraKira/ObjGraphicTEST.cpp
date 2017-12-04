@@ -19,7 +19,7 @@ void CObjGraphicTEST::Init()
 	m_motion_attack = 0;
 	m_jump = false;
 	m_dash = false;
-	m_key_z = false;
+	m_z_key = false;
 }
 //動作内容(アクション)////////////////////////
 void CObjGraphicTEST::Action()
@@ -60,11 +60,11 @@ void CObjGraphicTEST::Action()
 		m_vy -= 1.0f;
 		m_jump = true;
 	}
-	if (m_key_z == false)
+	if (m_z_key == false)
 	{
 		if (Input::GetVKey('Z') == true)
 		{
-			m_key_z = true;
+			m_z_key = true;
 			m_time = 0;
 		}
 	}
@@ -81,7 +81,7 @@ void CObjGraphicTEST::Action()
 		m_jump = false;
 	}
 
-	if (m_key_z == true)
+	if (m_z_key == true)
 	{
 		if (m_time % 3 == 0)
 		{
@@ -90,7 +90,7 @@ void CObjGraphicTEST::Action()
 			if (m_motion_attack == 5)
 			{
 				m_motion_attack = 0;
-				m_key_z = false;
+				m_z_key = false;
 			}
 		}
 	}
@@ -114,7 +114,7 @@ void CObjGraphicTEST::Draw()
 	RECT_F dst;//描画元表示位置
 
 	//切取位置の設定	
-	if (m_key_z == true)
+	if (m_z_key == true)
 	{
 		//Ｚキー
 		src.m_top = 96.0f;
