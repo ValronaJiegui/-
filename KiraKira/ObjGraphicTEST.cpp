@@ -83,11 +83,11 @@ void CObjGraphicTEST::Action()
 
 	if (m_key_z == true)
 	{
-		if (m_time % 4 == 0)
+		if (m_time % 3 == 0)
 		{
 			m_time = 0;
 			m_motion_attack++;
-			if (m_motion_attack == 4)
+			if (m_motion_attack == 5)
 			{
 				m_motion_attack = 0;
 				m_key_z = false;
@@ -117,26 +117,26 @@ void CObjGraphicTEST::Draw()
 	if (m_key_z == true)
 	{
 		//Ｚキー
-		src.m_top = 32.0f;
-		src.m_left = 32.0f + (m_motion_attack * 32);
-		src.m_right = 64.0f + (m_motion_attack * 32);;
-		src.m_bottom = 64.0f;
+		src.m_top = 96.0f;
+		src.m_left = 0.0f + (m_motion_attack * 32);
+		src.m_right = 32.0f + (m_motion_attack * 32);;
+		src.m_bottom = 128.0f;
 	}
 	else if (m_jump == true|| Input::GetVKey(VK_RIGHT) == true)
 	{
 		//ジャンプ＋右
-		src.m_top = 32.0f;
-		src.m_left = 0.0f;
-		src.m_right = 32.0f;
-		src.m_bottom = 64.0f;
+		src.m_top = 0.0f;
+		src.m_left = 128.0f;
+		src.m_right = 160.0f;
+		src.m_bottom = 32.0f;
 	}	
 	else if (m_jump == true || Input::GetVKey(VK_LEFT) == true)
 	{
 		//ジャンプ＋左
-		src.m_top = 32.0f;
-		src.m_left = 32.0f;
-		src.m_right = 0.0f;
-		src.m_bottom = 64.0f;
+		src.m_top = 0.0f;
+		src.m_left = 160.0f;
+		src.m_right = 128.0f;
+		src.m_bottom = 32.0f;
 	}
 	else if (Input::GetVKey(VK_RIGHT) == true)
 	{

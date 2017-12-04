@@ -114,8 +114,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="GameL\GameL_Main.cpp" />
-    <ClCompile Include="ObjBlock.cpp" />
-    <ClCompile Include="ObjGraphicTEST.cpp" />
+    <ClCompile Include="ObjBlock.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="ObjGraphicTEST.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="SceneMain.cpp" />
     <ClCompile Include="test.cpp" />
   </ItemGroup>
@@ -133,7 +137,9 @@
     <ClInclude Include="GameL\UserData.h" />
     <ClInclude Include="GameL\WinInputs.h" />
     <ClInclude Include="main.h" />
-    <ClInclude Include="ObjBlock.h" />
+    <ClInclude Include="ObjBlock.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="ObjGraphicTEST.h" />
     <ClInclude Include="SceneMain.h" />
   </ItemGroup>
