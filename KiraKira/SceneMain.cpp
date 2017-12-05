@@ -48,21 +48,25 @@ void CSceneMain::InitScene()
 
 
 	//グラフィック
-	Draw::LoadImageW(L"map.png",0 , TEX_SIZE_1024);
-
+	Draw::LoadImageW(L"map.png",1, TEX_SIZE_1024);
 
 	//ブロックグラフィック読み込み
-	Draw::LoadImageW(L"BlockGraphic.png", 1, TEX_SIZE_256);
+	Draw::LoadImageW(L"BlockGraphic.png", 2, TEX_SIZE_256);
+
 	//blockオブジェクト作成
 	CObjBlock* objb = new CObjBlock(map);
-	Objs::InsertObj(objb, OBJ_BLOCK, 9);
+	Objs::InsertObj(objb, OBJ_BLOCK, 1);
 
 	//グラフィック読み込み
-	Draw::LoadImageW(L"Lei.png", 2, TEX_SIZE_256);
+	Draw::LoadImageW(L"Lei.png", 0, TEX_SIZE_256);
 
 	//テストグラフィック作成
 	CObjGraphicTEST* obj = new CObjGraphicTEST();
-	Objs::InsertObj(obj, OBJ_TEST, 8);
+	Objs::InsertObj(obj, OBJ_TEST, 2);
+
+
+
+
 
 }
 //実行中の操作//////////////////////////////////

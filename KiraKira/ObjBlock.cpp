@@ -11,6 +11,8 @@
 //使用するネームスペース
 using namespace GameL;
 
+
+
 CObjBlock::CObjBlock(int map[10][100])
 {
 	//マップデータをコピー
@@ -29,9 +31,9 @@ void CObjBlock::Init()
 void CObjBlock::Action()
 {
 	//主人公の位置を取得
-	CObjGraphicTEST * test = (CObjGraphicTEST*)Objs::GetObj(OBJ_TEST);
-	hx= test->GetX();
-	hy = test->GetY();
+	CObjGraphicTEST *test = (CObjGraphicTEST*)Objs::GetObj(OBJ_TEST);
+	hx = test->GetX();
+	hy = test->GetY(); 
 
 	//後方スクロールライン
 	if (hx < 80)
@@ -68,7 +70,7 @@ void CObjBlock::Action()
 				float y = i*64.0f;
 
 				//主人公とブロックの当たり判定
-				if ((hx + (-m_scroll) + 64.0f>x) && (hx + (-m_scroll)<x + 64.0f) && (hy + 64.0f>y) && (hy<y + 64.0f))
+				if ((hx + (-m_scroll) + 64.0f > x) && (hx + (-m_scroll) < x + 64.0f) && (hy + 64.0f+0.0f> y) && (hy < y + 64.0f+0.0f))
 				{
 					//上下左右判定
 
@@ -81,7 +83,7 @@ void CObjBlock::Action()
 
 					//角度を求める
 					float r = atan2(vy, vx);
-					r = r*180.0f / 3.14;
+					r = r*180.0f / 3.14f;
 
 					if (r <= 0.0)
 						r = abs(r);
@@ -140,6 +142,8 @@ void CObjBlock::Action()
 //ドロー
 void CObjBlock::Draw()
 {
+	//主人公の位置を取得
+	CObjGraphicTEST *test = (CObjGraphicTEST*)Objs::GetObj(OBJ_TEST);
 
 	//描画カラー情報
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
@@ -156,7 +160,7 @@ void CObjBlock::Draw()
 	dst.m_left = 0.0f;
 	dst.m_right = 900.0f;
 	dst.m_bottom = 600.0;
-	Draw::Draw(0, &src, &dst, c, 0.0f);
+	Draw::Draw(1, &src, &dst, c, 0.0f);
 
 	//マップチップによるblock設置
 
@@ -167,10 +171,10 @@ void CObjBlock::Draw()
 			if (m_map[i][j] > 0)
 			{
 				//表示位置の設定
-				dst.m_top = i*64.0f;
+				dst.m_top = i*64.0f+96.0f;
 				dst.m_left = j*64.0f + m_scroll;
 				dst.m_right = dst.m_left + 64.0f;
-				dst.m_bottom = dst.m_top + 64.0f;
+				dst.m_bottom = dst.m_top + 64.0f + 0.0f;
 				if (m_map[i][j] == 2)
 				{
 					//スタートブロック
@@ -214,5 +218,5 @@ void CObjBlock::BlockDraw(float x, float y, RECT_F*dst, float c[])
 
 
 	//描画
-	Draw::Draw(1, &src, dst, c, 0.0f);
+	Draw::Draw(2, &src, dst, c, 0.0f);
 }
