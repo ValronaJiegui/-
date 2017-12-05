@@ -15,7 +15,7 @@ void CObjLei::Init()
 	m_vx = 0.0f;
 	m_vy = 10.0f;
 	m_time = 0;
-	m_aruku = 0;
+	m_motion_walk = 0;
 	m_jump = false;
 	m_dash = false;
 	m_z_key = false;

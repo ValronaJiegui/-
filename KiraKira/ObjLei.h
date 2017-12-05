@@ -2,11 +2,11 @@
 #include"GameL\SceneObjManager.h"
 using namespace GameL;
 
-class CObjGraphicTEST :public CObj
+class CObjLei :public CObj
 {
 public:
-	CObjGraphicTEST() {};
-	~CObjGraphicTEST(){};
+	CObjLei() {};
+	~CObjLei(){};
 	void Init();	//初期設定
 	void Action();	//動作内容
 	void Draw();	//描画情報
@@ -35,6 +35,7 @@ private:
 	bool m_jump;
 	bool m_dash;
 	bool m_z_key;
+	bool m_f;
 	int m_motion_attack;
 
 	//blockとの衝突状態確認用

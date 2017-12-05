@@ -147,11 +147,9 @@
     <ClInclude Include="GameL\WinInputs.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="ObjBlock.h" />
-    <ClInclude Include="ObjLei.h">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
-    </ClInclude>
     <ClInclude Include="ObjItemTea.h" />
     <ClInclude Include="ObjItemWing.h" />
+    <ClInclude Include="ObjLei.h" />
     <ClInclude Include="SceneMain.h" />
   </ItemGroup>
   <ItemGroup>

@@ -18,7 +18,7 @@ void CObjItemWing::Init()
 void CObjItemWing::Action()
 {
 	//主人公の座標の値を確保
-	CObjLei *hero = (CObjLei*)Objs::GetObj(OBJ_LEi);
+	CObjLei *hero = (CObjLei*)Objs::GetObj(OBJ_LEI);
 	float m_x = hero->GetX();
 	float m_y = hero->GetY();
 

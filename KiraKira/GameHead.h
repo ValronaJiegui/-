@@ -6,7 +6,7 @@ enum OBJ_NAME
 	OBJ_NO_NAME,	//オブジェクト名無し(禁止)
 	//ゲームで使うオブジェクトの名前
 	//OBJ_○○と表記
-	OBJ_LEi,
+	OBJ_LEI,
 	OBJ_ITEM_TEA,
 	OBJ_ITEM_WING,
 };

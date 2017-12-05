@@ -41,7 +41,7 @@ void CSceneMain::InitScene()
 
 	//ålŒö
 	CObjLei* obj3 = new CObjLei();
-	Objs::InsertObj(obj3, OBJ_LEi, 1);
+	Objs::InsertObj(obj3, OBJ_LEI, 1);
 }
 //Às’†‚Ì‘€ì//////////////////////////////////
 void CSceneMain::Scene()
