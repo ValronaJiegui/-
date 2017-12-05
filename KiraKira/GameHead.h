@@ -7,7 +7,8 @@ enum OBJ_NAME
 	//ゲームで使うオブジェクトの名前
 	//OBJ_○○と表記
 	OBJ_TEST,
-	OBJ_BLOCK,
+	OBJ_ITEM_TEA,
+	OBJ_ITEM_WING,
 };
 //------------------------------------------------
 
@@ -52,7 +53,8 @@ struct UserData
 
 //ゲームシーンオブジェクトヘッダ------------------
 #include"ObjGraphicTEST.h"
-#include"ObjBlock.h"
+#include"ObjItemTea.h"
+#include"ObjItemWing.h"
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------
