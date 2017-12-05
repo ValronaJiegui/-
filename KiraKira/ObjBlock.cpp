@@ -6,7 +6,7 @@
 
 #include"GameHead.h"
 #include"ObjBlock.h"
-#include "ObjGraphicTEST.h"
+#include"ObjLei.h"
 
 //使用するネームスペース
 using namespace GameL;
@@ -28,7 +28,7 @@ void CObjBlock::Init()
 void CObjBlock::Action()
 {
 	//主人公の位置を取得
-	CObjGraphicTEST * test = (CObjGraphicTEST*)Objs::GetObj(OBJ_TEST);
+	CObjLei *test = (CObjLei*)Objs::GetObj(OBJ_LEi);
 	hx= test->GetX();
 	hy = test->GetY();
 
@@ -177,8 +177,8 @@ void CObjBlock::Draw()
 				//表示位置の設定
 				dst.m_top = i*64.0f;
 				dst.m_left = j*64.0f + m_scroll;
-				dst.m_right = dst.m_left + 64.0;
-				dst.m_bottom = dst.m_top + 64.0;
+				dst.m_right = dst.m_left + 64.0f;
+				dst.m_bottom = dst.m_top + 64.0f;
 				if (m_map[i][j] == 2)
 				{
 					//スタートブロック

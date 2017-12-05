@@ -40,8 +40,8 @@ void CSceneMain::InitScene()
 	Objs::InsertObj(obj2, OBJ_ITEM_WING, 0);
 
 	//éÂêlåˆ
-	CObjGraphicTEST* obj3 = new CObjGraphicTEST();
-	Objs::InsertObj(obj3, OBJ_TEST, 1);
+	CObjLei* obj3 = new CObjLei();
+	Objs::InsertObj(obj3, OBJ_LEi, 1);
 }
 //é¿çsíÜÇÃëÄçÏ//////////////////////////////////
 void CSceneMain::Scene()

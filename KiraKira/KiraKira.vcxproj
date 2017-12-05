@@ -122,11 +122,13 @@
   <ItemGroup>
     <ClCompile Include="GameL\GameL_Main.cpp" />
     <ClCompile Include="ObjBlock.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="ObjGraphicTEST.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="ObjLei.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="ObjItemTea.cpp" />
+    <ClCompile Include="ObjItemWing.cpp" />
     <ClCompile Include="SceneMain.cpp" />
     <ClCompile Include="test.cpp" />
   </ItemGroup>
@@ -145,7 +147,7 @@
     <ClInclude Include="GameL\WinInputs.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="ObjBlock.h" />
-    <ClInclude Include="ObjGraphicTEST.h">
+    <ClInclude Include="ObjLei.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
     </ClInclude>
     <ClInclude Include="ObjItemTea.h" />
