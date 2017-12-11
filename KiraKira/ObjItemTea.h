@@ -10,9 +10,9 @@ class CObjItemTea : public CObj
 public:
 	CObjItemTea() {};
 	~CObjItemTea() {};
-	void Init();
-	void Action();
-	void Draw();
+	void Init() ;
+	void Action() ;
+	void Draw() ;
 private:
 	int m_time;
 	int animation;

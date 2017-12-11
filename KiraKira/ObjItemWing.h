@@ -11,9 +11,9 @@ class CObjItemWing : public CObj
 public:
 	CObjItemWing() {};
 	~CObjItemWing() {};
-	void Init();
-	void Action();
-	void Draw();
+	void Init() ;
+	void Action() ;
+	void Draw() ;
 	bool GetFlag() { return Flag; }
 private:
 	int m_time;

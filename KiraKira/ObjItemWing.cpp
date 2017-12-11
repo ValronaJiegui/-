@@ -3,7 +3,7 @@
 #include "GameHead.h"
 #include "SceneMain.h"
 #include "ObjItemWing.h"
-#include "ObjGraphicTEST.h"
+#include "ObjLei.h"
 
 //使用するネームスペース
 using namespace GameL;
@@ -18,7 +18,7 @@ void CObjItemWing::Init()
 void CObjItemWing::Action()
 {
 	//主人公の座標の値を確保
-	CObjGraphicTEST *hero = (CObjGraphicTEST*)Objs::GetObj(OBJ_TEST);
+	CObjLei *hero = (CObjLei*)Objs::GetObj(OBJ_LEI);
 	float m_x = hero->GetX();
 	float m_y = hero->GetY();
 
