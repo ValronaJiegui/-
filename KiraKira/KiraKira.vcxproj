@@ -121,6 +121,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="GameL\GameL_Main.cpp" />
+    <ClCompile Include="HaveItem.cpp" />
     <ClCompile Include="ObjBlock.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
     </ClCompile>
@@ -131,6 +132,7 @@
     <ClCompile Include="ObjItemWing.cpp" />
     <ClCompile Include="SceneMain.cpp" />
     <ClCompile Include="test.cpp" />
+    <ClCompile Include="window_create.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameHead.h" />
@@ -145,12 +147,14 @@
     <ClInclude Include="GameL\SetWindow.h" />
     <ClInclude Include="GameL\UserData.h" />
     <ClInclude Include="GameL\WinInputs.h" />
+    <ClInclude Include="HaveItem.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="ObjBlock.h" />
     <ClInclude Include="ObjItemTea.h" />
     <ClInclude Include="ObjItemWing.h" />
     <ClInclude Include="ObjLei.h" />
     <ClInclude Include="SceneMain.h" />
+    <ClInclude Include="window_create.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="GameL\Draw2DTex.hlsl" />
