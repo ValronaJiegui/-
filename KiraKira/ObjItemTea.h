@@ -13,7 +13,15 @@ public:
 	void Init() ;
 	void Action() ;
 	void Draw() ;
+
+	void SetItemTea(float rx, float lx, float ty, float by);
 private:
 	int m_time;
 	int animation;
+	bool Flag;
+
+	float top;
+	float left;
+	float right;
+	float bottom;
 };

@@ -2,6 +2,7 @@
 #include "GameL\DrawTexture.h"
 #include "GameHead.h"
 #include "SceneMain.h"
+#include "ObjLei.h"
 #include "ObjItemTea.h"
 
 //使用するネームスペース
@@ -11,10 +12,22 @@ void CObjItemTea::Init()
 {
 	m_time = 0;
 	animation = 0;
+	Flag = false;
+
+	//以下テスト用---
+	top = 0.0f;
+	left = 400.0f;
+	right = 464.0f;
+	bottom = 64.0f;
 }
 
 void CObjItemTea::Action()
 {
+	//主人公の座標の値を確保
+	CObjLei *hero = (CObjLei*)Objs::GetObj(OBJ_LEI);
+	float m_x = hero->GetX();
+	float m_y = hero->GetY();
+
 	m_time++;
 	if (m_time >= 60)
 	{
@@ -22,6 +35,14 @@ void CObjItemTea::Action()
 		if (animation >= 2)
 			animation = 0;
 		m_time = 0;
+	}
+
+	//ゲット判定（テスト用）
+	if (m_x <= right - 50.0f && m_x >= left)
+	{
+		if (m_y >= top - 50.0f && m_y <= bottom) {
+			Flag = true;
+		}
 	}
 }
 
@@ -38,11 +59,23 @@ void CObjItemTea::Draw()
 	src.m_right = 127.0f + animation * 32;
 	src.m_bottom = 32.0f;
 
-	//表示位置の設定
-	dst.m_top = 0.0f;
-	dst.m_left = 0.0f;
-	dst.m_right = 64.0f;
-	dst.m_bottom = 64.0f;
+	if (Flag == false) {
+		//表示位置の設定
+		dst.m_top = top;
+		dst.m_left = left;
+		dst.m_right = right;
+		dst.m_bottom = bottom;
+	}
 
 	Draw::Draw(0, &src, &dst, c, 0.0f);
+}
+
+void CObjItemTea::SetItemTea(float rx, float lx, float ty, float by)
+{
+	top = ty;
+	left = lx;
+	right = rx;
+	bottom = by;
+
+	return;
 }
