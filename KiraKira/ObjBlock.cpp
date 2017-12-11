@@ -6,7 +6,7 @@
 
 #include"GameHead.h"
 #include"ObjBlock.h"
-#include "ObjGraphicTEST.h"
+#include"ObjLei.h"
 
 //使用するネームスペース
 using namespace GameL;
@@ -31,7 +31,7 @@ void CObjBlock::Init()
 void CObjBlock::Action()
 {
 	//主人公の位置を取得
-	CObjGraphicTEST *test = (CObjGraphicTEST*)Objs::GetObj(OBJ_TEST);
+	CObjLei *test = (CObjLei*)Objs::GetObj(OBJ_LEI);
 	hx = test->GetX();
 	hy = test->GetY(); 
 
@@ -143,7 +143,7 @@ void CObjBlock::Action()
 void CObjBlock::Draw()
 {
 	//主人公の位置を取得
-	CObjGraphicTEST *test = (CObjGraphicTEST*)Objs::GetObj(OBJ_TEST);
+	CObjLei *test = (CObjLei*)Objs::GetObj(OBJ_LEI);
 
 	//描画カラー情報
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };

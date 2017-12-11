@@ -24,17 +24,14 @@
     <ClCompile Include="SceneMain.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="ObjGraphicTEST.cpp">
-      <Filter>ソース ファイル\TEST</Filter>
-    </ClCompile>
     <ClCompile Include="test.cpp">
       <Filter>ソース ファイル\TEST</Filter>
     </ClCompile>
-    <ClCompile Include="ObjItemTea.cpp">
-      <Filter>ソース ファイル\TEST</Filter>
+    <ClCompile Include="ObjBlock.cpp">
+      <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="ObjItemWing.cpp">
-      <Filter>ソース ファイル\TEST</Filter>
+    <ClCompile Include="ObjLei.cpp">
+      <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -80,17 +77,17 @@
     <ClInclude Include="SceneMain.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="ObjGraphicTEST.h">
-      <Filter>ソース ファイル\TEST</Filter>
-    </ClInclude>
     <ClInclude Include="ObjBlock.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="ObjItemTea.h">
-      <Filter>ソース ファイル\TEST</Filter>
+    <ClInclude Include="ObjLei.h">
+      <Filter>ソース ファイル</Filter>
     </ClInclude>
     <ClInclude Include="ObjItemWing.h">
-      <Filter>ソース ファイル\TEST</Filter>
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjItemTea.h">
+      <Filter>ソース ファイル</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

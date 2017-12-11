@@ -54,15 +54,23 @@ void CSceneMain::InitScene()
 	Draw::LoadImageW(L"BlockGraphic.png", 2, TEX_SIZE_256);
 
 	//blockオブジェクト作成
-	CObjBlock* objb = new CObjBlock(map);
-	Objs::InsertObj(objb, OBJ_BLOCK, 1);
+	CObjBlock* objBlock = new CObjBlock(map);
+	Objs::InsertObj(objBlock, OBJ_BLOCK, 1);
+
+	//茶
+	CObjItemTea* objTea = new CObjItemTea();
+	Objs::InsertObj(objTea, OBJ_ITEM_TEA, 0);
+
+	//翼
+	CObjItemWing* objWing = new CObjItemWing();
+	Objs::InsertObj(objWing, OBJ_ITEM_WING, 0);
 
 	//グラフィック読み込み
 	Draw::LoadImageW(L"Lei.png", 0, TEX_SIZE_256);
 
 	//テストグラフィック作成
-	CObjGraphicTEST* obj = new CObjGraphicTEST();
-	Objs::InsertObj(obj, OBJ_TEST, 2);
+	CObjLei* objLei = new CObjLei();
+	Objs::InsertObj(objLei, OBJ_LEI, 2);
 
 
 

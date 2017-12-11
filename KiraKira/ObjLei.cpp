@@ -3,12 +3,12 @@
 #include"GameL\SceneManager.h"
 
 #include"GameHead.h"
-#include"ObjGraphicTEST.h"
+#include"ObjLei.h"
 
 using namespace GameL;
 
 //初期設定(イニシャライズ)////////////////////
-void CObjGraphicTEST::Init()
+void CObjLei::Init()
 {
 	m_px = 0.0f;
 	m_py = 0.0f;
@@ -19,18 +19,18 @@ void CObjGraphicTEST::Init()
 	m_motion_attack = 0;
 	m_jump = false;
 	m_dash = false;
-	m_z_key = false;
+	m_key_z = false;
 	m_f = false;
 }
 //動作内容(アクション)////////////////////////
-void CObjGraphicTEST::Action()
+void CObjLei::Action()
 {
 	//翼が取れたとき、フラグを立てる
 	CObjItemWing *wing = (CObjItemWing*)Objs::GetObj(OBJ_ITEM_WING);
 	bool Flag = wing->GetFlag();
 
 	if (m_py >= 480.0f) {
-		m_vy = -9.8 / (16.0f);
+		m_vy = -9.8f / (16.0f);
 		m_jump = false;
 	}
 
@@ -103,8 +103,8 @@ void CObjGraphicTEST::Action()
 	else
 		m_time = 0;
 
-	m_vx += -(m_vx*0.098);
-	m_vy += 9.8 / (16.0f);
+	m_vx += -(m_vx*0.098f);
+	m_vy += 9.8f / (16.0f);
 
 	//移動を位置に反映する
 	m_px += m_vx;
@@ -139,7 +139,7 @@ void CObjGraphicTEST::Action()
 	}
 }
 //描画情報(ドロー)////////////////////////////
-void CObjGraphicTEST::Draw()
+void CObjLei::Draw()
 {
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
