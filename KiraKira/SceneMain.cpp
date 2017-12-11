@@ -59,7 +59,7 @@ void CSceneMain::InitScene()
 
 	//’ƒ
 	CObjItemTea* objTea = new CObjItemTea();
-	Objs::InsertObj(objTea, OBJ_ITEM_TEA, 0);
+	Objs::InsertObj(objTea, OBJ_ITEM_TEA,0 );
 
 	//—ƒ
 	CObjItemWing* objWing = new CObjItemWing();
