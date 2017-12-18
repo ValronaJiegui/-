@@ -39,11 +39,11 @@
     <ClCompile Include="ObjLei.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="HaveItem.cpp">
-      <Filter>ソース ファイル</Filter>
+    <ClCompile Include="ObjTitle.cpp">
+      <Filter>ソース ファイル\TEST</Filter>
     </ClCompile>
-    <ClCompile Include="window_create.cpp">
-      <Filter>ソース ファイル</Filter>
+    <ClCompile Include="SceneTitle.cpp">
+      <Filter>ソース ファイル\TEST</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -101,11 +101,11 @@
     <ClInclude Include="ObjLei.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="HaveItem.h">
+    <ClInclude Include="ObjTitle.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="window_create.h">
-      <Filter>ソース ファイル</Filter>
+    <ClInclude Include="SceneTitle.h">
+      <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

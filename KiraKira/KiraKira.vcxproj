@@ -81,7 +81,6 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -122,9 +121,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="GameL\GameL_Main.cpp" />
-    <ClCompile Include="HaveItem.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
     <ClCompile Include="ObjBlock.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
     </ClCompile>
@@ -133,9 +129,10 @@
     </ClCompile>
     <ClCompile Include="ObjItemTea.cpp" />
     <ClCompile Include="ObjItemWing.cpp" />
+    <ClCompile Include="ObjTitle.cpp" />
     <ClCompile Include="SceneMain.cpp" />
+    <ClCompile Include="SceneTitle.cpp" />
     <ClCompile Include="test.cpp" />
-    <ClCompile Include="window_create.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameHead.h" />
@@ -150,16 +147,14 @@
     <ClInclude Include="GameL\SetWindow.h" />
     <ClInclude Include="GameL\UserData.h" />
     <ClInclude Include="GameL\WinInputs.h" />
-    <ClInclude Include="HaveItem.h">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClInclude>
     <ClInclude Include="main.h" />
     <ClInclude Include="ObjBlock.h" />
     <ClInclude Include="ObjItemTea.h" />
     <ClInclude Include="ObjItemWing.h" />
     <ClInclude Include="ObjLei.h" />
+    <ClInclude Include="ObjTitle.h" />
     <ClInclude Include="SceneMain.h" />
-    <ClInclude Include="window_create.h" />
+    <ClInclude Include="SceneTitle.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="GameL\Draw2DTex.hlsl" />
