@@ -34,7 +34,7 @@ private:
 	int m_motion_walk;
 	bool m_jump;
 	bool m_dash;
-	bool m_z_key;
+	bool m_key_z;
 	bool m_f;
 	int m_motion_attack;
 

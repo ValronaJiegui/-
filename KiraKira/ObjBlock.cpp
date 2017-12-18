@@ -70,7 +70,7 @@ void CObjBlock::Action()
 				float y = i*64.0f;
 
 				//主人公とブロックの当たり判定
-				if ((hx + (-m_scroll) + 64.0f > x) && (hx + (-m_scroll) < x + 64.0f) && (hy + 64.0f+0.0f> y) && (hy < y + 64.0f+0.0f))
+				if ((hx + (-m_scroll) + 64.0f > x) && (hx + (-m_scroll) < x + 64.0f) && (hy + 64.0f> y) && (hy < y + 64.0f))
 				{
 					//上下左右判定
 

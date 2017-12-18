@@ -9,6 +9,7 @@ enum OBJ_NAME
 	OBJ_LEI,
 	OBJ_ITEM_TEA,
 	OBJ_ITEM_WING,
+	OBJ_BLOCK,
 };
 //------------------------------------------------
 
@@ -55,6 +56,7 @@ struct UserData
 #include"ObjLei.h"
 #include"ObjItemTea.h"
 #include"ObjItemWing.h"
+#include"ObjBlock.h"
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------
