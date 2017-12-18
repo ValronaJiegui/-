@@ -155,12 +155,12 @@ void CObjBlock::Draw()
 
 	//背景表示
 	src.m_top = 0.0f;
-	src.m_left = 0.0f + hx;
-	src.m_right = 650.0f + hx;
+	src.m_left = 0.0f ;
+	src.m_right = 650.0f ;
 	src.m_bottom = 900.0f;
 	dst.m_top = 0.0f;
-	dst.m_left = 0.0f;
-	dst.m_right = 900.0f;
+	dst.m_left = 0.0f+ m_scroll;
+	dst.m_right = 900.0f+m_scroll;
 	dst.m_bottom = 600.0;
 	Draw::Draw(1, &src, &dst, c, 0.0f);
 
@@ -177,21 +177,11 @@ void CObjBlock::Draw()
 				dst.m_left = j*64.0f + m_scroll;
 				dst.m_right = dst.m_left + 64.0f;
 				dst.m_bottom = dst.m_top + 64.0f;
-				if (m_map[i][j] == 2)
-				{
-					//スタートブロック
-					BlockDraw(320.0f + 64.0f, 0.0f, &dst, c);
 
-				}
-				else if (m_map[i][j] == 3)
-				{
-					//ゴールブロック
-					BlockDraw(320.0f + 64.0f, 64.0f, &dst, c);
-				}
-				else
-				{
+
+				
 					BlockDraw(32.0f, 0.0f, &dst, c);
-				}
+			
 
 
 			}
