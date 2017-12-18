@@ -5,10 +5,10 @@ public:
 	HaveItem();
 	~HaveItem();
 	//アイテム入手関数////(数を一個増やします！)
-	void GetTea() { Tea++; }
-	void GetWing() { Wing++; }
-	void GetShield() { Shield++; }
-	void GetBullet() { Bullet++; }
+	void GetTea()    { Tea++;    return; }
+	void GetWing()   { Wing++;   return; }
+	void GetShield() { Shield++; return; }
+	void GetBullet() { Bullet++; return; }
 
 	//アイテム使用関数////(数を一個減らして何か行います！)
 	void UseTea();
