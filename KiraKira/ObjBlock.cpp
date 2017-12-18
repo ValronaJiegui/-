@@ -30,6 +30,8 @@ void CObjBlock::Init()
 //アクション
 void CObjBlock::Action()
 {
+
+
 	//主人公の位置を取得
 	CObjLei *test = (CObjLei*)Objs::GetObj(OBJ_LEI);
 	hx = test->GetX();
@@ -124,8 +126,8 @@ void CObjBlock::Action()
 						if (r > 225 && r < 315)
 						{
 							//下
-							test->SetUp(true);//主人公から見て、上の部分が小とるしている
-							test->SetY(y + 64.0f);//ブロックの位置＋主人公の幅
+							test->SetUp(true);//主人公から見て、上の部分が衝突している
+							test->SetY(+y + 64.0f);//ブロックの位置＋主人公の幅
 							if (test->GetVY() < 0)
 							{
 								test->SetVY(0.0f);
@@ -171,10 +173,10 @@ void CObjBlock::Draw()
 			if (m_map[i][j] > 0)
 			{
 				//表示位置の設定
-				dst.m_top = i*64.0f+96.0f;
+				dst.m_top = i*64.0f;
 				dst.m_left = j*64.0f + m_scroll;
 				dst.m_right = dst.m_left + 64.0f;
-				dst.m_bottom = dst.m_top + 64.0f + 0.0f;
+				dst.m_bottom = dst.m_top + 64.0f;
 				if (m_map[i][j] == 2)
 				{
 					//スタートブロック
@@ -188,7 +190,7 @@ void CObjBlock::Draw()
 				}
 				else
 				{
-					BlockDraw(0.0f, 32.0f, &dst, c);
+					BlockDraw(32.0f, 0.0f, &dst, c);
 				}
 
 
