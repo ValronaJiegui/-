@@ -67,7 +67,7 @@ void CObjItemTea::Draw()
 		dst.m_bottom = bottom;
 	}
 
-	Draw::Draw(0, &src, &dst, c, 0.0f);
+	Draw::Draw(3, &src, &dst, c, 0.0f);
 }
 
 void CObjItemTea::SetItemTea(float rx, float lx, float ty, float by)

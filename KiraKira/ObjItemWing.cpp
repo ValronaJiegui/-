@@ -63,5 +63,5 @@ void CObjItemWing::Draw()
 		dst.m_bottom = 549.0f;
 	}
 
-	Draw::Draw(0, &src, &dst, c, 0.0f);
+	Draw::Draw(3, &src, &dst, c, 0.0f);
 }

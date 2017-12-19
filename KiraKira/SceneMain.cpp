@@ -45,7 +45,8 @@ void CSceneMain::InitScene()
 		}
 	}
 
-
+	//グラフィック読み込み
+	Draw::LoadImageW(L"Lei.png", 0, TEX_SIZE_256);
 
 	//グラフィック
 	Draw::LoadImageW(L"map.png",1, TEX_SIZE_1024);
@@ -57,16 +58,19 @@ void CSceneMain::InitScene()
 	CObjBlock* objBlock = new CObjBlock(map);
 	Objs::InsertObj(objBlock, OBJ_BLOCK, 1);
 
+
+
 	//茶
 	CObjItemTea* objTea = new CObjItemTea();
-	Objs::InsertObj(objTea, OBJ_ITEM_TEA,0 );
+	Objs::InsertObj(objTea, OBJ_ITEM_TEA,3 );
+	Draw::LoadImageW(L"item.png", 3, TEX_SIZE_256);
+
 
 	//翼
 	CObjItemWing* objWing = new CObjItemWing();
-	Objs::InsertObj(objWing, OBJ_ITEM_WING, 0);
+	Objs::InsertObj(objWing, OBJ_ITEM_WING, 3);
 
-	//グラフィック読み込み
-	Draw::LoadImageW(L"Lei.png", 0, TEX_SIZE_256);
+
 
 	//テストグラフィック作成
 	CObjLei* objLei = new CObjLei();
