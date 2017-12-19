@@ -10,6 +10,7 @@ enum OBJ_NAME
 	OBJ_ITEM_TEA,
 	OBJ_ITEM_WING,
 	OBJ_BLOCK,
+	OBJ_TITLE,
 };
 //------------------------------------------------
 
@@ -57,13 +58,15 @@ struct UserData
 #include"ObjItemTea.h"
 #include"ObjItemWing.h"
 #include"ObjBlock.h"
+#include"ObjTitle.h"
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------
 #include "SceneMain.h"
+#include "SceneTitle.h"
 //-----------------------------------------------
 
 //シーンスタートクラス---------------------------
 //ゲーム開始時のシーンクラス登録
-#define SET_GAME_START CSceneMain  
+#define SET_GAME_START CSceneMain 
 //-----------------------------------------------

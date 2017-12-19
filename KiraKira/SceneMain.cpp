@@ -61,6 +61,8 @@ void CSceneMain::InitScene()
 	CObjBlock* objBlock = new CObjBlock(map);
 	Objs::InsertObj(objBlock, OBJ_BLOCK, 2);
 
+
+
 	//’ƒ
 	CObjItemTea* objTea = new CObjItemTea();
 	Objs::InsertObj(objTea, OBJ_ITEM_TEA,3 );
