@@ -21,6 +21,12 @@ void CObjLei::Init()
 	m_dash = false;
 	m_key_z = false;
 	m_f = false;
+
+	//ブロックとの当たり判定
+	m_hit_down=false ;
+	m_hit_left = false;
+	m_hit_right =false;
+	m_hit_up = false;
 }
 //動作内容(アクション)////////////////////////
 void CObjLei::Action()
