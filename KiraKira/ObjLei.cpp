@@ -14,6 +14,7 @@ void CObjLei::Init()
 	m_py = 0.0f;
 	m_vx = 0.0f;
 	m_vy = 10.0f;
+	m_movepointX = 0.0f;
 	m_time = 0;
 	m_wtime = 0;
 	m_motion_walk = 0;
@@ -147,6 +148,8 @@ void CObjLei::Action()
 			m_motion_walk = 0;
 		}
 	}
+
+	m_movepointX += m_px - 64.0f;
 }
 //描画情報(ドロー)////////////////////////////
 void CObjLei::Draw()
@@ -210,7 +213,7 @@ void CObjLei::Draw()
 
 	//表示位置の設定
 	dst.m_top	 =   0.0f + m_py;
-	dst.m_left	 =   0.0f + m_px;
+	dst.m_left	 = 0.0f + m_px;
 	dst.m_right	 = 64.0f + m_px;
 	dst.m_bottom = 64.0f + m_py;
 

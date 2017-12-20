@@ -16,8 +16,8 @@ void CObjItemTea::Init()
 
 	//以下テスト用---
 	top = 0.0f;
-	left = 400.0f;
-	right = 464.0f;
+	left = 3400.0f;
+	right = 3464.0f;
 	bottom = 64.0f;
 }
 

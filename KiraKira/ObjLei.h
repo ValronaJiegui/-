@@ -14,6 +14,7 @@ public:
 	float GetY() { return m_py; }
 	float GetVX() { return m_vx; }
 	float GetVY() { return m_vy; }
+	float GetMoveX(){ return m_movepointX; }
 	void SetX(float x) { m_px = x; return; }
 	void SetY(float y) { m_py = y; return; }
 	void SetVX(float vx) { m_vx = vx; return; }
@@ -54,6 +55,7 @@ private:
 	float m_py;//位置Y
 	float m_vx;//移動X(ベクトル)
 	float m_vy;//移動Y(ベクトル)
+	float m_movepointX; //スタート地点からどれだけ動いたか
 	int m_wtime;
 	int m_motion_walk;
 	bool m_jump;   //2段以上ジャンプしない用
@@ -72,13 +74,9 @@ private:
 	int m_block_type;
 
 	//状態判定(方向、浮遊など)
-	bool m_jump;
-	bool m_dash;
 	bool m_muki;
 	bool m_jumping;
 
 	//モーション描画用変数
 	int m_time;
-	int m_motion_walk;
-	int m_motion_attack;
 };

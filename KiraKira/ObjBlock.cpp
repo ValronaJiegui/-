@@ -30,15 +30,14 @@ void CObjBlock::Init()
 //アクション
 void CObjBlock::Action()
 {
-
-
 	//主人公の位置を取得
 	CObjLei *test = (CObjLei*)Objs::GetObj(OBJ_LEI);
 	hx = test->GetX();
 	hy = test->GetY(); 
+	float MoveX = test->GetMoveX();
 
 	//後方スクロールライン
-	if (hx < 80)
+	if (hx < 80 && MoveX >= 0.0f)
 	{
 		test->SetX(80);//主人公はラインを超えないようにする
 		m_scroll -= test->GetVX();//主人公が本来動くべき分の値をm_scrollに加える
@@ -132,7 +131,7 @@ void CObjBlock::Action()
 						{
 							//下
 							test->SetUp(true);//主人公から見て、上の部分が衝突している
-							test->SetY(+y + 64.0f);//ブロックの位置＋主人公の幅
+							test->SetY(+y + 66.0f);//ブロックの位置＋主人公の幅
 							if (test->GetVY() < 0)
 							{
 								//test->SetVY(0.0f);
