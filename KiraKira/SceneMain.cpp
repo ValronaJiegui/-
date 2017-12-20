@@ -31,11 +31,11 @@ void CSceneMain::InitScene()
 	int size;			//ステージ情報の大きさ
 	p = Save::ExternalDataOpen(L"TestMap1.csv", &size);//外部データ読み込み
 
-	int map[10][100];
+	int map[10][500];
 	int count = 1;
 	for (int i = 0; i < 10; i++)
 	{
-		for (int j = 0; j < 100; j++)
+		for (int j = 0; j < 500; j++)
 		{
 			int w = 0;
 			swscanf_s(&p.get()[count], L"%d", &w);
@@ -44,7 +44,7 @@ void CSceneMain::InitScene()
 			count += 2;
 		}
 	}
-
+	
 	//グラフィック読み込み
 	Draw::LoadImageW(L"Lei.png", 0, TEX_SIZE_256);
 
@@ -62,7 +62,7 @@ void CSceneMain::InitScene()
 	Objs::InsertObj(objBlock, OBJ_BLOCK, 2);
 
 
-
+	
 	//茶
 	CObjItemTea* objTea = new CObjItemTea();
 	Objs::InsertObj(objTea, OBJ_ITEM_TEA,3 );
@@ -75,7 +75,7 @@ void CSceneMain::InitScene()
 	CObjLei* objLei = new CObjLei();
 	Objs::InsertObj(objLei, OBJ_LEI, 100);
 
-
+	
 
 
 

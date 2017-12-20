@@ -36,10 +36,10 @@ void CObjLei::Action()
 	CObjItemWing *wing = (CObjItemWing*)Objs::GetObj(OBJ_ITEM_WING);
 	bool Flag = wing->GetFlag();
 
-	if (m_py >= 480.0f) {
+	/*if (m_py >= 480.0f) {
 		m_vy = -9.8f / (16.0f);
 		//m_jump = false;
-	}
+	}*/
 
 	m_vx += -(m_vx*0.098f);
 	m_vy += 9.8f / (16.0f);
@@ -69,7 +69,7 @@ void CObjLei::Action()
 		}
 		if (Input::GetVKey(VK_SHIFT) == true)
 		{
-			m_vx = -4.0f;
+			m_vx -= 4.0f;
 		}
 	}
 	if (Input::GetVKey(VK_UP) == true)
