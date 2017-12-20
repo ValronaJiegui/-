@@ -16,7 +16,7 @@ using namespace GameL;
 class CObjBlock :public CObj
 {
 public:
-	CObjBlock(int map[10][500]);
+	CObjBlock(int map[10][100]);
 	~CObjBlock() {};
 	void Init();
 	void Action();
@@ -27,7 +27,7 @@ public:
 
 private:
 	void BlockDraw(float x, float y, RECT_F* dst, float c[]);
-	int m_map[10][500];
+	int m_map[10][100];
 	
 	float hx;
 	float hy;
