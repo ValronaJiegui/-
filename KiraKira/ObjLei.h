@@ -33,10 +33,10 @@ private:
 	int m_time;
 	int m_wtime;
 	int m_motion_walk;
-	bool m_jump;
+	bool m_jump;   //2段以上ジャンプしない用
 	bool m_dash;
 	bool m_key_z;
-	bool m_f;
+	bool m_f;      //ジャンプ制御
 	int m_motion_attack;
 
 	//blockとの衝突状態確認用
