@@ -13,10 +13,10 @@ using namespace GameL;
 
 
 
-CObjBlock::CObjBlock(int map[10][100])
+CObjBlock::CObjBlock(int map[10][500])
 {
 	//マップデータをコピー
-	memcpy(m_map, map, sizeof(int)*(10 * 100));
+	memcpy(m_map, map, sizeof(int)*(10 * 500));
 
 }
 
@@ -63,7 +63,7 @@ void CObjBlock::Action()
 	//m_mapの全要素にアクセス
 	for (int i = 0; i < 10; i++)
 	{
-		for (int j = 0; j < 100; j++)
+		for (int j = 0; j < 500; j++)
 		{
 			if (m_map[i][j] > 0)
 			{
@@ -101,8 +101,8 @@ void CObjBlock::Action()
 							//右
 							test->SetRight(true);//主人公の左の部分が衝突している
 							test->SetX(x + 64.0f + (m_scroll));//ブロックの位置＋主人公の幅
-							test->SetVX(-test->GetVX()*0.1f);//ーVX*反発定数
-
+							//test->SetVX(-test->GetVX()*0.1f);//ーVX*反発定数
+							test->SetVXBound();
 
 						}
 						if (r > 45 && r < 135)
@@ -110,10 +110,12 @@ void CObjBlock::Action()
 							//上
 							test->SetDown(true);
 							test->SetY(y - 64.0f);//ブロックの位置・主人公の幅
-							test->SetVY(0.0f);					 
+							//test->SetVY(0.0f);
+							test->SetVYBound();
+							test->SetJump();
 							 //種類を渡すのスタートとゴールのみ変更する
-							if (m_map[i][j] >= 2)
-								test->SetBT(m_map[i][j]);//ブロックの要素(type)を主人公に渡す
+							///if (m_map[i][j] >= 2)
+							//	test->SetBT(m_map[i][j]);//ブロックの要素(type)を主人公に渡す
 							
 
 						}
@@ -122,7 +124,9 @@ void CObjBlock::Action()
 							//左
 							test->SetLeft(true);
 							test->SetX(x - 64.0f + (m_scroll));
-							test->SetVX(-test->GetVX()*0.1f);
+							//test->SetVX(-test->GetVX()*0.1f);
+							test->SetVXBound();
+
 						}
 						if (r > 225 && r < 315)
 						{
@@ -131,7 +135,9 @@ void CObjBlock::Action()
 							test->SetY(+y + 64.0f);//ブロックの位置＋主人公の幅
 							if (test->GetVY() < 0)
 							{
-								test->SetVY(0.0f);
+								//test->SetVY(0.0f);
+								test->SetVYBound();
+
 							}
 						}
 					}
@@ -169,7 +175,7 @@ void CObjBlock::Draw()
 
 	for (int i = 0; i < 10; i++)
 	{
-		for (int j = 0; j < 100; j++)
+		for (int j = 0; j < 500; j++)
 		{
 			if (m_map[i][j] > 0)
 			{
