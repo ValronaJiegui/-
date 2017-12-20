@@ -4,6 +4,7 @@
 #include "SceneMain.h"
 #include "ObjItemWing.h"
 #include "ObjLei.h"
+#include"ObjBlock.h"
 
 //使用するネームスペース
 using namespace GameL;

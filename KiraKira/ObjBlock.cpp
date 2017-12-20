@@ -110,10 +110,11 @@ void CObjBlock::Action()
 							//上
 							test->SetDown(true);
 							test->SetY(y - 64.0f);//ブロックの位置・主人公の幅
-												  //種類を渡すのスタートとゴールのみ変更する
+							test->SetVY(0.0f);					 
+							 //種類を渡すのスタートとゴールのみ変更する
 							if (m_map[i][j] >= 2)
 								test->SetBT(m_map[i][j]);//ブロックの要素(type)を主人公に渡す
-							test->SetVY(0.0f);
+							
 
 						}
 						if (r > 135 && r < 225)
