@@ -31,11 +31,11 @@ void CSceneMain::InitScene()
 	int size;			//ステージ情報の大きさ
 	p = Save::ExternalDataOpen(L"TestMap1.csv", &size);//外部データ読み込み
 
-	int map[10][500];
+	int map[10][100];
 	int count = 1;
 	for (int i = 0; i < 10; i++)
 	{
-		for (int j = 0; j < 500; j++)
+		for (int j = 0; j < 100; j++)
 		{
 			int w = 0;
 			swscanf_s(&p.get()[count], L"%d", &w);
@@ -49,7 +49,7 @@ void CSceneMain::InitScene()
 	Draw::LoadImageW(L"Lei.png", 0, TEX_SIZE_256);
 
 	//グラフィック
-	Draw::LoadImageW(L"map.png",1, TEX_SIZE_1024);
+	Draw::LoadImageW(L"背景.png",1, TEX_SIZE_1024);
 
 	//ブロックグラフィック読み込み
 	Draw::LoadImageW(L"BlockGraphic.png", 2, TEX_SIZE_256);

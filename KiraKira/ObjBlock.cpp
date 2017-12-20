@@ -13,10 +13,10 @@ using namespace GameL;
 
 
 
-CObjBlock::CObjBlock(int map[10][500])
+CObjBlock::CObjBlock(int map[10][100])
 {
 	//マップデータをコピー
-	memcpy(m_map, map, sizeof(int)*(10 * 500));
+	memcpy(m_map, map, sizeof(int)*(10 * 100));
 
 }
 
@@ -63,7 +63,7 @@ void CObjBlock::Action()
 	//m_mapの全要素にアクセス
 	for (int i = 0; i < 10; i++)
 	{
-		for (int j = 0; j < 500; j++)
+		for (int j = 0; j < 100; j++)
 		{
 			if (m_map[i][j] > 0)
 			{
@@ -163,19 +163,19 @@ void CObjBlock::Draw()
 	//背景表示
 	src.m_top = 0.0f;
 	src.m_left = 0.0f ;
-	src.m_right = 650.0f ;
-	src.m_bottom = 900.0f;
+	src.m_right = 1024.0f ;
+	src.m_bottom = 540.0f;
 	dst.m_top = 0.0f;
 	dst.m_left = 0.0f+ m_scroll;
-	dst.m_right = 900.0f+m_scroll;
-	dst.m_bottom = 600.0;
+	dst.m_right = 965.0f+m_scroll;
+	dst.m_bottom = 600.0f;
 	Draw::Draw(1, &src, &dst, c, 0.0f);
 
 	//マップチップによるblock設置
 
 	for (int i = 0; i < 10; i++)
 	{
-		for (int j = 0; j < 500; j++)
+		for (int j = 0; j < 100; j++)
 		{
 			if (m_map[i][j] > 0)
 			{
