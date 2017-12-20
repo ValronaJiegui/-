@@ -28,6 +28,10 @@ void CObjItemTea::Action()
 	float m_x = hero->GetX();
 	float m_y = hero->GetY();
 
+	//スクロールの動く値を確保
+	CObjBlock *block = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
+	m_scroll = block->GetScroll();
+
 	m_time++;
 	if (m_time >= 60)
 	{
@@ -38,7 +42,7 @@ void CObjItemTea::Action()
 	}
 
 	//ゲット判定（テスト用）
-	if (m_x <= right - 50.0f && m_x >= left)
+	if (m_x <= right - 50.0f + m_scroll && m_x >= left + m_scroll)
 	{
 		if (m_y >= top - 50.0f && m_y <= bottom) {
 			Flag = true;
@@ -62,12 +66,12 @@ void CObjItemTea::Draw()
 	if (Flag == false) {
 		//表示位置の設定
 		dst.m_top = top;
-		dst.m_left = left;
-		dst.m_right = right;
+		dst.m_left = left + m_scroll;
+		dst.m_right = right + m_scroll;
 		dst.m_bottom = bottom;
 	}
 
-	Draw::Draw(0, &src, &dst, c, 0.0f);
+	Draw::Draw(3, &src, &dst, c, 0.0f);
 }
 
 void CObjItemTea::SetItemTea(float rx, float lx, float ty, float by)

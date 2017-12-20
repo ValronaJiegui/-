@@ -31,6 +31,7 @@ private:
 	float m_vx;//移動X(ベクトル)
 	float m_vy;//移動Y(ベクトル)
 	int m_time;
+	int m_wtime;
 	int m_motion_walk;
 	bool m_jump;
 	bool m_dash;

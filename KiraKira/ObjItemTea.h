@@ -24,4 +24,5 @@ private:
 	float left;
 	float right;
 	float bottom;
+	float m_scroll;
 };

@@ -30,6 +30,8 @@ void CObjBlock::Init()
 //アクション
 void CObjBlock::Action()
 {
+
+
 	//主人公の位置を取得
 	CObjLei *test = (CObjLei*)Objs::GetObj(OBJ_LEI);
 	hx = test->GetX();
@@ -108,10 +110,11 @@ void CObjBlock::Action()
 							//上
 							test->SetDown(true);
 							test->SetY(y - 64.0f);//ブロックの位置・主人公の幅
-												  //種類を渡すのスタートとゴールのみ変更する
+							test->SetVY(0.0f);					 
+							 //種類を渡すのスタートとゴールのみ変更する
 							if (m_map[i][j] >= 2)
 								test->SetBT(m_map[i][j]);//ブロックの要素(type)を主人公に渡す
-							test->SetVY(0.0f);
+							
 
 						}
 						if (r > 135 && r < 225)
@@ -124,8 +127,8 @@ void CObjBlock::Action()
 						if (r > 225 && r < 315)
 						{
 							//下
-							test->SetUp(true);//主人公から見て、上の部分が小とるしている
-							test->SetY(y + 64.0f);//ブロックの位置＋主人公の幅
+							test->SetUp(true);//主人公から見て、上の部分が衝突している
+							test->SetY(+y + 64.0f);//ブロックの位置＋主人公の幅
 							if (test->GetVY() < 0)
 							{
 								test->SetVY(0.0f);
@@ -153,12 +156,12 @@ void CObjBlock::Draw()
 
 	//背景表示
 	src.m_top = 0.0f;
-	src.m_left = 0.0f + hx;
-	src.m_right = 650.0f + hx;
+	src.m_left = 0.0f ;
+	src.m_right = 650.0f ;
 	src.m_bottom = 900.0f;
 	dst.m_top = 0.0f;
-	dst.m_left = 0.0f;
-	dst.m_right = 900.0f;
+	dst.m_left = 0.0f+ m_scroll;
+	dst.m_right = 900.0f+m_scroll;
 	dst.m_bottom = 600.0;
 	Draw::Draw(1, &src, &dst, c, 0.0f);
 
@@ -171,25 +174,15 @@ void CObjBlock::Draw()
 			if (m_map[i][j] > 0)
 			{
 				//表示位置の設定
-				dst.m_top = i*64.0f+96.0f;
+				dst.m_top = i*64.0f;
 				dst.m_left = j*64.0f + m_scroll;
 				dst.m_right = dst.m_left + 64.0f;
-				dst.m_bottom = dst.m_top + 64.0f + 0.0f;
-				if (m_map[i][j] == 2)
-				{
-					//スタートブロック
-					BlockDraw(320.0f + 64.0f, 0.0f, &dst, c);
+				dst.m_bottom = dst.m_top + 64.0f;
 
-				}
-				else if (m_map[i][j] == 3)
-				{
-					//ゴールブロック
-					BlockDraw(320.0f + 64.0f, 64.0f, &dst, c);
-				}
-				else
-				{
-					BlockDraw(0.0f, 32.0f, &dst, c);
-				}
+
+				
+					BlockDraw(32.0f, 0.0f, &dst, c);
+			
 
 
 			}
