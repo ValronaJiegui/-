@@ -16,6 +16,9 @@
     <Filter Include="ソース ファイル\TEST">
       <UniqueIdentifier>{ea358465-c5c2-422c-8f2d-ec2551adef02}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\アイテム軍">
+      <UniqueIdentifier>{07a50fd7-c1bd-425a-be8f-73e461c6aea9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameL\GameL_Main.cpp">
@@ -30,12 +33,6 @@
     <ClCompile Include="ObjBlock.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="ObjItemTea.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjItemWing.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="ObjLei.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
@@ -44,6 +41,12 @@
     </ClCompile>
     <ClCompile Include="SceneTitle.cpp">
       <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjItemTea.cpp">
+      <Filter>ソース ファイル\アイテム軍</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjItemWing.cpp">
+      <Filter>ソース ファイル\アイテム軍</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
