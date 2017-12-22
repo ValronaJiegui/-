@@ -1,6 +1,7 @@
 #include"GameL\DrawTexture.h"
 #include"GameL\WinInputs.h"
 #include"GameL\SceneManager.h"
+#include"GameL\DrawFont.h" //←HP表示のテスト用なのでそのうち消します！
 
 #include"GameHead.h"
 #include"ObjLei.h"
@@ -22,16 +23,37 @@ void CObjLei::Init()
 	m_dash = false;
 	m_key_z = false;
 	m_f = false;
+	m_muki = 0;
+	m_live_tama = false;
+	z_flag = true;
 
 	//ブロックとの当たり判定
 	m_hit_down=false ;
 	m_hit_left = false;
 	m_hit_right =false;
 	m_hit_up = false;
+	m_HP = 10;
 }
 //動作内容(アクション)////////////////////////
 void CObjLei::Action()
 {
+	m_time++;
+
+	
+	if (Input::GetVKey('Z') == true)
+	{
+		if (z_flag) {
+			CObjTama*obj = new CObjTama(m_px, m_py);
+			Objs::InsertObj(obj, OBJ_TAMA, 100);
+			m_live_tama = true;
+			m_key_z = true;
+			z_flag = false;
+		}
+	}
+	else
+		z_flag = true;
+
+
 	//翼が取れたとき、フラグを立てる
 	CObjItemWing *wing = (CObjItemWing*)Objs::GetObj(OBJ_ITEM_WING);
 	bool Flag = wing->GetFlag();
@@ -48,7 +70,7 @@ void CObjLei::Action()
 	if (Input::GetVKey(VK_RIGHT) == true)
 	{ 
 		m_vx = 5.0f;
-
+		m_muki = 0;
 		//左右同時押しされたら停止
 		if (Input::GetVKey(VK_LEFT) == true)
 		{
@@ -61,7 +83,8 @@ void CObjLei::Action()
 	}
 	if (Input::GetVKey(VK_LEFT) == true)
 	{ 
-		m_vx = -5.0f; 
+		m_vx = -5.0f;
+		m_muki = 1;
 		//左右同時押しされたら停止
 		if (Input::GetVKey(VK_RIGHT) == true)
 		{
@@ -79,7 +102,7 @@ void CObjLei::Action()
 			if (Flag == false)
 			{
 				if (m_jump == false) {
-					m_vy = -10.0f;
+					m_vy = -15.0f;
 					m_jump = true;
 				}
 			}
@@ -87,7 +110,7 @@ void CObjLei::Action()
 			{
 				if (m_jump == false)
 				{
-					m_vy = -25.0f;
+					m_vy = -20.0f;
 					m_jump = true;
 				}
 			}
@@ -153,6 +176,11 @@ void CObjLei::Draw()
 {
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
+	wchar_t HP[8];
+	swprintf_s(HP, 8, L"%d", m_HP);
+	Font::StrDraw(L"HP：", 0, 0, 32, c);
+	Font::StrDraw(HP, 64, 0, 32, c);
+	
 	RECT_F src;//描画元切取位置
 	RECT_F dst;//描画元表示位置
 
@@ -160,27 +188,43 @@ void CObjLei::Draw()
 	if (m_key_z == true)
 	{
 		//Ｚキー
+		if (m_muki == 0)
+		{
 		src.m_top = 96.0f;
 		src.m_left = 0.0f + (m_motion_attack * 32);
 		src.m_right = 32.0f + (m_motion_attack * 32);;
-		src.m_bottom = 128.0f;
+		src.m_bottom = src.m_top + 32.0f;
+		}
+		else
+		{
+			src.m_top = 96.0f;
+			src.m_left = 32.0f + (m_motion_attack * 32);
+			src.m_right = 0.0f + (m_motion_attack * 32);;
+			src.m_bottom = src.m_top + 32.0f;
+		}
+
+
 	}
-	else if (m_jump == true|| Input::GetVKey(VK_RIGHT) == true)
+	else if (m_jump == true)
 	{
+		if (Input::GetVKey(VK_RIGHT) == true)
+		{
 		//ジャンプ＋右
 		src.m_top = 0.0f;
 		src.m_left = 128.0f;
 		src.m_right = 160.0f;
 		src.m_bottom = 32.0f;
-	}	
-	else if (m_jump == true || Input::GetVKey(VK_LEFT) == true)
-	{
+		}
+		else
+		{
 		//ジャンプ＋左
 		src.m_top = 0.0f;
 		src.m_left = 160.0f;
 		src.m_right = 128.0f;
 		src.m_bottom = 32.0f;
-	}
+		}
+
+	}	
 	else if (Input::GetVKey(VK_RIGHT) == true)
 	{
 		//右キー
@@ -197,14 +241,25 @@ void CObjLei::Draw()
 		src.m_right = 0.0f + (m_motion_walk * 32.0f);
 		src.m_bottom = 32.0f;
 	}
-
 	else
 	{
-		//キーなし(止まり)
-		src.m_top = 0.0f;
-		src.m_left = 0.0f;
-		src.m_right = 32.0f;
-		src.m_bottom = 32.0f;
+		if (m_muki == 0)
+		{
+			//止まり右
+			src.m_top = 0.0f;
+			src.m_left = 0.0f;
+			src.m_right = 32.0f;
+			src.m_bottom = 32.0f;
+		}
+		else
+		{
+			//止まり左
+			src.m_top = 0.0f;
+			src.m_left = 32.0f;
+			src.m_right = 0.0f;
+			src.m_bottom = 32.0f;
+		}
+
 	}
 
 

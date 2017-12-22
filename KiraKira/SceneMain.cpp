@@ -57,6 +57,8 @@ void CSceneMain::InitScene()
 	//アイテムグラフィック読み込み
 	Draw::LoadImageW(L"item.png", 3, TEX_SIZE_256);
 
+	Draw::LoadImageW(L"image20.png", 5, TEX_SIZE_512);
+
 	//blockオブジェクト作成
 	CObjBlock* objBlock = new CObjBlock(map);
 	Objs::InsertObj(objBlock, OBJ_BLOCK, 2);
