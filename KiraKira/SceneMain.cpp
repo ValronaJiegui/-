@@ -44,39 +44,45 @@ void CSceneMain::InitScene()
 			count += 2;
 		}
 	}
-
+	
 	//グラフィック読み込み
 	Draw::LoadImageW(L"Lei.png", 0, TEX_SIZE_256);
 
 	//グラフィック
-	Draw::LoadImageW(L"map.png",1, TEX_SIZE_1024);
+	Draw::LoadImageW(L"背景.png",1, TEX_SIZE_1024);
 
 	//ブロックグラフィック読み込み
-	Draw::LoadImageW(L"BlockGraphic.png", 2, TEX_SIZE_256);
+	Draw::LoadImageW(L"BlockGraphic4.png", 2, TEX_SIZE_256);
+
+	//アイテムグラフィック読み込み
+	Draw::LoadImageW(L"item.png", 3, TEX_SIZE_256);
+
+	Draw::LoadImageW(L"image20.png", 5, TEX_SIZE_512);
+
+	//ザコグラフィック読み込み
+	Draw::LoadImageW(L"ZakoData.png", 6, TEX_SIZE_512);
 
 	//blockオブジェクト作成
 	CObjBlock* objBlock = new CObjBlock(map);
-	Objs::InsertObj(objBlock, OBJ_BLOCK, 1);
+	Objs::InsertObj(objBlock, OBJ_BLOCK, 2);
 
 
-
+	
 	//茶
 	CObjItemTea* objTea = new CObjItemTea();
 	Objs::InsertObj(objTea, OBJ_ITEM_TEA,3 );
-	Draw::LoadImageW(L"item.png", 3, TEX_SIZE_256);
-
 
 	//翼
 	CObjItemWing* objWing = new CObjItemWing();
 	Objs::InsertObj(objWing, OBJ_ITEM_WING, 3);
 
-
-
 	//テストグラフィック作成
 	CObjLei* objLei = new CObjLei();
-	Objs::InsertObj(objLei, OBJ_LEI, 2);
+	Objs::InsertObj(objLei, OBJ_LEI, 100);
 
-
+	//ナイフ君
+	CObjNage* objnage = new CObjNage();
+	Objs::InsertObj(objnage, OBJ_NAIHU, 3);
 
 
 

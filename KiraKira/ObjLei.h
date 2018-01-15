@@ -6,7 +6,7 @@ class CObjLei :public CObj
 {
 public:
 	CObjLei() {};
-	~CObjLei(){};
+	~CObjLei() {};
 	void Init();	//初期設定
 	void Action();	//動作内容
 	void Draw();	//描画情報
@@ -33,7 +33,7 @@ public:
 	//引数のとこに true か false を入力すると
 	//レイのm_jumpingが 
 	//　　　　その true か false が指定されます
-	void SetJumping(bool a){if (a == true){m_jumping = true;}else{m_jumping = false;}}
+	void SetJumping(bool a) { if (a == true) { m_jumping = true; } else { m_jumping = false; } }
 
 	//バウンド関数！
 	//説明：
@@ -43,16 +43,31 @@ public:
 	//引数無し
 	void SetVXBound() { m_vx = -m_vx / 4; }
 	void SetVYBound() { m_vy = -m_vy / 4; }
-	
+
+	//ジャンプ初期化関数！
+	//外部からジャンプ値をfalseにセットできます
+	void SetJump() { m_jumping = false; m_jump = false; }
+
+	int GetMuki() { return m_muki; }
+
+	//セットHP関数！
+	//レイのHPを 引数の分だけ加算します！
+	//※※※ダメージの場合、引数をマイナス値にしてください！
+	void SetHP(int i) { m_HP += i; return; }
+
 
 private:
 	float m_px;//位置X
 	float m_py;//位置Y
 	float m_vx;//移動X(ベクトル)
 	float m_vy;//移動Y(ベクトル)
-	int m_time;
+	int m_wtime;
+	int m_motion_walk;
+  //2段以上ジャンプしない用
 	bool m_key_z;
-	bool m_f;
+	bool m_f;      //ジャンプ制御
+	bool z_flag;
+
 
 	//blockとの衝突状態確認用
 	bool m_hit_up;
@@ -66,11 +81,14 @@ private:
 	//状態判定(方向、浮遊など)
 	bool m_jump;
 	bool m_dash;
-	bool m_muki;
+	int m_muki;
 	bool m_jumping;
+	bool m_live_tama;
 
 	//モーション描画用変数
-	int m_motion_time;
-	int m_motion_walk;
+	int m_time;
 	int m_motion_attack;
+
+	//HP!
+	int m_HP;
 };

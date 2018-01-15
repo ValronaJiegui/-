@@ -25,6 +25,9 @@ void CObjBlock::Init()
 {
 	m_scroll = 0.0f;
 
+	m_x1 = 0.0f;
+	m_x2 = 965.0f;
+
 }
 
 //アクション
@@ -101,8 +104,8 @@ void CObjBlock::Action()
 							//右
 							test->SetRight(true);//主人公の左の部分が衝突している
 							test->SetX(x + 64.0f + (m_scroll));//ブロックの位置＋主人公の幅
-							test->SetVX(-test->GetVX()*0.1f);//ーVX*反発定数
-
+							//test->SetVX(-test->GetVX()*0.1f);//ーVX*反発定数
+							test->SetVXBound();
 
 						}
 						if (r > 45 && r < 135)
@@ -110,10 +113,13 @@ void CObjBlock::Action()
 							//上
 							test->SetDown(true);
 							test->SetY(y - 64.0f);//ブロックの位置・主人公の幅
-												  //種類を渡すのスタートとゴールのみ変更する
-							if (m_map[i][j] >= 2)
-								test->SetBT(m_map[i][j]);//ブロックの要素(type)を主人公に渡す
-							test->SetVY(0.0f);
+							//test->SetVY(0.0f);
+							test->SetVYBound();
+							test->SetJump();
+							 //種類を渡すのスタートとゴールのみ変更する
+							///if (m_map[i][j] >= 2)
+							//	test->SetBT(m_map[i][j]);//ブロックの要素(type)を主人公に渡す
+							
 
 						}
 						if (r > 135 && r < 225)
@@ -121,7 +127,9 @@ void CObjBlock::Action()
 							//左
 							test->SetLeft(true);
 							test->SetX(x - 64.0f + (m_scroll));
-							test->SetVX(-test->GetVX()*0.1f);
+							//test->SetVX(-test->GetVX()*0.1f);
+							test->SetVXBound();
+
 						}
 						if (r > 225 && r < 315)
 						{
@@ -130,7 +138,9 @@ void CObjBlock::Action()
 							test->SetY(+y + 64.0f);//ブロックの位置＋主人公の幅
 							if (test->GetVY() < 0)
 							{
-								test->SetVY(0.0f);
+								//test->SetVY(0.0f);
+								test->SetVYBound();
+
 							}
 						}
 					}
@@ -156,13 +166,59 @@ void CObjBlock::Draw()
 	//背景表示
 	src.m_top = 0.0f;
 	src.m_left = 0.0f ;
-	src.m_right = 650.0f ;
-	src.m_bottom = 900.0f;
-	dst.m_top = 0.0f;
-	dst.m_left = 0.0f+ m_scroll;
-	dst.m_right = 900.0f+m_scroll;
-	dst.m_bottom = 600.0;
-	Draw::Draw(1, &src, &dst, c, 0.0f);
+	src.m_right = 1024.0f ;
+	src.m_bottom = 540.0f;
+
+
+		dst.m_top = 0.0f;
+		dst.m_left = 0.0f + m_scroll;
+		dst.m_right = 965.0f + m_scroll;
+		dst.m_bottom = 600.0f;
+		Draw::Draw(1, &src, &dst, c, 0.0f);
+
+		dst.m_top = 0.0f;
+		dst.m_left = 965.0f + m_scroll;
+		dst.m_right = 965.0f + m_x2 + m_scroll;
+		dst.m_bottom = 600.0f;
+		Draw::Draw(1, &src, &dst, c, 0.0f);
+
+		dst.m_top = 0.0f;
+		dst.m_left = 965.0f +965.0f+ m_scroll;
+		dst.m_right = 965.0f+965.0f + m_x2 + m_scroll;
+		dst.m_bottom = 600.0f;
+		Draw::Draw(1, &src, &dst, c, 0.0f);
+
+		dst.m_top = 0.0f;
+		dst.m_left = 965.0f + 965.0f + 965.0f + m_scroll;
+		dst.m_right = 965.0f + 965.0f + 965.0f + m_x2 + m_scroll;
+		dst.m_bottom = 600.0f;
+		Draw::Draw(1, &src, &dst, c, 0.0f);
+
+		dst.m_top = 0.0f;
+		dst.m_left = 965.0f + 965.0f + 965.0f + 965.0f + m_scroll;
+		dst.m_right = 965.0f + 965.0f + 965.0f + 965.0f + m_x2 + m_scroll;
+		dst.m_bottom = 600.0f;
+		Draw::Draw(1, &src, &dst, c, 0.0f);
+
+		dst.m_top = 0.0f;
+		dst.m_left = 965.0f + 965.0f + 965.0f + 965.0f + 965.0f + m_scroll;
+		dst.m_right = 965.0f + 965.0f + 965.0f + 965.0f + 965.0f + m_x2 + m_scroll;
+		dst.m_bottom = 600.0f;
+
+		dst.m_top = 0.0f;
+		dst.m_left = 965.0f + 965.0f + 965.0f + 965.0f + 965.0f  + m_scroll;
+		dst.m_right = 965.0f + 965.0f + 965.0f + 965.0f + 965.0f  + m_x2 + m_scroll;
+		dst.m_bottom = 600.0f;
+		Draw::Draw(1, &src, &dst, c, 0.0f);
+
+		dst.m_top = 0.0f;
+		dst.m_left = 965.0f + 965.0f + 965.0f + 965.0f + 965.0f + 965.0f  + m_scroll;
+		dst.m_right = 965.0f + 965.0f + 965.0f + 965.0f + 965.0f + 965.0f  + m_x2 + m_scroll;
+		dst.m_bottom = 600.0f;
+		Draw::Draw(1, &src, &dst, c, 0.0f);
+
+;
+
 
 	//マップチップによるblock設置
 
@@ -177,10 +233,18 @@ void CObjBlock::Draw()
 				dst.m_left = j*64.0f + m_scroll;
 				dst.m_right = dst.m_left + 64.0f;
 				dst.m_bottom = dst.m_top + 64.0f;
+				if (m_map[i][j] == 2)
+				{
+					BlockDraw(96.0f, 0.0f, &dst, c);
+				}
+				else
+				{
+					BlockDraw(32.0f, 0.0f, &dst, c);
+
+				}
 
 
 				
-					BlockDraw(32.0f, 0.0f, &dst, c);
 			
 
 
