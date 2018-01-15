@@ -66,9 +66,6 @@ void CObjNage::Action()
 	}
 
 	CHitBox*hit = Hits::GetHitBox(this);
-	if(ka==0){
-	hit->SetPos(m_px+14+m_scroll, m_py);//hitboxの位置を弾丸の位置に更新
-	}
 
 	if (hit->CheckObjNameHit(OBJ_TAMA) != nullptr)
 	{
@@ -87,7 +84,7 @@ void CObjNage::Action()
 		m_vy+=9.8/(16.0f);
 		if(m_py==800){
 			this->SetStatus(false);//自身に削除命令を出す
-		    Hits::DeleteHitBox(this);//弾丸が所有するhitboxに削除する。
+		    Hits::DeleteHitBox(this);//自身が所有するhitboxに削除する。
 		}
 	}
 
@@ -107,6 +104,10 @@ void CObjNage::Action()
 
 	m_px+=m_vx;
 	m_py+=m_vy;
+
+	if (ka == 0) {
+		hit->SetPos(m_px+m_scroll , m_py);//hitboxの位置を弾丸の位置に更新
+	}
 }
 
 void CObjNage::Draw()
@@ -150,6 +151,12 @@ void CObjNage::Draw()
 	}
 	else if(houkou<dst.m_right){
 		m_posture = 1;//向きを左向きに変更
+	}
+
+	if (dst.m_right<=-300.0f)//主人公が自身よりも左にいる場合
+	{
+		this->SetStatus(false);//自身に削除命令を出す
+		Hits::DeleteHitBox(this);//自身が所有するhitboxに削除する。
 	}
 
 	Draw::Draw(6,&src,&dst,c,r);
