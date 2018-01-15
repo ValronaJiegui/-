@@ -2,6 +2,7 @@
 #include"GameL\WinInputs.h"
 #include"GameL\SceneManager.h"
 #include"GameL\DrawFont.h" //←HP表示のテスト用なのでそのうち消します！
+#include"GameL\HitBoxManager.h"//←当たり判定に必要なデータ
 
 #include"GameHead.h"
 #include"ObjLei.h"
@@ -33,6 +34,8 @@ void CObjLei::Init()
 	m_hit_right =false;
 	m_hit_up = false;
 	m_HP = 10;
+
+	Hits::SetHitBox(this, m_px - 10, m_py, 32, 64, ELEMENT_PLAYER, OBJ_LEI, 1);
 }
 //動作内容(アクション)////////////////////////
 void CObjLei::Action()
@@ -169,6 +172,15 @@ void CObjLei::Action()
 		{
 			m_motion_walk = 0;
 		}
+	}
+
+	//hit box更新用ポインター取得
+	CHitBox*hit = Hits::GetHitBox(this);
+	hit->SetPos(m_px, m_py);//hitboxの位置を現在の位置に更新
+
+	if (hit->CheckElementHit(ELEMENT_ENEMY) == true )
+	{
+		m_HP -= 1;
 	}
 }
 //描画情報(ドロー)////////////////////////////

@@ -66,6 +66,8 @@ struct UserData
 #include "ObjTitle.h"
 #include"tama.h"
 #include"tamac.h"
+#include"objnage.h"
+#include"naihu.h"
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------

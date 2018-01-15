@@ -59,6 +59,9 @@ void CSceneMain::InitScene()
 
 	Draw::LoadImageW(L"image20.png", 5, TEX_SIZE_512);
 
+	//ザコグラフィック読み込み
+	Draw::LoadImageW(L"ZakoData.png", 6, TEX_SIZE_512);
+
 	//blockオブジェクト作成
 	CObjBlock* objBlock = new CObjBlock(map);
 	Objs::InsertObj(objBlock, OBJ_BLOCK, 2);
@@ -77,7 +80,9 @@ void CSceneMain::InitScene()
 	CObjLei* objLei = new CObjLei();
 	Objs::InsertObj(objLei, OBJ_LEI, 100);
 
-	
+	//ナイフ君
+	CObjNage* objnage = new CObjNage();
+	Objs::InsertObj(objnage, OBJ_NAIHU, 3);
 
 
 
