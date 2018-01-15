@@ -52,7 +52,7 @@ void CSceneMain::InitScene()
 	Draw::LoadImageW(L"背景.png",1, TEX_SIZE_1024);
 
 	//ブロックグラフィック読み込み
-	Draw::LoadImageW(L"BlockGraphic.png", 2, TEX_SIZE_256);
+	Draw::LoadImageW(L"BlockGraphic4.png", 2, TEX_SIZE_256);
 
 	//アイテムグラフィック読み込み
 	Draw::LoadImageW(L"item.png", 3, TEX_SIZE_256);

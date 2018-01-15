@@ -34,4 +34,7 @@ private:
 	float m_scroll;//左右スクロール用
 	RECT_F src;
 	RECT_F dst;
+
+	float m_x1;
+	float m_x2;
 };
