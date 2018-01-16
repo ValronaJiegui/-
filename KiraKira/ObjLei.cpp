@@ -181,6 +181,8 @@ void CObjLei::Action()
 	if (hit->CheckElementHit(ELEMENT_ENEMY) == true )
 	{
 		m_HP -= 1;
+		SetVXBound();
+		SetVYBound();
 	}
 }
 //•`‰æî•ñ(ƒhƒ[)////////////////////////////
