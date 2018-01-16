@@ -106,7 +106,7 @@ void CObjNage::Action()
 	m_py+=m_vy;
 
 	if (ka == 0) {
-		hit->SetPos(m_px+m_scroll , m_py);//hitboxの位置を弾丸の位置に更新
+		hit->SetPos(m_px + block->GetScroll(), m_py);//hitboxの位置を更新
 	}
 }
 
@@ -141,7 +141,7 @@ void CObjNage::Draw()
 	houkou = hero->GetX();
 
 	dst.m_top =0.0f+m_py;
-	dst.m_left=(64.0f-64.0f*m_posture)+m_px+m_scroll;
+	dst.m_left=(64.0f-64.0f*m_posture)+m_px + m_scroll;
 	dst.m_right=(64.0f*m_posture)+m_px + m_scroll;
 	dst.m_bottom=64.0f+m_py;
 

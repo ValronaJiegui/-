@@ -66,6 +66,12 @@
     <ClCompile Include="objnage.cpp">
       <Filter>ソース ファイル\敵データ</Filter>
     </ClCompile>
+    <ClCompile Include="objenemy.cpp">
+      <Filter>ソース ファイル\敵データ</Filter>
+    </ClCompile>
+    <ClCompile Include="objhenemy.cpp">
+      <Filter>ソース ファイル\敵データ</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameHead.h">
@@ -138,6 +144,12 @@
       <Filter>ヘッダー ファイル\敵ヘッダーデータ</Filter>
     </ClInclude>
     <ClInclude Include="objnage.h">
+      <Filter>ヘッダー ファイル\敵ヘッダーデータ</Filter>
+    </ClInclude>
+    <ClInclude Include="objenemy.h">
+      <Filter>ヘッダー ファイル\敵ヘッダーデータ</Filter>
+    </ClInclude>
+    <ClInclude Include="objhenemy.h">
       <Filter>ヘッダー ファイル\敵ヘッダーデータ</Filter>
     </ClInclude>
   </ItemGroup>

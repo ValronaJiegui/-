@@ -188,6 +188,21 @@ void CObjBlock::Draw()
 	dst.m_bottom = 0.0f;
 	Draw::Draw(1, &src, &dst, c, 0.0f);
 
+	for (int i = 0; i < 7; i++)
+	{
+		float plus_x = 0.0f;
+		for (int j = 0; j < i; j++)
+		{
+			plus_x += m_x2;
+		}
+		dst.m_top = 0.0f;
+		dst.m_left = 0.0f  + plus_x + m_scroll;
+		dst.m_right = 965.0f + plus_x + m_scroll;
+		dst.m_bottom = 600.0f;
+		Draw::Draw(1, &src, &dst, c, 0.0f);
+	}
+	
+	/*
 		dst.m_top = 0.0f;
 		dst.m_left = 0.0f + m_scroll;
 		dst.m_right = 965.0f + m_scroll;
@@ -234,8 +249,7 @@ void CObjBlock::Draw()
 		dst.m_right = 965.0f + 965.0f + 965.0f + 965.0f + 965.0f + 965.0f  + m_x2 + m_scroll;
 		dst.m_bottom = 600.0f;
 		Draw::Draw(1, &src, &dst, c, 0.0f);
-
-;
+	*/
 
 
 	//マップチップによるblock設置
