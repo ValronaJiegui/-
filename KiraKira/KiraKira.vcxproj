@@ -126,6 +126,8 @@
     <ClCompile Include="ObjBlock.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="objenemy.cpp" />
+    <ClCompile Include="objhenemy.cpp" />
     <ClCompile Include="ObjLei.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
     </ClCompile>
@@ -158,6 +160,8 @@
     <ClInclude Include="main.h" />
     <ClInclude Include="naihu.h" />
     <ClInclude Include="ObjBlock.h" />
+    <ClInclude Include="objenemy.h" />
+    <ClInclude Include="objhenemy.h" />
     <ClInclude Include="ObjItemTea.h" />
     <ClInclude Include="ObjItemWing.h" />
     <ClInclude Include="ObjLei.h" />

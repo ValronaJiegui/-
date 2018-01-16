@@ -61,6 +61,9 @@ private:
 	float m_py;//位置Y
 	float m_vx;//移動X(ベクトル)
 	float m_vy;//移動Y(ベクトル)
+
+	bool houkou;//主人公の向きを知るためのデータ
+
 	int m_wtime;
 	int m_motion_walk;
   //2段以上ジャンプしない用
@@ -84,6 +87,14 @@ private:
 	int m_muki;
 	bool m_jumping;
 	bool m_live_tama;
+
+	//無敵判定（被弾時少しの間無敵）
+	int muteki;
+	int muteki_time;
+	int mutekie;
+	bool hutobi;
+	bool hantei;
+	int xcount;
 
 	//モーション描画用変数
 	int m_time;
