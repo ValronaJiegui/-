@@ -55,7 +55,7 @@ void CSceneMain::InitScene()
 	Draw::LoadImageW(L"BlockGraphic4.png", 2, TEX_SIZE_256);
 
 	//アイテムグラフィック読み込み
-	Draw::LoadImageW(L"item.png", 3, TEX_SIZE_256);
+	Draw::LoadImageW(L"item2.png", 3, TEX_SIZE_256);
 
 	Draw::LoadImageW(L"image20.png", 5, TEX_SIZE_512);
 
