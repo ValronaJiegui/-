@@ -85,7 +85,7 @@ void CObjLei::Action()
 			m_vx += 4.0f;
 		}
 	}
-	if (Input::GetVKey(VK_LEFT) == true)
+	else if (Input::GetVKey(VK_LEFT) == true)
 	{ 
 		m_vx = -5.0f;
 		m_muki = 1;
@@ -99,6 +99,7 @@ void CObjLei::Action()
 			m_vx -= 4.0f;
 		}
 	}
+
 	if (Input::GetVKey(VK_UP) == true)
 	{
 		if (m_f == false)
@@ -187,6 +188,10 @@ void CObjLei::Action()
 	}
 
 	m_movepointX += m_px - 64.0f;
+
+	//ゲームオーバー判定
+	if(m_HP == 0)
+		Scene::SetScene(new CSceneTitle());
 }
 //描画情報(ドロー)////////////////////////////
 void CObjLei::Draw()
@@ -278,7 +283,6 @@ void CObjLei::Draw()
 		}
 
 	}
-
 
 	//表示位置の設定
 	dst.m_top	 =   0.0f + m_py;

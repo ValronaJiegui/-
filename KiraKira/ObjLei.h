@@ -10,6 +10,7 @@ public:
 	void Init();	//‰Šúİ’è
 	void Action();	//“®ì“à—e
 	void Draw();	//•`‰æî•ñ
+	int   GetHP() { return m_HP; }
 	float GetX() { return m_px; }
 	float GetY() { return m_py; }
 	float GetVX() { return m_vx; }
