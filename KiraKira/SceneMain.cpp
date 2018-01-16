@@ -29,7 +29,7 @@ void CSceneMain::InitScene()
 	//外部データの読み込み(ステージ情報)
 	unique_ptr<wchar_t>p;//ステージ情報ポインター
 	int size;			//ステージ情報の大きさ
-	p = Save::ExternalDataOpen(L"TestMap1.csv", &size);//外部データ読み込み
+	p = Save::ExternalDataOpen(L"S1.csv", &size);//外部データ読み込み
 
 	int map[10][100];
 	int count = 1;
@@ -49,10 +49,11 @@ void CSceneMain::InitScene()
 	Draw::LoadImageW(L"Lei.png", 0, TEX_SIZE_256);
 
 	//グラフィック
-	Draw::LoadImageW(L"背景.png",1, TEX_SIZE_1024);
+	Draw::LoadImageW(L"背景1.png", 1, TEX_SIZE_1024);
+
 
 	//ブロックグラフィック読み込み
-	Draw::LoadImageW(L"BlockGraphic4.png", 2, TEX_SIZE_256);
+	Draw::LoadImageW(L"BlockGraphic5.png", 2, TEX_SIZE_256);
 
 	//アイテムグラフィック読み込み
 	Draw::LoadImageW(L"item2.png", 3, TEX_SIZE_256);
@@ -62,6 +63,8 @@ void CSceneMain::InitScene()
 	//ザコグラフィック読み込み
 	Draw::LoadImageW(L"ZakoData.png", 6, TEX_SIZE_512);
 
+	//背景グラフィック
+	Draw::LoadImageW(L"空.jpg", 7, TEX_SIZE_1024);
 	//blockオブジェクト作成
 	CObjBlock* objBlock = new CObjBlock(map);
 	Objs::InsertObj(objBlock, OBJ_BLOCK, 2);
