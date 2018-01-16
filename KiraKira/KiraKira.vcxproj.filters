@@ -16,14 +16,17 @@
     <Filter Include="ソース ファイル\TEST">
       <UniqueIdentifier>{ea358465-c5c2-422c-8f2d-ec2551adef02}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\アイテム軍">
+    <Filter Include="ソース ファイル\アイテム群">
       <UniqueIdentifier>{07a50fd7-c1bd-425a-be8f-73e461c6aea9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\敵データ">
+      <UniqueIdentifier>{182f7c6a-f50a-4c46-8ed7-1afd3e318968}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\敵ヘッダーデータ">
+      <UniqueIdentifier>{db86fdae-c8dd-4a18-bc07-3d5ca95f602b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="GameL\GameL_Main.cpp">
-      <Filter>リソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="SceneMain.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
@@ -43,10 +46,25 @@
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="ObjItemTea.cpp">
-      <Filter>ソース ファイル\アイテム軍</Filter>
+      <Filter>ソース ファイル\アイテム群</Filter>
     </ClCompile>
     <ClCompile Include="ObjItemWing.cpp">
-      <Filter>ソース ファイル\アイテム軍</Filter>
+      <Filter>ソース ファイル\アイテム群</Filter>
+    </ClCompile>
+    <ClCompile Include="tama.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="tamac.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="GameL\GameL_Main.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="naihu.cpp">
+      <Filter>ソース ファイル\敵データ</Filter>
+    </ClCompile>
+    <ClCompile Include="objnage.cpp">
+      <Filter>ソース ファイル\敵データ</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -109,6 +127,18 @@
     </ClInclude>
     <ClInclude Include="SceneTitle.h">
       <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="tama.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="tamac.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="naihu.h">
+      <Filter>ヘッダー ファイル\敵ヘッダーデータ</Filter>
+    </ClInclude>
+    <ClInclude Include="objnage.h">
+      <Filter>ヘッダー ファイル\敵ヘッダーデータ</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

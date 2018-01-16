@@ -49,6 +49,13 @@ public:
 	//外部からジャンプ値をfalseにセットできます
 	void SetJump() { m_jumping = false; m_jump = false; }
 
+	int GetMuki() { return m_muki; }
+
+	//セットHP関数！
+	//レイのHPを 引数の分だけ加算します！
+	//※※※ダメージの場合、引数をマイナス値にしてください！
+	void SetHP(int i) { m_HP += i; return; }
+
 
 private:
 	float m_px;//位置X
@@ -58,11 +65,11 @@ private:
 	float m_movepointX; //スタート地点からどれだけ動いたか
 	int m_wtime;
 	int m_motion_walk;
-	bool m_jump;   //2段以上ジャンプしない用
-	bool m_dash;
+  //2段以上ジャンプしない用
 	bool m_key_z;
 	bool m_f;      //ジャンプ制御
-	int m_motion_attack;
+	bool z_flag;
+
 
 	//blockとの衝突状態確認用
 	bool m_hit_up;
@@ -74,9 +81,16 @@ private:
 	int m_block_type;
 
 	//状態判定(方向、浮遊など)
-	bool m_muki;
+	bool m_jump;
+	bool m_dash;
+	int m_muki;
 	bool m_jumping;
+	bool m_live_tama;
 
 	//モーション描画用変数
 	int m_time;
+	int m_motion_attack;
+
+	//HP!
+	int m_HP;
 };

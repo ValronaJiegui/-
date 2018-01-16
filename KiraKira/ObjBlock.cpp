@@ -25,6 +25,9 @@ void CObjBlock::Init()
 {
 	m_scroll = 0.0f;
 
+	m_x1 = 0.0f;
+	m_x2 = 965.0f;
+
 }
 
 //アクション
@@ -164,11 +167,57 @@ void CObjBlock::Draw()
 	src.m_left = 0.0f ;
 	src.m_right = 1024.0f ;
 	src.m_bottom = 540.0f;
-	dst.m_top = 0.0f;
-	dst.m_left = 0.0f+ m_scroll;
-	dst.m_right = 965.0f+m_scroll;
-	dst.m_bottom = 600.0f;
-	Draw::Draw(1, &src, &dst, c, 0.0f);
+
+
+		dst.m_top = 0.0f;
+		dst.m_left = 0.0f + m_scroll;
+		dst.m_right = 965.0f + m_scroll;
+		dst.m_bottom = 600.0f;
+		Draw::Draw(1, &src, &dst, c, 0.0f);
+
+		dst.m_top = 0.0f;
+		dst.m_left = 965.0f + m_scroll;
+		dst.m_right = 965.0f + m_x2 + m_scroll;
+		dst.m_bottom = 600.0f;
+		Draw::Draw(1, &src, &dst, c, 0.0f);
+
+		dst.m_top = 0.0f;
+		dst.m_left = 965.0f +965.0f+ m_scroll;
+		dst.m_right = 965.0f+965.0f + m_x2 + m_scroll;
+		dst.m_bottom = 600.0f;
+		Draw::Draw(1, &src, &dst, c, 0.0f);
+
+		dst.m_top = 0.0f;
+		dst.m_left = 965.0f + 965.0f + 965.0f + m_scroll;
+		dst.m_right = 965.0f + 965.0f + 965.0f + m_x2 + m_scroll;
+		dst.m_bottom = 600.0f;
+		Draw::Draw(1, &src, &dst, c, 0.0f);
+
+		dst.m_top = 0.0f;
+		dst.m_left = 965.0f + 965.0f + 965.0f + 965.0f + m_scroll;
+		dst.m_right = 965.0f + 965.0f + 965.0f + 965.0f + m_x2 + m_scroll;
+		dst.m_bottom = 600.0f;
+		Draw::Draw(1, &src, &dst, c, 0.0f);
+
+		dst.m_top = 0.0f;
+		dst.m_left = 965.0f + 965.0f + 965.0f + 965.0f + 965.0f + m_scroll;
+		dst.m_right = 965.0f + 965.0f + 965.0f + 965.0f + 965.0f + m_x2 + m_scroll;
+		dst.m_bottom = 600.0f;
+
+		dst.m_top = 0.0f;
+		dst.m_left = 965.0f + 965.0f + 965.0f + 965.0f + 965.0f  + m_scroll;
+		dst.m_right = 965.0f + 965.0f + 965.0f + 965.0f + 965.0f  + m_x2 + m_scroll;
+		dst.m_bottom = 600.0f;
+		Draw::Draw(1, &src, &dst, c, 0.0f);
+
+		dst.m_top = 0.0f;
+		dst.m_left = 965.0f + 965.0f + 965.0f + 965.0f + 965.0f + 965.0f  + m_scroll;
+		dst.m_right = 965.0f + 965.0f + 965.0f + 965.0f + 965.0f + 965.0f  + m_x2 + m_scroll;
+		dst.m_bottom = 600.0f;
+		Draw::Draw(1, &src, &dst, c, 0.0f);
+
+;
+
 
 	//マップチップによるblock設置
 
@@ -183,10 +232,18 @@ void CObjBlock::Draw()
 				dst.m_left = j*64.0f + m_scroll;
 				dst.m_right = dst.m_left + 64.0f;
 				dst.m_bottom = dst.m_top + 64.0f;
+				if (m_map[i][j] == 2)
+				{
+					BlockDraw(96.0f, 0.0f, &dst, c);
+				}
+				else
+				{
+					BlockDraw(32.0f, 0.0f, &dst, c);
+
+				}
 
 
 				
-					BlockDraw(32.0f, 0.0f, &dst, c);
 			
 
 

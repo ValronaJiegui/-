@@ -15,10 +15,10 @@ void CObjItemTea::Init()
 	Flag = false;
 
 	//以下テスト用---
-	top = 0.0f;
-	left = 3400.0f;
-	right = 3464.0f;
-	bottom = 64.0f;
+	top = 0.0f + 200.0f;
+	left = 400.0f;
+	right = 464.0f;
+	bottom = 64.0f + 200.0f;
 }
 
 void CObjItemTea::Action()
@@ -45,7 +45,10 @@ void CObjItemTea::Action()
 	if (m_x <= right - 50.0f + m_scroll && m_x >= left + m_scroll)
 	{
 		if (m_y >= top - 50.0f && m_y <= bottom) {
-			Flag = true;
+			if (Flag == false) {
+				Flag = true;
+				hero->SetHP(5);
+			}
 		}
 	}
 }
