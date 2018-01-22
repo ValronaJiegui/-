@@ -14,6 +14,7 @@ enum OBJ_NAME
 	OBJ_TAMA,
 	OBJ_TAMAC,
 	OBJ_ENEMY,
+	OBJ_HENEMY,
 	OBJ_NAIHU,
 	OBJ_BAKU,
 };
@@ -66,8 +67,11 @@ struct UserData
 #include "ObjTitle.h"
 #include"tama.h"
 #include"tamac.h"
+
 #include"objnage.h"
 #include"naihu.h"
+#include"objenemy.h"
+#include"objhenemy.h"
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------
@@ -77,5 +81,5 @@ struct UserData
 
 //シーンスタートクラス---------------------------
 //ゲーム開始時のシーンクラス登録
-#define SET_GAME_START CSceneTitle  
+#define SET_GAME_START CSceneTitle
 //-----------------------------------------------
