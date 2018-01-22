@@ -245,7 +245,7 @@ void CObjLei::Action()
 
 	}
 
-	m_movepointX += m_px - 64.0f;
+	//m_movepointX += m_px - 64.0f;
 
 	//ゲームオーバー判定
 	if(m_HP == 0)

@@ -17,6 +17,7 @@ enum OBJ_NAME
 	OBJ_HENEMY,
 	OBJ_NAIHU,
 	OBJ_BAKU,
+	OBJ_BOSS_KIRARI,
 };
 //------------------------------------------------
 
@@ -72,6 +73,7 @@ struct UserData
 #include"naihu.h"
 #include"objenemy.h"
 #include"objhenemy.h"
+#include "Kirari.h"
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------
