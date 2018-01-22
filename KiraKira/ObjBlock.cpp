@@ -37,10 +37,10 @@ void CObjBlock::Action()
 	CObjLei *test = (CObjLei*)Objs::GetObj(OBJ_LEI);
 	hx = test->GetX();
 	hy = test->GetY(); 
-	float MoveX = test->GetMoveX();
+	//float MoveX = test->GetMoveX();
 
 	//後方スクロールライン
-	if (hx < 80 && MoveX >= 0.0f)
+	if (hx < 80 && 100 >= 0.0f)
 	{
 		test->SetX(80);//主人公はラインを超えないようにする
 		m_scroll -= test->GetVX();//主人公が本来動くべき分の値をm_scrollに加える
@@ -117,8 +117,13 @@ void CObjBlock::Action()
 								//test->SetVY(0.0f);
 								test->SetVYBound();
 								test->SetJump();
+								if (m_map[i][j] == 4)
+								{
+									Scene::SetScene(new CSceneTitle());
+									break;
+								}
 								//種類を渡すのスタートとゴールのみ変更する
-							   ///if (m_map[i][j] >= 2)
+							   ///if (m_map[i][j] >= 4)
 							   //	test->SetBT(m_map[i][j]);//ブロックの要素(type)を主人公に渡す
 
 
@@ -273,11 +278,16 @@ void CObjBlock::Draw()
 				{
 					BlockDraw(0.0f, 32.0f, &dst, c);
 				}
+				else if (m_map[i][j]==4)
+				{
+					BlockDraw(0.0f, 192.0f, &dst, c);
+				}
 				else
 				{
 					BlockDraw(32.0f, 0.0f, &dst, c);
 
 				}
+
 
 
 				

@@ -76,7 +76,7 @@ void CObjLei::Action()
 		//m_jump = false;
 	}*/
 
-	m_vx += -(m_vx*0.098f);
+	m_vx += -(m_vx*0.25f);
 	m_vy += 9.8f / (16.0f);
 
 	//キー入力されたときの処理
@@ -245,7 +245,7 @@ void CObjLei::Action()
 
 	}
 
-	m_movepointX += m_px - 64.0f;
+	//m_movepointX += m_px - 64.0f;
 
 	//ゲームオーバー判定
 	if(m_HP == 0)

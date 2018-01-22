@@ -88,12 +88,12 @@ void CSceneMain::InitScene()
 	Objs::InsertObj(objnage, OBJ_NAIHU, 3);
 
 	//‚ ‚é‚­‚¿‚á‚ñ
-	//CObjEnemy* objenemy = new CObjEnemy();
-	//Objs::InsertObj(objenemy, OBJ_ENEMY, 3);
+	CObjEnemy* objenemy = new CObjEnemy();
+	Objs::InsertObj(objenemy, OBJ_ENEMY, 3);
 
 	//‚Í‚µ‚é‚¿‚á‚ñ
-	//CObjHenemy* objhenemy = new CObjHenemy();
-	//Objs::InsertObj(objhenemy, OBJ_HENEMY, 3);
+	CObjHenemy* objhenemy = new CObjHenemy();
+	Objs::InsertObj(objhenemy, OBJ_HENEMY, 3);
 
 
 
