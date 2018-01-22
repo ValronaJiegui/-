@@ -11,6 +11,7 @@ enum OBJ_NAME
 	OBJ_ITEM_WING,
 	OBJ_BLOCK,
 	OBJ_TITLE,
+	OBJ_STAGE_SELECT,
 	OBJ_TAMA,
 	OBJ_TAMAC,
 	OBJ_ENEMY,
@@ -66,6 +67,7 @@ struct UserData
 #include"ObjItemWing.h"
 #include"ObjBlock.h"
 #include "ObjTitle.h"
+#include "ObjStageSelect.h"
 #include"tama.h"
 #include"tamac.h"
 
@@ -79,6 +81,7 @@ struct UserData
 //ゲームシーンクラスヘッダ------------------------
 #include "SceneMain.h"
 #include "SceneTitle.h"
+#include "SceneStageSelect.h"
 //-----------------------------------------------
 
 //シーンスタートクラス---------------------------
