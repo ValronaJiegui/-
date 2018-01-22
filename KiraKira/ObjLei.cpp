@@ -76,7 +76,7 @@ void CObjLei::Action()
 		//m_jump = false;
 	}*/
 
-	m_vx += -(m_vx*0.098f);
+	m_vx += -(m_vx*0.25f);
 	m_vy += 9.8f / (16.0f);
 
 	//ƒL[“ü—Í‚³‚ê‚½‚Æ‚«‚Ìˆ—
