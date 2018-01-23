@@ -77,14 +77,13 @@ struct UserData
 #include"objenemy.h"
 #include"objhenemy.h"
 
+#include"ObjAnten.h"
 #include"Kirari.h"
-#include"ObjAnten"
-#include"Stage1"
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------
 #include "SceneMain.h"
-#include "SceneTitle.h
+#include "SceneTitle.h"
 #include"SceneStageSelect.h"
 #include"Stage1.h"
 //-----------------------------------------------
