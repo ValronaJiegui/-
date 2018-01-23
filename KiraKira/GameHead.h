@@ -11,12 +11,15 @@ enum OBJ_NAME
 	OBJ_ITEM_WING,
 	OBJ_BLOCK,
 	OBJ_TITLE,
+	OBJ_STAGE_SELECT,
 	OBJ_TAMA,
 	OBJ_TAMAC,
 	OBJ_ENEMY,
 	OBJ_HENEMY,
 	OBJ_NAIHU,
 	OBJ_BAKU,
+	OBJ_BOSS_KIRARI,
+	OBJ_ANTEN,
 };
 //------------------------------------------------
 
@@ -65,6 +68,7 @@ struct UserData
 #include"ObjItemWing.h"
 #include"ObjBlock.h"
 #include "ObjTitle.h"
+#include "ObjStageSelect.h"
 #include"tama.h"
 #include"tamac.h"
 
@@ -72,12 +76,16 @@ struct UserData
 #include"naihu.h"
 #include"objenemy.h"
 #include"objhenemy.h"
-#include"Stage1.h"
+
+#include"Kirari.h"
+#include"ObjAnten"
+#include"Stage1"
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------
 #include "SceneMain.h"
-#include "SceneTitle.h"
+#include "SceneTitle.h
+#include"SceneStageSelect.h"
 #include"Stage1.h"
 //-----------------------------------------------
 

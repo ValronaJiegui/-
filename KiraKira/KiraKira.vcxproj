@@ -122,7 +122,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="GameL\GameL_Main.cpp" />
+    <ClCompile Include="Kirari.cpp" />
     <ClCompile Include="naihu.cpp" />
+    <ClCompile Include="ObjAnten.cpp" />
     <ClCompile Include="ObjBlock.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
     </ClCompile>
@@ -134,8 +136,10 @@
     <ClCompile Include="ObjItemTea.cpp" />
     <ClCompile Include="ObjItemWing.cpp" />
     <ClCompile Include="objnage.cpp" />
+    <ClCompile Include="ObjStageSelect.cpp" />
     <ClCompile Include="ObjTitle.cpp" />
     <ClCompile Include="SceneMain.cpp" />
+    <ClCompile Include="SceneStageSelect.cpp" />
     <ClCompile Include="SceneTitle.cpp" />
     <ClCompile Include="Stage1.cpp" />
     <ClCompile Include="tama.cpp" />
@@ -143,7 +147,6 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="test.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameHead.h" />
@@ -158,8 +161,10 @@
     <ClInclude Include="GameL\SetWindow.h" />
     <ClInclude Include="GameL\UserData.h" />
     <ClInclude Include="GameL\WinInputs.h" />
+    <ClInclude Include="Kirari.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="naihu.h" />
+    <ClInclude Include="ObjAnten.h" />
     <ClInclude Include="ObjBlock.h" />
     <ClInclude Include="objenemy.h" />
     <ClInclude Include="objhenemy.h" />
@@ -167,8 +172,10 @@
     <ClInclude Include="ObjItemWing.h" />
     <ClInclude Include="ObjLei.h" />
     <ClInclude Include="objnage.h" />
+    <ClInclude Include="ObjStageSelect.h" />
     <ClInclude Include="ObjTitle.h" />
     <ClInclude Include="SceneMain.h" />
+    <ClInclude Include="SceneStageSelect.h" />
     <ClInclude Include="SceneTitle.h" />
     <ClInclude Include="Stage1.h" />
     <ClInclude Include="tama.h" />

@@ -11,39 +11,35 @@ using namespace GameL;
 
 //使用ヘッダー
 #include "SceneMain.h"
+#include "SceneStageSelect.h"
 #include "Gamehead.h"
-#include "ObjTitle.h"
-
-#include"ObjAnten.h"
+#include "ObjStageSelect.h"
 
 //コンストラクタ
-CSceneTitle::CSceneTitle()
+CSceneStageSelect::CSceneStageSelect()
 {
 
 }
 
 //デストラクダ
-CSceneTitle::~CSceneTitle()
+CSceneStageSelect::~CSceneStageSelect()
 {
 
 }
 
 //ゲームメイン初期化メソッド
-void CSceneTitle::InitScene()
+void CSceneStageSelect::InitScene()
 {
-	Draw::LoadImageW(L"Title.png", 0, TEX_SIZE_1024);
-
-	//グラフィック作成
-	CObjTitle* obj = new CObjTitle();
-	Objs::InsertObj(obj, OBJ_TITLE, 0);
+	Draw::LoadImageW(L"STAGE1.png", 0, TEX_SIZE_1024);
 
 
-	CObjAnten* obj2 = new CObjAnten();
-	Objs::InsertObj(obj2, OBJ_ANTEN, 9);
+	//テストグラフィック作成
+	CObjStageSelect* obj = new CObjStageSelect();
+	Objs::InsertObj(obj, OBJ_STAGE_SELECT, 0);
 }
 
 //ゲームメイン実行中メソッド
-void CSceneTitle::Scene()
+void CSceneStageSelect::Scene()
 {
 
 }

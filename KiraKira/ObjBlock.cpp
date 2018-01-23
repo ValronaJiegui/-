@@ -37,10 +37,9 @@ void CObjBlock::Action()
 	CObjLei *test = (CObjLei*)Objs::GetObj(OBJ_LEI);
 	hx = test->GetX();
 	hy = test->GetY(); 
-	//float MoveX = test->GetMoveX();
 
 	//後方スクロールライン
-	if (hx < 80 && 100 >= 0.0f)
+	if (hx < 80)
 	{
 		test->SetX(80);//主人公はラインを超えないようにする
 		m_scroll -= test->GetVX();//主人公が本来動くべき分の値をm_scrollに加える
