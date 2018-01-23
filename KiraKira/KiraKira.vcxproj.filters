@@ -72,6 +72,15 @@
     <ClCompile Include="objhenemy.cpp">
       <Filter>ソース ファイル\敵データ</Filter>
     </ClCompile>
+    <ClCompile Include="Kirari.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjStageSelect.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneStageSelect.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameHead.h">
@@ -151,6 +160,15 @@
     </ClInclude>
     <ClInclude Include="objhenemy.h">
       <Filter>ヘッダー ファイル\敵ヘッダーデータ</Filter>
+    </ClInclude>
+    <ClInclude Include="Kirari.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjStageSelect.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneStageSelect.h">
+      <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
