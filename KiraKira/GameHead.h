@@ -17,6 +17,7 @@ enum OBJ_NAME
 	OBJ_HENEMY,
 	OBJ_NAIHU,
 	OBJ_BAKU,
+	OBJ_ANTEN,
 };
 //------------------------------------------------
 
@@ -65,6 +66,7 @@ struct UserData
 #include"ObjItemWing.h"
 #include"ObjBlock.h"
 #include "ObjTitle.h"
+#include"ObjAnten.h"
 #include"tama.h"
 #include"tamac.h"
 

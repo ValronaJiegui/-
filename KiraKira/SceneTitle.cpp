@@ -14,6 +14,8 @@ using namespace GameL;
 #include "Gamehead.h"
 #include "ObjTitle.h"
 
+#include"ObjAnten.h"
+
 //コンストラクタ
 CSceneTitle::CSceneTitle()
 {
@@ -34,6 +36,10 @@ void CSceneTitle::InitScene()
 	//グラフィック作成
 	CObjTitle* obj = new CObjTitle();
 	Objs::InsertObj(obj, OBJ_TITLE, 0);
+
+
+	CObjAnten* obj2 = new CObjAnten();
+	Objs::InsertObj(obj2, OBJ_ANTEN, 9);
 }
 
 //ゲームメイン実行中メソッド
