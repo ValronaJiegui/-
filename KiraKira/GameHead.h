@@ -72,11 +72,13 @@ struct UserData
 #include"naihu.h"
 #include"objenemy.h"
 #include"objhenemy.h"
+#include"Stage1.h"
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------
 #include "SceneMain.h"
 #include "SceneTitle.h"
+#include"Stage1.h"
 //-----------------------------------------------
 
 //シーンスタートクラス---------------------------

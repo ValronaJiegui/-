@@ -8,8 +8,6 @@ using namespace GameL;
 #include"GameHead.h"
 #include"GameL\DrawTexture.h"
 
-#include"GameL\SceneObjManager.h"
-#include"GameL\DrawTexture.h"
 #include"GameL\DrawFont.h"
 #include"GameL\UserData.h"
 

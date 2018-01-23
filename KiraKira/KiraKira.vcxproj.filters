@@ -72,6 +72,9 @@
     <ClCompile Include="objhenemy.cpp">
       <Filter>ソース ファイル\敵データ</Filter>
     </ClCompile>
+    <ClCompile Include="Stage1.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameHead.h">
@@ -151,6 +154,9 @@
     </ClInclude>
     <ClInclude Include="objhenemy.h">
       <Filter>ヘッダー ファイル\敵ヘッダーデータ</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage1.h">
+      <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

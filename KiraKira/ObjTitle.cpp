@@ -5,6 +5,7 @@
 #include "Gamehead.h"
 #include "ObjTitle.h"
 #include "SceneMain.h"
+#include"Stage1.h"
 
 #include "GameL\DrawTexture.h"
 
@@ -45,7 +46,7 @@ void CObjTitle::Action()
 	//_NEW_GAME_‚ª‰Ÿ‚³‚ê‚½‚çƒƒCƒ“‚ÉØ‚è‘Ö‚¦‚é
 	if (m_mou_l == true && NEW == true)
 	{
-		Scene::SetScene(new CSceneMain());
+		Scene::SetScene(new CStage1());
 	}
 	//_LOAD_GAME_‚ª‰Ÿ‚³‚ê‚½‚ç
 	else if (m_mou_l == true && LOAD == true)
