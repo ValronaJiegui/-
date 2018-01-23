@@ -124,6 +124,7 @@
     <ClCompile Include="GameL\GameL_Main.cpp" />
     <ClCompile Include="Kirari.cpp" />
     <ClCompile Include="naihu.cpp" />
+    <ClCompile Include="ObjAnten.cpp" />
     <ClCompile Include="ObjBlock.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
     </ClCompile>
@@ -145,7 +146,6 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="test.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameHead.h" />
@@ -163,6 +163,7 @@
     <ClInclude Include="Kirari.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="naihu.h" />
+    <ClInclude Include="ObjAnten.h" />
     <ClInclude Include="ObjBlock.h" />
     <ClInclude Include="objenemy.h" />
     <ClInclude Include="objhenemy.h" />

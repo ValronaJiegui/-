@@ -34,9 +34,9 @@ void CObjStageSelect::Action()
 
 	//クリア判定
 	if (0/*ステージ１をクリアしている場合の処理をここに書く*/)
-		CLEAR1 == true;
+		CLEAR1 = true;
 	if (0/*ステージ２をクリアしている場合の処理をここに書く*/)
-		CLEAR2 == true;
+		CLEAR2 = true;
 
 	//マウスの位置を取得
 	m_mou_x = (float)Input::GetPosX();
