@@ -7,6 +7,7 @@ using namespace GameL;
 #include"SceneMain.h"
 #include"GameHead.h"
 #include"GameL\DrawTexture.h"
+#include"GameL\Audio.h"
 
 #include"GameL\SceneObjManager.h"
 #include"GameL\DrawTexture.h"
@@ -64,10 +65,10 @@ void CSceneMain::InitScene()
 	Draw::LoadImageW(L"ZakoData.png", 6, TEX_SIZE_512);
 
 	//背景グラフィック
-	Draw::LoadImageW(L"空.jpg", 7, TEX_SIZE_1024);
+	Draw::LoadImageW(L"奥背景2.png", 7, TEX_SIZE_1024);
 	//blockオブジェクト作成
 	CObjBlock* objBlock = new CObjBlock(map);
-	Objs::InsertObj(objBlock, OBJ_BLOCK, 2);
+	Objs::InsertObj(objBlock, OBJ_BLOCK, 1);
 
 
 	
@@ -96,7 +97,10 @@ void CSceneMain::InitScene()
 	Objs::InsertObj(objhenemy, OBJ_HENEMY, 3);
 
 
-
+	/////////////ミュージック
+	/*音楽読込*///Audio::LoadAudio(0, L"BGMTitle.wav", SOUND_TYPE::BACK_MUSIC);
+	/*音量調整*///float Volume = Audio::VolumeMaster(-0.8f);
+	/*再生開始*///Audio::Start(0);
 }
 //実行中の操作//////////////////////////////////
 void CSceneMain::Scene()

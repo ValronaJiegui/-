@@ -96,9 +96,6 @@
     <ClCompile Include="tama.cpp">
       <Filter>ソース ファイル\オブジェ\敵データ\弾</Filter>
     </ClCompile>
-    <ClCompile Include="tamac.cpp">
-      <Filter>ソース ファイル\オブジェ\敵データ\弾</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameHead.h">
@@ -186,9 +183,6 @@
       <Filter>ヘッダー ファイル\オブジェ</Filter>
     </ClInclude>
     <ClInclude Include="tama.h">
-      <Filter>ヘッダー ファイル\オブジェ\敵データ\弾</Filter>
-    </ClInclude>
-    <ClInclude Include="tamac.h">
       <Filter>ヘッダー ファイル\オブジェ\敵データ\弾</Filter>
     </ClInclude>
   </ItemGroup>
