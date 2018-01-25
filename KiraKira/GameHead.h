@@ -76,14 +76,16 @@ struct UserData
 #include"naihu.h"
 #include"objenemy.h"
 #include"objhenemy.h"
-#include "Kirari.h"
+
 #include"ObjAnten.h"
+#include"Kirari.h"
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------
 #include "SceneMain.h"
 #include "SceneTitle.h"
-#include "SceneStageSelect.h"
+#include"SceneStageSelect.h"
+#include"Stage1.h"
 //-----------------------------------------------
 
 //シーンスタートクラス---------------------------

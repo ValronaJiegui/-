@@ -9,8 +9,6 @@ using namespace GameL;
 #include"GameL\DrawTexture.h"
 #include"GameL\Audio.h"
 
-#include"GameL\SceneObjManager.h"
-#include"GameL\DrawTexture.h"
 #include"GameL\DrawFont.h"
 #include"GameL\UserData.h"
 
