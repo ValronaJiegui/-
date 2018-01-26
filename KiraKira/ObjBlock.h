@@ -28,7 +28,13 @@ public:
 private:
 	void BlockDraw(float x, float y, RECT_F* dst, float c[]);
 	int m_map[10][100];
-	float m_scroll;//左右スクロール用
+	
 	float hx;
 	float hy;
+	float m_scroll;//左右スクロール用
+	RECT_F src;
+	RECT_F dst;
+
+	float m_x1;
+	float m_x2;
 };

@@ -18,15 +18,16 @@ namespace GameL
 	//テクスチャイメージサイズ　８乗ｵﾝﾘ-設定
 	enum TEX_SIZE
 	{
-		TEX_SIZE_8	  =	   8,
-		TEX_SIZE_16   =	  16,
-		TEX_SIZE_24   =	  24,
-		TEX_SIZE_32   =	  32,
-		TEX_SIZE_64   =	  64,
-		TEX_SIZE_128  =	 128,
-		TEX_SIZE_256  =	 256,
-		TEX_SIZE_512  =	 512,
-		TEX_SIZE_1024 =	1024,
+		TEX_SIZE_8 = 8,
+		TEX_SIZE_16 = 16,
+		TEX_SIZE_24 = 24,
+		TEX_SIZE_32 = 32,
+		TEX_SIZE_64 = 64,
+		TEX_SIZE_128 = 128,
+		TEX_SIZE_256 = 256,
+		TEX_SIZE_512 = 512,
+		TEX_SIZE_1024 = 1024,
+		TEX_SIZE_2048 = 2048,
 	};
 
 	//２Ｄ描画専用RECTのFLOAT型
@@ -61,7 +62,7 @@ namespace GameL
 			//描画用オブジェクト破棄
 			static void DeleteDrawTexture();
 			static void InitDraw(ID3D11Device* p_device,ID3D11DeviceContext* p_device_context,int w,int h,int img_max);	//初期化
-			static void LoadImage(wchar_t* name,int id,TEX_SIZE hw);			//グラフィック読み込み　サイズは定数で指定
+			static void LoadImageW(wchar_t* name,int id,TEX_SIZE hw);			//グラフィック読み込み　サイズは定数で指定
 			static void DeleteImage();											//グラフィック破棄
 			static void Draw(int id,RECT_F* src,RECT_F* dst,float col[4],float r); //登録テクスチャ描画
 			static void DrawStr(ID3D11ShaderResourceView* ptex_res_view,float x,float y,float size,float col[4]);//文字描画

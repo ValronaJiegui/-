@@ -33,15 +33,15 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v100</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>MultiByte</CharacterSet>
+    <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v100</PlatformToolset>
-    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -76,11 +76,16 @@
     <IncludePath>$(DXSDK_DIR)Include;$(IncludePath)</IncludePath>
     <LibraryPath>$(DXSDK_DIR)Lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>$(DXSDK_DIR)Include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(DXSDK_DIR)Lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -121,16 +126,27 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="GameL\GameL_Main.cpp" />
+    <ClCompile Include="Kirari.cpp" />
+    <ClCompile Include="naihu.cpp" />
+    <ClCompile Include="ObjAnten.cpp" />
     <ClCompile Include="ObjBlock.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="objenemy.cpp" />
+    <ClCompile Include="objhenemy.cpp" />
     <ClCompile Include="ObjLei.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="ObjItemTea.cpp" />
     <ClCompile Include="ObjItemWing.cpp" />
+    <ClCompile Include="objnage.cpp" />
+    <ClCompile Include="ObjStageSelect.cpp" />
+    <ClCompile Include="ObjTitle.cpp" />
     <ClCompile Include="SceneMain.cpp" />
-    <ClCompile Include="test.cpp" />
+    <ClCompile Include="SceneStageSelect.cpp" />
+    <ClCompile Include="SceneTitle.cpp" />
+    <ClCompile Include="Stage1.cpp" />
+    <ClCompile Include="tama.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameHead.h" />
@@ -145,18 +161,32 @@
     <ClInclude Include="GameL\SetWindow.h" />
     <ClInclude Include="GameL\UserData.h" />
     <ClInclude Include="GameL\WinInputs.h" />
+    <ClInclude Include="Kirari.h" />
     <ClInclude Include="main.h" />
+    <ClInclude Include="naihu.h" />
+    <ClInclude Include="ObjAnten.h" />
     <ClInclude Include="ObjBlock.h" />
+    <ClInclude Include="objenemy.h" />
+    <ClInclude Include="objhenemy.h" />
     <ClInclude Include="ObjItemTea.h" />
     <ClInclude Include="ObjItemWing.h" />
     <ClInclude Include="ObjLei.h" />
+    <ClInclude Include="objnage.h" />
+    <ClInclude Include="ObjStageSelect.h" />
+    <ClInclude Include="ObjTitle.h" />
     <ClInclude Include="SceneMain.h" />
+    <ClInclude Include="SceneStageSelect.h" />
+    <ClInclude Include="SceneTitle.h" />
+    <ClInclude Include="Stage1.h" />
+    <ClInclude Include="tama.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="GameL\Draw2DTex.hlsl" />
   </ItemGroup>
   <ItemGroup>
-    <Library Include="GameL\libar.lib" />
+    <Library Include="GameL\libar.lib">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+    </Library>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -10,4 +10,5 @@ public:
 	void InitScene();	//初期化の操作(メソッド)
 	void Scene();		//実行中の操作(メソッド)
 private:
+	int m_map[10][100];
 };

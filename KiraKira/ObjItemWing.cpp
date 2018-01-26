@@ -4,6 +4,7 @@
 #include "SceneMain.h"
 #include "ObjItemWing.h"
 #include "ObjLei.h"
+#include"ObjBlock.h"
 
 //使用するネームスペース
 using namespace GameL;
@@ -13,6 +14,12 @@ void CObjItemWing::Init()
 	m_time = 0;
 	Flag = false;
 	animation = 0;
+
+	//テスト用
+	top = 485.0f;
+	left = 300.0f;
+	right = 364.0f;
+	bottom = 549.0f;
 }
 
 void CObjItemWing::Action()
@@ -21,6 +28,10 @@ void CObjItemWing::Action()
 	CObjLei *hero = (CObjLei*)Objs::GetObj(OBJ_LEI);
 	float m_x = hero->GetX();
 	float m_y = hero->GetY();
+
+	//スクロールの動く値を確保
+	CObjBlock *block = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
+	m_scroll = block->GetScroll();
 
 	//アニメーション動かす用
 	m_time++;
@@ -34,9 +45,9 @@ void CObjItemWing::Action()
 	}
 
 	//ゲット判定（テスト用）
-	if (m_x <= 364.0f && m_x >= 280.0f)
+	if (m_x <= right - 50.0f + m_scroll && m_x >= left + m_scroll)
 	{
-		if (m_y >= 450.0f && m_y <= 569.0f) {
+		if (m_y >= top - 50.0f && m_y <= bottom) {
 			Flag = true;
 		}
 	}
@@ -57,11 +68,21 @@ void CObjItemWing::Draw()
 
 	if (Flag == false) {
 		//表示位置の設定
-		dst.m_top = 485.0f;
-		dst.m_left = 300.0f;
-		dst.m_right = 364.0f;
-		dst.m_bottom = 549.0f;
+		dst.m_top = top;
+		dst.m_left = left + m_scroll;
+		dst.m_right = right + m_scroll;
+		dst.m_bottom = bottom;
 	}
 
-	Draw::Draw(0, &src, &dst, c, 0.0f);
+	Draw::Draw(3, &src, &dst, c, 0.0f);
+}
+
+void CObjItemWing::SetItemWing(float rx, float lx, float ty, float by)
+{
+	top = ty;
+	left = lx;
+	right = rx;
+	bottom = by;
+
+	return;
 }
