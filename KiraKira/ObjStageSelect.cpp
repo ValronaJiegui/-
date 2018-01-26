@@ -71,13 +71,13 @@ void CObjStageSelect::Action()
 	{
 		//ステージ１へ行く処理をここに書く
 		Scene::SetScene(new CSceneMain());
-		//CLEAR1 = true;
 	}
 
 	//ステージ２が押されたとき
 	else if (m_mou_l == true && STAGE2 == true)
 	{
-		CLEAR2 = true;
+		//ステージ２へ行く処理をここに書く
+		;
 	}
 }
 

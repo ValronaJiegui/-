@@ -249,7 +249,7 @@ void CObjLei::Action()
 
 	//ゲームオーバー判定
 	if(m_HP == 0)
-		Scene::SetScene(new CSceneTitle());
+		Scene::SetScene(new CSceneGameOver());
 }
 //描画情報(ドロー)////////////////////////////
 void CObjLei::Draw()

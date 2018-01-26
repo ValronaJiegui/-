@@ -12,6 +12,7 @@ enum OBJ_NAME
 	OBJ_BLOCK,
 	OBJ_TITLE,
 	OBJ_STAGE_SELECT,
+	OBJ_GAME_OVER,
 	OBJ_TAMA,
 	OBJ_TAMAC,
 	OBJ_ENEMY,
@@ -69,6 +70,7 @@ struct UserData
 #include"ObjBlock.h"
 #include "ObjTitle.h"
 #include "ObjStageSelect.h"
+#include "ObjGameOver.h"
 #include"tama.h"
 #include"tamac.h"
 
@@ -85,6 +87,7 @@ struct UserData
 #include "SceneMain.h"
 #include "SceneTitle.h"
 #include"SceneStageSelect.h"
+#include "SceneGameOver.h"
 #include"Stage1.h"
 //-----------------------------------------------
 
