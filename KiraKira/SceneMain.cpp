@@ -63,6 +63,9 @@ void CSceneMain::InitScene()
 	//ザコグラフィック読み込み
 	Draw::LoadImageW(L"ZakoData.png", 6, TEX_SIZE_512);
 
+	//車掌グラフィック読み込み
+	Draw::LoadImageW(L"dnsyaBoss.png", 8, TEX_SIZE_512);
+
 	//背景グラフィック
 	Draw::LoadImageW(L"空.jpg", 7, TEX_SIZE_1024);
 	//blockオブジェクト作成
@@ -83,17 +86,31 @@ void CSceneMain::InitScene()
 	CObjLei* objLei = new CObjLei();
 	Objs::InsertObj(objLei, OBJ_LEI, 100);
 
+
+	//動作確認用敵配置
 	//ナイフ君
 	CObjNage* objnage = new CObjNage();
 	Objs::InsertObj(objnage, OBJ_NAIHU, 3);
 
+	//信者君
+	CObjSin* objsin = new CObjSin();
+	Objs::InsertObj(objsin, OBJ_BAKU, 3);
+
 	//あるくちゃん
-	//CObjEnemy* objenemy = new CObjEnemy();
-	//Objs::InsertObj(objenemy, OBJ_ENEMY, 3);
+	CObjEnemy* objenemy = new CObjEnemy();
+	Objs::InsertObj(objenemy, OBJ_ENEMY, 3);
 
 	//はしるちゃん
-	//CObjHenemy* objhenemy = new CObjHenemy();
-	//Objs::InsertObj(objhenemy, OBJ_HENEMY, 3);
+	CObjHenemy* objhenemy = new CObjHenemy();
+	Objs::InsertObj(objhenemy, OBJ_HENEMY, 3);
+
+	//とばすくん
+	CObjTobasu* objfenemy = new CObjTobasu();
+	Objs::InsertObj(objfenemy, OBJ_TOBASU, 3);
+
+	//しゃしょうさん
+	CObjSyasyou* objenemyaaa = new CObjSyasyou();
+	Objs::InsertObj(objenemyaaa, OBJ_SYASYO, 3);
 
 
 

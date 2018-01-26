@@ -10,14 +10,17 @@ using namespace GameL;
 
 void CObjHenemy::Init()
 {
-	m_px=500.0f;
-	m_py=515.0f;
+	m_px=200.0f;
+	m_py=110.0f;
 	m_vx=0.0f;
 	m_vy=0.0f;
 	ki=0;
 	ka=0;
 	r=0;
-	m_posture=1.0f;//右向き０　左向き１
+	m_posture=0.0f;//右向き０　左向き１
+
+	muki = false;//ture=みぎfalse=ひだり
+
 	m_ani_time=0;
 	m_ani_frame=3;
 	m_speed_power=0.5f;
@@ -37,20 +40,20 @@ void CObjHenemy::Action()
 
 	m_ani_time+=1;
 
-	if(m_px==0.0f){
-		ki=1;
-		m_posture=0.0f;
+	if (m_hit_left == true) {
+		muki = true;
+		m_posture = 1.0f;
 	}
-	else if(m_px==740.0f){
-		ki=0;
-		m_posture=1.0f;
+	if (m_hit_right == true) {
+		muki = false;
+		m_posture = 0.0f;
 	}
 
-	if(ki==0){//仮組みではこうなっているが、本当はブロックの左側にぶつかった場合
-		m_px-=4.0f;
+	if (muki == true && ka == 0) {
+		m_px -= 4.0f;
 	}
-	else if(ki==1){//仮組みではこうなっているが、本当はブロックの右側にぶつかった場合
-		m_px+=4.0f;
+	else if (muki == false && ka == 0) {
+		m_px += 4.0f;
 	}
 
 	if(m_ani_time>m_ani_max_time){
@@ -76,7 +79,6 @@ void CObjHenemy::Action()
 		m_py-=10.0f;
 		//摩擦
 		m_vx+=-(m_vx*0.098);
-		m_vy+=9.8/(16.0f);
 		if(m_py==800){
 			this->SetStatus(false);//自身に削除命令を出す
 		    Hits::DeleteHitBox(this);//自身が所有するhitboxに削除する。
@@ -85,6 +87,18 @@ void CObjHenemy::Action()
 
 	m_px+=m_vx;
 	m_py+=m_vy;
+
+	m_vy += 9.8 / (16.0f);
+
+	CObjBlock *pb = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
+	if (ka == 0) {
+		int d;
+
+		pb->BlockHit(&m_px, &m_py, false,
+			&m_hit_up, &m_hit_down, &m_hit_left, &m_hit_right, &m_vx, &m_vy,
+			&d
+		);
+	}
 
 	if (ka == 0) {
 		hit->SetPos(m_px + block->GetScroll(), m_py);//hitboxの位置を更新
@@ -126,7 +140,7 @@ void CObjHenemy::Draw()
 	dst.m_right = (64.0f*m_posture) + m_px + m_scroll;
 	dst.m_bottom = 64.0f + m_py;
 
-	if (dst.m_right <= -300.0f)//主人公が自身よりも左にいる場合
+	if (dst.m_right <= -1000.0f)//主人公が自身よりも左にいる場合
 	{
 		this->SetStatus(false);//自身に削除命令を出す
 		Hits::DeleteHitBox(this);//自身が所有するhitboxに削除する。

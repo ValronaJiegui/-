@@ -19,6 +19,8 @@ void CObjNaihu::Init()
 
 	m_vx=0.0f;
 	m_vy=-8.0f;
+	x2 = 0;
+	stop = 0;
 	tada=0;
 	m_ani_frame=0;
 	m_ani_time=0;
@@ -34,12 +36,17 @@ void CObjNaihu::Init()
 
 void CObjNaihu::Action()
 {
+
+	//スクロールの動く値を確保
+	CObjBlock *block = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
+	m_scroll = block->GetScroll();
+
+
 	//弾丸用のhit box更新用ポインター取得
 	CHitBox*hit = Hits::GetHitBox(this);
 
 	if(a==0&&m_py<=520.0f&&tada==0){//なげるくんが左向きだった場合
-	m_vx += 0.3f;
-	m_px += m_vx;
+	m_px += 6.0f;
 	if(m_px==800){
 		this->SetStatus(false);//自身に削除命令を出す
 		Hits::DeleteHitBox(this);//弾丸が所有するhitboxに削除する。
@@ -48,8 +55,7 @@ void CObjNaihu::Action()
 
 	else if(a==1&&m_py<=520.0f&&tada==0){//なげるくんが右向きだった場合
 	m_posture=1;
-	m_vx -= 0.3f;
-	m_px += m_vx;
+	m_px -= 6.0f;
 	if(m_px==-80){
 		this->SetStatus(false);//自身に削除命令を出す
 		Hits::DeleteHitBox(this);//自身が所有するhitboxに削除する。
@@ -74,11 +80,16 @@ void CObjNaihu::Action()
 		}
 	}
 
-	hit->SetPos(m_px+14, m_py+20);//hitboxの位置を自身の位置に更新
+	hit->SetPos(m_px + m_scroll, m_py + 20);//hitboxの位置を自身の位置に更新
+
 }
 
 void CObjNaihu::Draw()
 {
+
+	CObjLei*hero = (CObjLei*)Objs::GetObj(OBJ_LEI);
+	stop = hero->GetX();
+
 	int AniData[8]=
 	{
 		0,1,2,3
@@ -94,10 +105,11 @@ void CObjNaihu::Draw()
 	src.m_right=64.0f+AniData[m_ani_frame]*64;
 	src.m_bottom=512.0f;
 
+
 	//ひょうじいち
 	dst.m_top =0.0f+m_py;
-	dst.m_left=(64.0f-64.0f*m_posture)+m_px;
-	dst.m_right=(64.0f*m_posture)+m_px;
+	dst.m_left=(64.0f-64.0f*m_posture)+m_px + m_scroll;
+	dst.m_right=(64.0f*m_posture)+m_px + m_scroll;
 	dst.m_bottom=64.0f+m_py;
 
 	Draw::Draw(6,&src,&dst,c,0.0f);

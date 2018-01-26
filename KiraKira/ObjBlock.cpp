@@ -37,10 +37,10 @@ void CObjBlock::Action()
 	CObjLei *test = (CObjLei*)Objs::GetObj(OBJ_LEI);
 	hx = test->GetX();
 	hy = test->GetY(); 
-	float MoveX = test->GetMoveX();
+	//float MoveX = test->GetMoveX();
 
 	//後方スクロールライン
-	if (hx < 80 && MoveX >= 0.0f)
+	if (hx < 80)
 	{
 		test->SetX(80);//主人公はラインを超えないようにする
 		m_scroll -= test->GetVX();//主人公が本来動くべき分の値をm_scrollに加える
@@ -52,7 +52,7 @@ void CObjBlock::Action()
 		test->SetX(300);
 		m_scroll -= test->GetVX();
 	}
-
+	/*
 	//主人公の衝突状態確認用のフラグの初期化
 	test->SetUp(false);
 	test->SetDown(false);
@@ -151,6 +151,7 @@ void CObjBlock::Action()
 		}
 
 	}
+	*/
 }
 
 //ドロー
@@ -311,4 +312,102 @@ void CObjBlock::BlockDraw(float x, float y, RECT_F*dst, float c[])
 
 	//描画
 	Draw::Draw(2, &src, dst, c, 0.0f);
+}
+
+//BlockHit関数
+//引数1　float*x1:判定を行うobjectのX位置
+//引数2　float*y2:判定を行うobjectのY位置
+//引数3　bool	scroll_on:判定を行うobjectはスクロールの影響与えるかどうか（true=与える　false=与えない）
+//引数4　bool*	up:上下左右の上部分に当たっているか動かを返す
+//引数5　bool*	down:上下左右の下部分に当たっているか動かを返す
+//引数6　bool*	left:上下左右の左部分に当たっているか動かを返す
+//引数7　bool*	right:上下左右の右部分に当たっているか動かを返す
+//引数8　float*vx	:左右判定時の反発による移動方向・力の値を変えて返す
+//引数9　float*vy	:上下判定時の反発による移動方向・力の値を変えて返す
+//引数10 int*bt		:下部分判定時、特殊なブロックのタイプを返す
+//判定を行うobjectとブロック64*64限定で、当たり判定と左右当たり判定を行う
+//その結果は引数4～10に返す
+void CObjBlock::BlockHit(
+	float*x, float*y, bool scroll_on,
+	bool*up, bool*down, bool*left, bool*right,
+	float*vx, float*vy, int*bt
+)
+{
+	//衝突状態確認用フラグの初期化
+	*up = false;
+	*down = false;
+	*left = false;
+	*right = false;
+	//踏んでいるblockの種類の初期化
+	*bt = 0;
+	//m_mapの全要素にアクセス
+	for (int i = 0; i<10; i++)
+	{
+		for (int j = 0; j<100; j++)
+		{
+			if (m_map[i][j]==1) {
+				//要素番号を座標に変更
+				float bx = j*64.0f;
+				float by = i*64.0f;
+				//スクロールの影響
+				float scroll = scroll_on ? m_scroll : 0;
+				//オブジェクトとブロックの当たり判定
+				if ((*x + (-scroll) + 64.0f>bx) && (*x + (-scroll)<bx + 64.0f) && (*y + 64.0f>by) && (*y<by + 64.0f))
+				{
+					//上下左右判定
+
+					//vectorの作成
+					float rvx = (*x + (-scroll)) - bx;
+					float rvy = *y - by;
+					//長さを求める
+					float len = sqrt(rvx*rvx + rvy*rvy);
+					//角度を求める
+					float r = atan2(rvy, rvx);
+					r = r*180.0f / 3.14f;
+					if (r <= 0.0f)
+						r = abs(r);
+					else
+						r = 360.0f - abs(r);
+					//lenがある一定の長さのより短い場合判定に入る
+					if (len<88.0f) {
+						//角度で上下左右を判定
+						if ((r<45 && r>0) || r>315)
+						{
+							//右
+							*right = true;//オブジェクトの左の部分が衝突している
+							*x = bx + 64.0f + (scroll);//ブロックの位置＋主人公の幅
+							*vx = -(*vx)*0.1f;//ーVX*反発係数
+						}
+						if (r>45 && r<135)
+						{
+							//上
+							*down = true;//オブジェクトの下の部分が衝突している
+							*y = by - 64.0f;//ブロックの位置ー主人公の幅
+											//種類を渡すのスタートとゴールのみ変更する
+							if (m_map[i][j] >= 2)
+								*bt = m_map[i][j];//ブロックの要素（type）を主人公に渡す
+							*vy = 0.0f;
+						}
+						if (r>135 && r<225)
+						{
+							//左
+							*left = true;//オブジェクトの右の部分が衝突している
+							*x = bx - 64.0f + (scroll);//ブロックの位置ー主人公の幅
+							*vx = -(*vx)*0.1f;//ーVX*反発係数
+						}
+						if (r>225 && r<315)
+						{
+							//下
+							*up = true;//主人公の上の部分が衝突している
+							*y = by + 64.0f;//ブロックの位置＋主人公の幅
+							if (*vy<0)
+							{
+								*vy = 0.0f;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }

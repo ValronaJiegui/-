@@ -52,13 +52,13 @@ void CObjNage::Action()
 	{
 		if(m_posture==0){
 		//右向きナイフを作成
-		CObjNaihu*obj=new CObjNaihu(m_px+30.0f + m_scroll,m_py+3.0f);
+		CObjNaihu*obj=new CObjNaihu(m_px+30.0f,m_py+3.0f);
 		Objs::InsertObj(obj,OBJ_ENEMY,100);
 		}
 
 		else if(m_posture==1){
 		//左向きナイフを作成
-		CObjNaihu*obj=new CObjNaihu(m_px-30.0f + m_scroll,m_py-3.0f);
+		CObjNaihu*obj=new CObjNaihu(m_px-30.0f,m_py-3.0f);
 		Objs::InsertObj(obj,OBJ_ENEMY,100);
 		}
 		stop=1;//攻撃を制限するためにフィルターをかける
@@ -74,17 +74,14 @@ void CObjNage::Action()
 		hit->SetPos(-256,-256);//hitboxの位置を弾丸の位置に更新
 	}
 
-	if(ka==1)
+	if (ka >= 1)
 	{
-		r+=5;
-		m_px+=3.0f;
-		m_py-=5.0f;
-		//摩擦
-		m_vx+=-(m_vx*0.098);
-		m_vy+=9.8/(16.0f);
-		if(m_py==800){
+		m_py -= 10.0f;
+		m_px += 4;
+		r += 3;
+		if (m_py == 800) {
 			this->SetStatus(false);//自身に削除命令を出す
-		    Hits::DeleteHitBox(this);//自身が所有するhitboxに削除する。
+			Hits::DeleteHitBox(this);//自身が所有するhitboxに削除する。
 		}
 	}
 
@@ -105,9 +102,22 @@ void CObjNage::Action()
 	m_px+=m_vx;
 	m_py+=m_vy;
 
+	m_vx += -(m_vx*0.098);
+	m_vy += 9.8 / (16.0f);
+
 	if (ka == 0) {
 		hit->SetPos(m_px + block->GetScroll(), m_py);//hitboxの位置を更新
 	}
+
+	CObjBlock*pb = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
+	int d;
+	if (ka <= 0) {
+		pb->BlockHit(&m_px, &m_py, false,
+			&m_hit_up, &m_hit_down, &m_hit_left, &m_hit_right, &m_vx, &m_vy,
+			&d
+		);
+	}
+
 }
 
 void CObjNage::Draw()
@@ -153,7 +163,7 @@ void CObjNage::Draw()
 		m_posture = 1;//向きを左向きに変更
 	}
 
-	if (dst.m_right<=-300.0f)//主人公が自身よりも左にいる場合
+	if (dst.m_right<=-1000.0f)//主人公が自身よりも左にいる場合
 	{
 		this->SetStatus(false);//自身に削除命令を出す
 		Hits::DeleteHitBox(this);//自身が所有するhitboxに削除する。

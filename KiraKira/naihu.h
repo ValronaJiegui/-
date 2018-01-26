@@ -18,6 +18,9 @@ private:
 	float m_vx;
 	float m_vy;
 
+	float x2;
+	int stop;
+
 	float m_posture;
 	float m_scroll;
 

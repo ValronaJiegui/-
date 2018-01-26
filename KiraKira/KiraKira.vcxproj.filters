@@ -54,9 +54,6 @@
     <ClCompile Include="tama.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="tamac.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="GameL\GameL_Main.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
@@ -70,6 +67,33 @@
       <Filter>ソース ファイル\敵データ</Filter>
     </ClCompile>
     <ClCompile Include="objhenemy.cpp">
+      <Filter>ソース ファイル\敵データ</Filter>
+    </ClCompile>
+    <ClCompile Include="doron.cpp">
+      <Filter>ソース ファイル\敵データ</Filter>
+    </ClCompile>
+    <ClCompile Include="objsin.cpp">
+      <Filter>ソース ファイル\敵データ</Filter>
+    </ClCompile>
+    <ClCompile Include="tobasu.cpp">
+      <Filter>ソース ファイル\敵データ</Filter>
+    </ClCompile>
+    <ClCompile Include="tamac.cpp">
+      <Filter>ソース ファイル\敵データ</Filter>
+    </ClCompile>
+    <ClCompile Include="densya.cpp">
+      <Filter>ソース ファイル\敵データ</Filter>
+    </ClCompile>
+    <ClCompile Include="objsyasyo.cpp">
+      <Filter>ソース ファイル\敵データ</Filter>
+    </ClCompile>
+    <ClCompile Include="sukima.cpp">
+      <Filter>ソース ファイル\敵データ</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjSyasyou.cpp">
+      <Filter>ソース ファイル\敵データ</Filter>
+    </ClCompile>
+    <ClCompile Include="kip.cpp">
       <Filter>ソース ファイル\敵データ</Filter>
     </ClCompile>
   </ItemGroup>
@@ -137,9 +161,6 @@
     <ClInclude Include="tama.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="tamac.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="naihu.h">
       <Filter>ヘッダー ファイル\敵ヘッダーデータ</Filter>
     </ClInclude>
@@ -150,6 +171,33 @@
       <Filter>ヘッダー ファイル\敵ヘッダーデータ</Filter>
     </ClInclude>
     <ClInclude Include="objhenemy.h">
+      <Filter>ヘッダー ファイル\敵ヘッダーデータ</Filter>
+    </ClInclude>
+    <ClInclude Include="tamac.h">
+      <Filter>ヘッダー ファイル\敵ヘッダーデータ</Filter>
+    </ClInclude>
+    <ClInclude Include="doron.h">
+      <Filter>ヘッダー ファイル\敵ヘッダーデータ</Filter>
+    </ClInclude>
+    <ClInclude Include="tobasu.h">
+      <Filter>ヘッダー ファイル\敵ヘッダーデータ</Filter>
+    </ClInclude>
+    <ClInclude Include="objsin.h">
+      <Filter>ヘッダー ファイル\敵ヘッダーデータ</Filter>
+    </ClInclude>
+    <ClInclude Include="densya.h">
+      <Filter>ヘッダー ファイル\敵ヘッダーデータ</Filter>
+    </ClInclude>
+    <ClInclude Include="sukima.h">
+      <Filter>ヘッダー ファイル\敵ヘッダーデータ</Filter>
+    </ClInclude>
+    <ClInclude Include="objsyasyo.h">
+      <Filter>ヘッダー ファイル\敵ヘッダーデータ</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjSyasyou.h">
+      <Filter>ヘッダー ファイル\敵ヘッダーデータ</Filter>
+    </ClInclude>
+    <ClInclude Include="kip.h">
       <Filter>ヘッダー ファイル\敵ヘッダーデータ</Filter>
     </ClInclude>
   </ItemGroup>

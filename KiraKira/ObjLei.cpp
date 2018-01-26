@@ -43,7 +43,7 @@ void CObjLei::Init()
 	m_hit_left = false;
 	m_hit_right =false;
 	m_hit_up = false;
-	m_HP = 10;
+	m_HP = 9999;
 
 	Hits::SetHitBox(this, m_px - 10, m_py, 32, 64, ELEMENT_PLAYER, OBJ_LEI, 1);
 }
@@ -78,6 +78,12 @@ void CObjLei::Action()
 
 	m_vx += -(m_vx*0.098f);
 	m_vy += 9.8f / (16.0f);
+
+	CObjBlock*pb = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
+	pb->BlockHit(&m_px, &m_py, true,
+		&m_hit_up, &m_hit_down, &m_hit_left, &m_hit_right, &m_vx, &m_vy,
+		&m_block_type
+	);
 
 	//キー入力されたときの処理
 	if (Input::GetVKey(VK_RIGHT) == true)
@@ -193,11 +199,21 @@ void CObjLei::Action()
 
 	if (hit->CheckElementHit(ELEMENT_ENEMY) == true &&muteki==0)
 	{
-		m_HP -= 1;
-		muteki = 1;
-		hutobi = true;
-		m_px += 40.0f;
-		m_py -= 40.0f;
+		if (hit->CheckObjNameHit(OBJ_DNSYA) != nullptr)
+		{
+			m_HP -= 3;
+			muteki = 1;
+			hutobi = true;
+			m_px += 40.0f;
+			m_py -= 40.0f;
+		}
+		else {
+			m_HP -= 1;
+			muteki = 1;
+			hutobi = true;
+			m_px += 40.0f;
+			m_py -= 40.0f;
+		}
 	}
 
 	//被弾したとき若干吹っ飛ぶ
@@ -245,7 +261,7 @@ void CObjLei::Action()
 
 	}
 
-	m_movepointX += m_px - 64.0f;
+	//m_movepointX += m_px - 64.0f;
 
 	//ゲームオーバー判定
 	if(m_HP == 0)

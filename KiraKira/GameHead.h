@@ -16,6 +16,13 @@ enum OBJ_NAME
 	OBJ_ENEMY,
 	OBJ_HENEMY,
 	OBJ_NAIHU,
+	OBJ_HATU,
+	OBJ_TOBASU,
+	OBJ_DORON,
+	OBJ_SYASYO,
+	OBJ_SUKIMA,
+	OBJ_DNSYA,
+	OBJ_KIP,
 	OBJ_BAKU,
 };
 //------------------------------------------------
@@ -72,6 +79,13 @@ struct UserData
 #include"naihu.h"
 #include"objenemy.h"
 #include"objhenemy.h"
+#include"doron.h"
+#include"objsin.h"
+#include"tobasu.h"
+#include"ObjSyasyou.h"
+#include"densya.h"
+#include"sukima.h"
+#include"kip.h"
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------

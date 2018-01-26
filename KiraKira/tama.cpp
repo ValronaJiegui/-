@@ -66,20 +66,10 @@ void CObjTama::Action()
 		r+=90;
 	}
 
-	int data[3]=
-	{
-		OBJ_ENEMY,
-		OBJ_NAIHU,
-		OBJ_BAKU,
-	};
-
-	for(int i=0;i<3;i++){
-		if(hit->CheckObjNameHit(data[i]) != nullptr)
-		{
-			this->SetStatus(false);//自身に削除命令を出す
-			Hits::DeleteHitBox(this);//弾丸が所有するhitboxに削除する。
-			return;
-		}
+	if (hit->CheckElementHit(ELEMENT_ENEMY) == true){
+		this->SetStatus(false);//自身に削除命令を出す
+		Hits::DeleteHitBox(this);//弾丸が所有するhitboxに削除する。
+		return;
 	}
 
 	if(m_ani_time>8)

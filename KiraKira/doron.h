@@ -4,40 +4,40 @@
 
 using namespace GameL;
 
-class CObjHenemy : public CObj
+class CObjDoron : public CObj
 {
 public:
-	CObjHenemy(){};
-	~CObjHenemy(){};
+	CObjDoron(float x, float y);
+	~CObjDoron(){};
 	void Init();
 	void Action();
 	void Draw();
+
+	bool hata;
 
 private:
 	float m_px;
 	float m_py;
 	float m_vx;
 	float m_vy;
-	float m_posture;
-
-	int ki;
-	int ka;
-	int r;
-	int m_ani_time;
-	int m_ani_frame;
-	int m_ani_time2;
-	int m_ani_frame2;
-	int tdkr_kouzi;
 
 	float m_scroll;
-	float kyori;
-	float m_speed_power;
-	float m_ani_max_time;
 
 	bool m_hit_up;
 	bool m_hit_down;
 	bool m_hit_left;
 	bool m_hit_right;
 
-	bool muki;
+	int tada;
+	int a;
+	int ad;
+	int m_ani_frame;
+	int m_ani_time;
+	int ooo;
+	int ki;
+	int te;
+
+	bool kuru;
+	bool aaaa;
+	bool ido;
 };
