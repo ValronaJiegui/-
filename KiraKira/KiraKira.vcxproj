@@ -152,6 +152,7 @@
     </ClCompile>
     <ClCompile Include="ObjSyasyou.cpp" />
     <ClCompile Include="ObjStageSelect.cpp" />
+    <ClCompile Include="ObjText.cpp" />
     <ClCompile Include="ObjTitle.cpp" />
     <ClCompile Include="SceneGameOver.cpp" />
     <ClCompile Include="SceneMain.cpp" />
@@ -205,6 +206,7 @@
     </ClInclude>
     <ClInclude Include="ObjSyasyou.h" />
     <ClInclude Include="ObjStageSelect.h" />
+    <ClInclude Include="ObjText.h" />
     <ClInclude Include="ObjTitle.h" />
     <ClInclude Include="SceneGameOver.h" />
     <ClInclude Include="SceneMain.h" />

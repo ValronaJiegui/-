@@ -203,7 +203,7 @@ void CObjBlock::Draw()
 		}
 		dst.m_top = 0.0f;
 		dst.m_left = 0.0f  + plus_x + m_scroll;
-		dst.m_right = 965.0f + plus_x + m_scroll;
+		dst.m_right = 1024.0f + plus_x + m_scroll;
 		dst.m_bottom = 600.0f;
 		Draw::Draw(1, &src, &dst, c, 0.0f);
 	}
