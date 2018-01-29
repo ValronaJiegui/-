@@ -117,8 +117,13 @@ void CObjBlock::Action()
 								//test->SetVY(0.0f);
 								test->SetVYBound();
 								test->SetJump();
+								if (m_map[i][j] == 4)
+								{
+									Scene::SetScene(new CSceneTitle());
+									break;
+								}
 								//種類を渡すのスタートとゴールのみ変更する
-							   ///if (m_map[i][j] >= 2)
+							   ///if (m_map[i][j] >= 4)
 							   //	test->SetBT(m_map[i][j]);//ブロックの要素(type)を主人公に渡す
 
 
@@ -168,8 +173,8 @@ void CObjBlock::Draw()
 
 	//背景表示
 	src.m_top = 0.0f;
-	src.m_left = 0.0f ;
-	src.m_right = 1024.0f ;
+	src.m_left = 0.0f;
+	src.m_right = 1024.0f;
 	src.m_bottom = 540.0f;
 
 	///////////////////////////////////背景の空
@@ -274,11 +279,16 @@ void CObjBlock::Draw()
 				{
 					BlockDraw(0.0f, 32.0f, &dst, c);
 				}
+				else if (m_map[i][j]==4)
+				{
+					BlockDraw(0.0f, 192.0f, &dst, c);
+				}
 				else
 				{
 					BlockDraw(32.0f, 0.0f, &dst, c);
 
 				}
+
 
 
 				

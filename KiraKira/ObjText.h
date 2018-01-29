@@ -13,6 +13,8 @@ public:
 	void Init();
 	void Action();
 	void Draw();
+
+	float m_time;
 private:
 };
 

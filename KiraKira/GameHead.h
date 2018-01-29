@@ -11,6 +11,8 @@ enum OBJ_NAME
 	OBJ_ITEM_WING,
 	OBJ_BLOCK,
 	OBJ_TITLE,
+	OBJ_STAGE_SELECT,
+	OBJ_GAME_OVER,
 	OBJ_TAMA,
 	OBJ_TAMAC,
 	OBJ_ENEMY,
@@ -24,6 +26,8 @@ enum OBJ_NAME
 	OBJ_DNSYA,
 	OBJ_KIP,
 	OBJ_BAKU,
+	OBJ_BOSS_KIRARI,
+	OBJ_ANTEN,
 };
 //------------------------------------------------
 
@@ -72,6 +76,8 @@ struct UserData
 #include"ObjItemWing.h"
 #include"ObjBlock.h"
 #include "ObjTitle.h"
+#include "ObjStageSelect.h"
+#include "ObjGameOver.h"
 #include"tama.h"
 #include"tamac.h"
 
@@ -86,11 +92,17 @@ struct UserData
 #include"densya.h"
 #include"sukima.h"
 #include"kip.h"
+
+#include"ObjAnten.h"
+#include"Kirari.h"
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------
 #include "SceneMain.h"
 #include "SceneTitle.h"
+#include"SceneStageSelect.h"
+#include "SceneGameOver.h"
+#include"Stage1.h"
 //-----------------------------------------------
 
 //シーンスタートクラス---------------------------

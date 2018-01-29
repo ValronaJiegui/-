@@ -76,7 +76,7 @@ void CObjLei::Action()
 		//m_jump = false;
 	}*/
 
-	m_vx += -(m_vx*0.098f);
+	m_vx += -(m_vx*0.25f);
 	m_vy += 9.8f / (16.0f);
 
 	CObjBlock*pb = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
@@ -265,7 +265,7 @@ void CObjLei::Action()
 
 	//ゲームオーバー判定
 	if(m_HP == 0)
-		Scene::SetScene(new CSceneTitle());
+		Scene::SetScene(new CSceneGameOver());
 }
 //描画情報(ドロー)////////////////////////////
 void CObjLei::Draw()

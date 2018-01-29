@@ -33,9 +33,9 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v100</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>MultiByte</CharacterSet>
+    <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -73,6 +73,10 @@
     <LibraryPath>$(DXSDK_DIR)Lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>$(DXSDK_DIR)Include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(DXSDK_DIR)Lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <IncludePath>$(DXSDK_DIR)Include;$(IncludePath)</IncludePath>
     <LibraryPath>$(DXSDK_DIR)Lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
@@ -127,11 +131,14 @@
     </ClCompile>
     <ClCompile Include="GameL\GameL_Main.cpp" />
     <ClCompile Include="kip.cpp" />
+    <ClCompile Include="Kirari.cpp" />
     <ClCompile Include="naihu.cpp" />
+    <ClCompile Include="ObjAnten.cpp" />
     <ClCompile Include="ObjBlock.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="objenemy.cpp" />
+    <ClCompile Include="ObjGameOver.cpp" />
     <ClCompile Include="objhenemy.cpp" />
     <ClCompile Include="ObjLei.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
@@ -144,9 +151,13 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="ObjSyasyou.cpp" />
+    <ClCompile Include="ObjStageSelect.cpp" />
     <ClCompile Include="ObjTitle.cpp" />
+    <ClCompile Include="SceneGameOver.cpp" />
     <ClCompile Include="SceneMain.cpp" />
+    <ClCompile Include="SceneStageSelect.cpp" />
     <ClCompile Include="SceneTitle.cpp" />
+    <ClCompile Include="Stage1.cpp" />
     <ClCompile Include="sukima.cpp" />
     <ClCompile Include="tama.cpp" />
     <ClCompile Include="tamac.cpp">
@@ -176,10 +187,13 @@
     <ClInclude Include="GameL\UserData.h" />
     <ClInclude Include="GameL\WinInputs.h" />
     <ClInclude Include="kip.h" />
+    <ClInclude Include="Kirari.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="naihu.h" />
+    <ClInclude Include="ObjAnten.h" />
     <ClInclude Include="ObjBlock.h" />
     <ClInclude Include="objenemy.h" />
+    <ClInclude Include="ObjGameOver.h" />
     <ClInclude Include="objhenemy.h" />
     <ClInclude Include="ObjItemTea.h" />
     <ClInclude Include="ObjItemWing.h" />
@@ -190,9 +204,13 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClInclude>
     <ClInclude Include="ObjSyasyou.h" />
+    <ClInclude Include="ObjStageSelect.h" />
     <ClInclude Include="ObjTitle.h" />
+    <ClInclude Include="SceneGameOver.h" />
     <ClInclude Include="SceneMain.h" />
+    <ClInclude Include="SceneStageSelect.h" />
     <ClInclude Include="SceneTitle.h" />
+    <ClInclude Include="Stage1.h" />
     <ClInclude Include="sukima.h" />
     <ClInclude Include="tama.h" />
     <ClInclude Include="tamac.h">
@@ -207,7 +225,9 @@
     <None Include="GameL\Draw2DTex.hlsl" />
   </ItemGroup>
   <ItemGroup>
-    <Library Include="GameL\libar.lib" />
+    <Library Include="GameL\libar.lib">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+    </Library>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
