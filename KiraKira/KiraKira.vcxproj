@@ -133,6 +133,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="objenemy.cpp" />
+    <ClCompile Include="ObjGameOver.cpp" />
     <ClCompile Include="objhenemy.cpp" />
     <ClCompile Include="ObjLei.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
@@ -143,6 +144,7 @@
     <ClCompile Include="ObjStageSelect.cpp" />
     <ClCompile Include="ObjText.cpp" />
     <ClCompile Include="ObjTitle.cpp" />
+    <ClCompile Include="SceneGameOver.cpp" />
     <ClCompile Include="SceneMain.cpp" />
     <ClCompile Include="SceneStageSelect.cpp" />
     <ClCompile Include="SceneTitle.cpp" />
@@ -168,6 +170,7 @@
     <ClInclude Include="ObjAnten.h" />
     <ClInclude Include="ObjBlock.h" />
     <ClInclude Include="objenemy.h" />
+    <ClInclude Include="ObjGameOver.h" />
     <ClInclude Include="objhenemy.h" />
     <ClInclude Include="ObjItemTea.h" />
     <ClInclude Include="ObjItemWing.h" />
@@ -176,6 +179,7 @@
     <ClInclude Include="ObjStageSelect.h" />
     <ClInclude Include="ObjText.h" />
     <ClInclude Include="ObjTitle.h" />
+    <ClInclude Include="SceneGameOver.h" />
     <ClInclude Include="SceneMain.h" />
     <ClInclude Include="SceneStageSelect.h" />
     <ClInclude Include="SceneTitle.h" />

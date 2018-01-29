@@ -96,10 +96,16 @@
     <ClCompile Include="tama.cpp">
       <Filter>ソース ファイル\オブジェ\敵データ\弾</Filter>
     </ClCompile>
+    <ClCompile Include="tamac.cpp">
+      <Filter>ソース ファイル\オブジェ\敵データ\弾</Filter>
+    </ClCompile>
     <ClCompile Include="Stage1.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="ObjText.cpp">
+    <ClCompile Include="SceneGameOver.cpp">
+      <Filter>ソース ファイル\シーン</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjGameOver.cpp">
       <Filter>ソース ファイル\オブジェ</Filter>
     </ClCompile>
   </ItemGroup>
@@ -191,10 +197,16 @@
     <ClInclude Include="tama.h">
       <Filter>ヘッダー ファイル\オブジェ\敵データ\弾</Filter>
     </ClInclude>
+    <ClInclude Include="tamac.h">
+      <Filter>ヘッダー ファイル\オブジェ\敵データ\弾</Filter>
+    </ClInclude>
     <ClInclude Include="Stage1.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="ObjText.h">
+    <ClInclude Include="SceneGameOver.h">
+      <Filter>ヘッダー ファイル\シーン</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjGameOver.h">
       <Filter>ヘッダー ファイル\オブジェ</Filter>
     </ClInclude>
   </ItemGroup>
