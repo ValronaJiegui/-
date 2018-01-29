@@ -141,6 +141,7 @@
     <ClCompile Include="ObjItemWing.cpp" />
     <ClCompile Include="objnage.cpp" />
     <ClCompile Include="ObjStageSelect.cpp" />
+    <ClCompile Include="ObjText.cpp" />
     <ClCompile Include="ObjTitle.cpp" />
     <ClCompile Include="SceneMain.cpp" />
     <ClCompile Include="SceneStageSelect.cpp" />
@@ -173,6 +174,7 @@
     <ClInclude Include="ObjLei.h" />
     <ClInclude Include="objnage.h" />
     <ClInclude Include="ObjStageSelect.h" />
+    <ClInclude Include="ObjText.h" />
     <ClInclude Include="ObjTitle.h" />
     <ClInclude Include="SceneMain.h" />
     <ClInclude Include="SceneStageSelect.h" />

@@ -254,12 +254,17 @@ void CObjLei::Action()
 //描画情報(ドロー)////////////////////////////
 void CObjLei::Draw()
 {
-	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
-
 	wchar_t HP[8];
 	swprintf_s(HP, 8, L"%d", m_HP);
-	Font::StrDraw(L"HP：", 0, 0, 32, c);
-	Font::StrDraw(HP, 64, 0, 32, c);
+	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
+	float c2[4] = { 0.0f,0.8f,0.0f,1.0f };
+	float c3[4] = { 0.0f,0.0f,0.0f,0.8f };
+
+	Font::StrDraw(L"HP:", 2, 1, 50, c3);
+	Font::StrDraw(HP, 82, 1, 50, c3);
+	
+	Font::StrDraw(L"HP:", 0, 0, 50, c2);
+	Font::StrDraw(HP, 80, 0, 50, c2);
 	
 	RECT_F src;//描画元切取位置
 	RECT_F dst;//描画元表示位置
