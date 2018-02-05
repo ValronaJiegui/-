@@ -152,11 +152,13 @@
     </ClCompile>
     <ClCompile Include="ObjSyasyou.cpp" />
     <ClCompile Include="ObjStageSelect.cpp" />
+    <ClCompile Include="ObjSynopsis.cpp" />
     <ClCompile Include="ObjText.cpp" />
     <ClCompile Include="ObjTitle.cpp" />
     <ClCompile Include="SceneGameOver.cpp" />
     <ClCompile Include="SceneMain.cpp" />
     <ClCompile Include="SceneStageSelect.cpp" />
+    <ClCompile Include="SceneSynopsis.cpp" />
     <ClCompile Include="SceneTitle.cpp" />
     <ClCompile Include="Stage1.cpp" />
     <ClCompile Include="sukima.cpp" />
@@ -206,11 +208,13 @@
     </ClInclude>
     <ClInclude Include="ObjSyasyou.h" />
     <ClInclude Include="ObjStageSelect.h" />
+    <ClInclude Include="ObjSynopsis.h" />
     <ClInclude Include="ObjText.h" />
     <ClInclude Include="ObjTitle.h" />
     <ClInclude Include="SceneGameOver.h" />
     <ClInclude Include="SceneMain.h" />
     <ClInclude Include="SceneStageSelect.h" />
+    <ClInclude Include="SceneSynopsis.h" />
     <ClInclude Include="SceneTitle.h" />
     <ClInclude Include="Stage1.h" />
     <ClInclude Include="sukima.h" />

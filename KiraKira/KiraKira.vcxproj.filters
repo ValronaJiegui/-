@@ -1,286 +1,103 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="ソース ファイル">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="ヘッダー ファイル">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
-    <Filter Include="リソース ファイル">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
-    <Filter Include="ヘッダー ファイル\オブジェ">
-      <UniqueIdentifier>{66e56d2d-c454-4ae7-bffe-e521d5cd6c85}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ヘッダー ファイル\シーン">
-      <UniqueIdentifier>{faac1719-b0cd-424a-8b44-b57ac063a9eb}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\オブジェ">
-      <UniqueIdentifier>{74b936c0-c3f9-4cb3-9902-d2d473668955}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\シーン">
-      <UniqueIdentifier>{ee0e931f-05c8-4565-a027-d30593932da9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\アイテム">
-      <UniqueIdentifier>{07a50fd7-c1bd-425a-be8f-73e461c6aea9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ヘッダー ファイル\アイテム">
-      <UniqueIdentifier>{5ae24344-309d-4e64-8a46-d7e5fc6dc95f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ヘッダー ファイル\オブジェ\敵データ">
-      <UniqueIdentifier>{db86fdae-c8dd-4a18-bc07-3d5ca95f602b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\オブジェ\敵データ">
-      <UniqueIdentifier>{182f7c6a-f50a-4c46-8ed7-1afd3e318968}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\オブジェ\敵データ\弾">
-      <UniqueIdentifier>{5ea8fa1e-a886-4aa7-a9bf-57533bd83736}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ヘッダー ファイル\オブジェ\敵データ\弾">
-      <UniqueIdentifier>{b9ba6924-a2c3-4836-aa8a-e42decdf1f02}</UniqueIdentifier>
-    </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="ObjItemTea.cpp">
-      <Filter>ソース ファイル\アイテム</Filter>
+    <ClCompile Include="densya.cpp" />
+    <ClCompile Include="doron.cpp" />
+    <ClCompile Include="GameL\GameL_Main.cpp" />
+    <ClCompile Include="kip.cpp" />
+    <ClCompile Include="Kirari.cpp" />
+    <ClCompile Include="naihu.cpp" />
+    <ClCompile Include="ObjAnten.cpp" />
+    <ClCompile Include="ObjBlock.cpp" />
+    <ClCompile Include="objenemy.cpp" />
+    <ClCompile Include="ObjGameOver.cpp" />
+    <ClCompile Include="objhenemy.cpp" />
+    <ClCompile Include="ObjLei.cpp" />
+    <ClCompile Include="ObjItemTea.cpp" />
+    <ClCompile Include="ObjItemWing.cpp" />
+    <ClCompile Include="objnage.cpp" />
+    <ClCompile Include="objsin.cpp" />
+    <ClCompile Include="objsyasyo.cpp" />
+    <ClCompile Include="ObjSyasyou.cpp" />
+    <ClCompile Include="ObjStageSelect.cpp" />
+    <ClCompile Include="ObjText.cpp" />
+    <ClCompile Include="ObjTitle.cpp" />
+    <ClCompile Include="SceneGameOver.cpp" />
+    <ClCompile Include="SceneMain.cpp" />
+    <ClCompile Include="SceneStageSelect.cpp" />
+    <ClCompile Include="SceneTitle.cpp" />
+    <ClCompile Include="Stage1.cpp" />
+    <ClCompile Include="sukima.cpp" />
+    <ClCompile Include="tama.cpp" />
+    <ClCompile Include="tamac.cpp" />
+    <ClCompile Include="test.cpp" />
+    <ClCompile Include="tobasu.cpp" />
+    <ClCompile Include="ObjSynopsis.cpp">
+      <Filter>Synopsis</Filter>
     </ClCompile>
-    <ClCompile Include="ObjItemWing.cpp">
-      <Filter>ソース ファイル\アイテム</Filter>
-    </ClCompile>
-    <ClCompile Include="GameL\GameL_Main.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="naihu.cpp">
-      <Filter>ソース ファイル\オブジェ\敵データ</Filter>
-    </ClCompile>
-    <ClCompile Include="objnage.cpp">
-      <Filter>ソース ファイル\オブジェ\敵データ</Filter>
-    </ClCompile>
-    <ClCompile Include="objenemy.cpp">
-      <Filter>ソース ファイル\オブジェ\敵データ</Filter>
-    </ClCompile>
-    <ClCompile Include="objhenemy.cpp">
-      <Filter>ソース ファイル\オブジェ\敵データ</Filter>
-    </ClCompile>
-    <ClCompile Include="Kirari.cpp">
-      <Filter>ソース ファイル\オブジェ</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjAnten.cpp">
-      <Filter>ソース ファイル\オブジェ</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjBlock.cpp">
-      <Filter>ソース ファイル\オブジェ</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjLei.cpp">
-      <Filter>ソース ファイル\オブジェ</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjStageSelect.cpp">
-      <Filter>ソース ファイル\オブジェ</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjTitle.cpp">
-      <Filter>ソース ファイル\オブジェ</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneMain.cpp">
-      <Filter>ソース ファイル\シーン</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneStageSelect.cpp">
-      <Filter>ソース ファイル\シーン</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneTitle.cpp">
-      <Filter>ソース ファイル\シーン</Filter>
-    </ClCompile>
-    <ClCompile Include="tama.cpp">
-      <Filter>ソース ファイル\オブジェ\敵データ\弾</Filter>
-    </ClCompile>
-    <ClCompile Include="tamac.cpp">
-      <Filter>ソース ファイル\オブジェ\敵データ\弾</Filter>
-    </ClCompile>
-    <ClCompile Include="Stage1.cpp">
-    <ClCompile Include="GameL\GameL_Main.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneGameOver.cpp">
-      <Filter>ソース ファイル\シーン</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjGameOver.cpp">
-      <Filter>ソース ファイル\オブジェ</Filter>
-    </ClCompile>
-    <ClCompile Include="doron.cpp">
-      <Filter>ソース ファイル\敵データ</Filter>
-    </ClCompile>
-    <ClCompile Include="objsin.cpp">
-      <Filter>ソース ファイル\敵データ</Filter>
-    </ClCompile>
-    <ClCompile Include="tobasu.cpp">
-      <Filter>ソース ファイル\敵データ</Filter>
-    </ClCompile>
-    <ClCompile Include="tamac.cpp">
-      <Filter>ソース ファイル\敵データ</Filter>
-    </ClCompile>
-    <ClCompile Include="densya.cpp">
-      <Filter>ソース ファイル\敵データ</Filter>
-    </ClCompile>
-    <ClCompile Include="objsyasyo.cpp">
-      <Filter>ソース ファイル\敵データ</Filter>
-    </ClCompile>
-    <ClCompile Include="sukima.cpp">
-      <Filter>ソース ファイル\敵データ</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjSyasyou.cpp">
-      <Filter>ソース ファイル\敵データ</Filter>
-    </ClCompile>
-    <ClCompile Include="kip.cpp">
-      <Filter>ソース ファイル\敵データ</Filter>
+    <ClCompile Include="SceneSynopsis.cpp">
+      <Filter>Synopsis</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="GameHead.h">
-      <Filter>ヘッダー ファイル</Filter>
+    <ClInclude Include="densya.h" />
+    <ClInclude Include="doron.h" />
+    <ClInclude Include="GameHead.h" />
+    <ClInclude Include="GameL\Audio.h" />
+    <ClInclude Include="GameL\DirectXDevice.h" />
+    <ClInclude Include="GameL\DrawFont.h" />
+    <ClInclude Include="GameL\DrawTexture.h" />
+    <ClInclude Include="GameL\HitBoxManager.h" />
+    <ClInclude Include="GameL\MultiThread.h" />
+    <ClInclude Include="GameL\SceneManager.h" />
+    <ClInclude Include="GameL\SceneObjManager.h" />
+    <ClInclude Include="GameL\SetWindow.h" />
+    <ClInclude Include="GameL\UserData.h" />
+    <ClInclude Include="GameL\WinInputs.h" />
+    <ClInclude Include="kip.h" />
+    <ClInclude Include="Kirari.h" />
+    <ClInclude Include="main.h" />
+    <ClInclude Include="naihu.h" />
+    <ClInclude Include="ObjAnten.h" />
+    <ClInclude Include="ObjBlock.h" />
+    <ClInclude Include="objenemy.h" />
+    <ClInclude Include="ObjGameOver.h" />
+    <ClInclude Include="objhenemy.h" />
+    <ClInclude Include="ObjItemTea.h" />
+    <ClInclude Include="ObjItemWing.h" />
+    <ClInclude Include="ObjLei.h" />
+    <ClInclude Include="objnage.h" />
+    <ClInclude Include="objsin.h" />
+    <ClInclude Include="objsyasyo.h" />
+    <ClInclude Include="ObjSyasyou.h" />
+    <ClInclude Include="ObjStageSelect.h" />
+    <ClInclude Include="ObjText.h" />
+    <ClInclude Include="ObjTitle.h" />
+    <ClInclude Include="SceneGameOver.h" />
+    <ClInclude Include="SceneMain.h" />
+    <ClInclude Include="SceneStageSelect.h" />
+    <ClInclude Include="SceneTitle.h" />
+    <ClInclude Include="Stage1.h" />
+    <ClInclude Include="sukima.h" />
+    <ClInclude Include="tama.h" />
+    <ClInclude Include="tamac.h" />
+    <ClInclude Include="tobasu.h" />
+    <ClInclude Include="ObjSynopsis.h">
+      <Filter>Synopsis</Filter>
     </ClInclude>
-    <ClInclude Include="main.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="GameL\Audio.h">
-      <Filter>リソース ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="GameL\DirectXDevice.h">
-      <Filter>リソース ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="GameL\DrawFont.h">
-      <Filter>リソース ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="GameL\DrawTexture.h">
-      <Filter>リソース ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="GameL\HitBoxManager.h">
-      <Filter>リソース ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="GameL\MultiThread.h">
-      <Filter>リソース ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="GameL\SceneManager.h">
-      <Filter>リソース ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="GameL\SceneObjManager.h">
-      <Filter>リソース ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="GameL\SetWindow.h">
-      <Filter>リソース ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="GameL\UserData.h">
-      <Filter>リソース ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="GameL\WinInputs.h">
-      <Filter>リソース ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="naihu.h">
-      <Filter>ヘッダー ファイル\オブジェ\敵データ</Filter>
-    </ClInclude>
-    <ClInclude Include="objnage.h">
-      <Filter>ヘッダー ファイル\オブジェ\敵データ</Filter>
-    </ClInclude>
-    <ClInclude Include="objenemy.h">
-      <Filter>ヘッダー ファイル\オブジェ\敵データ</Filter>
-    </ClInclude>
-    <ClInclude Include="objhenemy.h">
-      <Filter>ヘッダー ファイル\オブジェ\敵データ</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjItemTea.h">
-      <Filter>ヘッダー ファイル\アイテム</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjItemWing.h">
-      <Filter>ヘッダー ファイル\アイテム</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjAnten.h">
-      <Filter>ヘッダー ファイル\オブジェ</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjBlock.h">
-      <Filter>ヘッダー ファイル\オブジェ</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjLei.h">
-      <Filter>ヘッダー ファイル\オブジェ</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjStageSelect.h">
-      <Filter>ヘッダー ファイル\オブジェ</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjTitle.h">
-      <Filter>ヘッダー ファイル\オブジェ</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneMain.h">
-      <Filter>ヘッダー ファイル\シーン</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneStageSelect.h">
-      <Filter>ヘッダー ファイル\シーン</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneTitle.h">
-      <Filter>ヘッダー ファイル\シーン</Filter>
-    </ClInclude>
-    <ClInclude Include="Kirari.h">
-      <Filter>ヘッダー ファイル\オブジェ</Filter>
-    </ClInclude>
-    <ClInclude Include="tama.h">
-      <Filter>ヘッダー ファイル\オブジェ\敵データ\弾</Filter>
-    </ClInclude>
-    <ClInclude Include="naihu.h">
-      <Filter>ヘッダー ファイル\敵ヘッダーデータ</Filter>
-    </ClInclude>
-    <ClInclude Include="objnage.h">
-      <Filter>ヘッダー ファイル\敵ヘッダーデータ</Filter>
-    </ClInclude>
-    <ClInclude Include="objenemy.h">
-      <Filter>ヘッダー ファイル\敵ヘッダーデータ</Filter>
-    <ClInclude Include="tamac.h">
-      <Filter>ヘッダー ファイル\オブジェ\敵データ\弾</Filter>
-    </ClInclude>
-    <ClInclude Include="Stage1.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneGameOver.h">
-      <Filter>ヘッダー ファイル\シーン</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjGameOver.h">
-      <Filter>ヘッダー ファイル\オブジェ</Filter>
-    </ClInclude>
-    <ClInclude Include="tamac.h">
-      <Filter>ヘッダー ファイル\敵ヘッダーデータ</Filter>
-    </ClInclude>
-    <ClInclude Include="doron.h">
-      <Filter>ヘッダー ファイル\敵ヘッダーデータ</Filter>
-    </ClInclude>
-    <ClInclude Include="tobasu.h">
-      <Filter>ヘッダー ファイル\敵ヘッダーデータ</Filter>
-    </ClInclude>
-    <ClInclude Include="objsin.h">
-      <Filter>ヘッダー ファイル\敵ヘッダーデータ</Filter>
-    </ClInclude>
-    <ClInclude Include="densya.h">
-      <Filter>ヘッダー ファイル\敵ヘッダーデータ</Filter>
-    </ClInclude>
-    <ClInclude Include="sukima.h">
-      <Filter>ヘッダー ファイル\敵ヘッダーデータ</Filter>
-    </ClInclude>
-    <ClInclude Include="objsyasyo.h">
-      <Filter>ヘッダー ファイル\敵ヘッダーデータ</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjSyasyou.h">
-      <Filter>ヘッダー ファイル\敵ヘッダーデータ</Filter>
-    </ClInclude>
-    <ClInclude Include="kip.h">
-      <Filter>ヘッダー ファイル\敵ヘッダーデータ</Filter>
+    <ClInclude Include="SceneSynopsis.h">
+      <Filter>Synopsis</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="GameL\Draw2DTex.hlsl">
-      <Filter>リソース ファイル</Filter>
-    </None>
+    <Library Include="GameL\libar.lib" />
   </ItemGroup>
   <ItemGroup>
-    <Library Include="GameL\libar.lib">
-      <Filter>リソース ファイル</Filter>
-    </Library>
+    <None Include="GameL\Draw2DTex.hlsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Synopsis">
+      <UniqueIdentifier>{e8091ccf-a123-4599-8a35-966238261d11}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>

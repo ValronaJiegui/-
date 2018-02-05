@@ -28,6 +28,7 @@ enum OBJ_NAME
 	OBJ_BAKU,
 	OBJ_BOSS_KIRARI,
 	OBJ_ANTEN,
+	OBJ_SYNOPSIS,
 };
 //------------------------------------------------
 
@@ -89,6 +90,7 @@ struct UserData
 #include"objsin.h"
 #include"tobasu.h"
 #include"ObjSyasyou.h"
+#include "ObjSynopsis.h"
 #include"densya.h"
 #include"sukima.h"
 #include"kip.h"
@@ -103,6 +105,7 @@ struct UserData
 #include"SceneStageSelect.h"
 #include "SceneGameOver.h"
 #include"Stage1.h"
+#include "SceneSynopsis.h"
 //-----------------------------------------------
 
 //シーンスタートクラス---------------------------

@@ -111,9 +111,6 @@ void CSceneMain::InitScene()
 	CObjSyasyou* objenemyaaa = new CObjSyasyou();
 	Objs::InsertObj(objenemyaaa, OBJ_SYASYO, 3);
 
-	CObjHenemy* objhenemy = new CObjHenemy();
-	Objs::InsertObj(objhenemy, OBJ_HENEMY, 3);
-
 
 	/////////////ミュージック
 	/*音楽読込*///Audio::LoadAudio(0, L"BGMTitle.wav", SOUND_TYPE::BACK_MUSIC);
