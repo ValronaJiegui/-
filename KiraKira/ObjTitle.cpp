@@ -24,6 +24,7 @@ void CObjTitle::Init()
 void CObjTitle::Action()
 {
 	bool NEW = false;
+	bool LOAD = false;
 	bool FINISH = false;
 
 	//マウスの位置を取得
@@ -34,8 +35,9 @@ void CObjTitle::Action()
 	if (m_mou_x > 30 && m_mou_x < 512 && m_mou_y>293 && m_mou_y < 357&& m_mou_l == false)
 			NEW = true;
 	else if (m_mou_x > 30 && m_mou_x < 512 && m_mou_y>398 && m_mou_y < 462&& m_mou_l == false)
+			LOAD = true;
+	else if (m_mou_x > 30 && m_mou_x < 512 && m_mou_y>507 && m_mou_y < 571&& m_mou_l == false)
 			FINISH = true;
-			
 
 	//マウスのボタンの状態
 	m_mou_l = Input::GetMouButtonL();
@@ -44,6 +46,11 @@ void CObjTitle::Action()
 	if (m_mou_l == true && NEW == true)
 	{
 		Scene::SetScene(new CSceneSynopsis());
+	}
+	//_LOAD_GAME_が押されたら
+	else if (m_mou_l == true && LOAD == true)
+	{
+		//ここに処理を書く
 	}
 	//_FINISH_GAME_が押されたらゲームを終了する
 	else if (m_mou_l == true && FINISH == true)
@@ -60,6 +67,8 @@ void CObjTitle::Draw()
 	if (m_mou_x > 30 && m_mou_x < 512 && m_mou_y>293 && m_mou_y < 357)
 		Draw::LoadImageW(L"NEW GAME.png", 0, TEX_SIZE_1024);
 	else if (m_mou_x > 30 && m_mou_x < 512 && m_mou_y>398 && m_mou_y < 462)
+		Draw::LoadImageW(L"LOAD GAME.png", 0, TEX_SIZE_1024);
+	else if (m_mou_x > 30 && m_mou_x < 512 && m_mou_y>507 && m_mou_y < 571)
 		Draw::LoadImageW(L"FINISH GAME.png", 0, TEX_SIZE_1024);
 	else
 		Draw::LoadImageW(L"Title.png", 0, TEX_SIZE_1024);
